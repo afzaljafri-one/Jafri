@@ -7,14 +7,16 @@ ROOT PAGES
 - fastag.html — B2B FASTag case study.
 - ncmc.html — NCMC case study / explainer.
 - mobility.html — Mobility payments page.
-- payments-ecosystem.html — new approved black-and-gold payments guide.
+- payments-ecosystem.html — black-and-gold payments guide.
+- career.html — detailed chronological career history with employer links and logos.
+- work.html — selected business portfolio with internal case-study links.
 - 404.html — custom not-found page.
 
 SITE / SEO FILES
 - CNAME — custom domain jafri.one.
 - .nojekyll — GitHub Pages static asset handling.
 - robots.txt — crawler access and sitemap declaration.
-- sitemap.xml — all five canonical pages.
+- sitemap.xml — all seven canonical pages.
 - favicon.ico — site favicon.
 
 ASSETS
