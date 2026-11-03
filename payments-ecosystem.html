@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>Understanding the Payments Ecosystem | Afzal Jafri</title>
+<meta name="description" content="A practical guide to payment gateways, merchant economics, MDR, rate subvention, MCC and India's payment rails by Afzal Jafri.">
+<link rel="canonical" href="https://jafri.one/payments-ecosystem.html">
+<link rel="icon" type="image/webp" href="/assets/afzal-jafri-signature-logo.webp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Understanding the Payments Ecosystem | Afzal Jafri">
+<meta property="og:description" content="A practical guide to payment gateways, merchant economics, rate subvention, MCC and India's payment rails.">
+<meta property="og:url" content="https://jafri.one/payments-ecosystem.html">
+<style>
+:root{--bg:#090909;--panel:#101010;--panel2:#15130f;--gold:#c7a66a;--gold2:#e5c78e;--white:#f4f0e8;--muted:#aaa398;--line:rgba(199,166,106,.25);--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:radial-gradient(ellipse at 82% 5%,rgba(126,91,42,.13),transparent 28%),var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;width:145px;flex:none}.brand img{width:100%;height:46px;object-fit:contain;object-position:left center}
+.navlinks{display:flex;align-items:center;gap:clamp(12px,2vw,27px);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#d0c9bd}
+.navlinks a{transition:color .2s}.navlinks a:hover,.navlinks a[aria-current=page]{color:var(--gold2)}
+.nav-social{font-size:13px;font-weight:700;color:#ddd}.navcta{border:1px solid var(--gold);padding:9px 14px;color:var(--gold2);font-size:10px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--gold2);padding:8px 10px}
+.hero{min-height:365px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:30px;padding:48px 0 42px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.eyebrow,.kicker{color:var(--gold2);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+.eyebrow .dot{padding:0 10px;color:var(--gold)}
+h1{font:clamp(43px,5.3vw,68px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.04em;font-weight:400;margin:18px 0 14px;max-width:760px}
+h1 span{color:var(--gold2)}.hero p{font:16px/1.75 Georgia,serif;color:#d2cabe;max-width:620px;margin:0}
+.byline{display:flex;align-items:center;gap:12px;margin-top:24px;color:#e7dfd2;font-size:12px}.avatar{width:39px;height:39px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold2);font:18px Georgia,serif;background:linear-gradient(135deg,#272016,#090909)}
+.byline small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.hero-art{height:280px;position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.hero-art:before{content:"";position:absolute;width:82%;height:60%;bottom:5%;left:8%;background:radial-gradient(ellipse,rgba(198,154,81,.2),transparent 68%);filter:blur(14px);z-index:-1}
+.phone{position:absolute;width:145px;height:238px;left:25%;top:15px;border:3px solid #9b8d76;border-radius:27px;background:linear-gradient(145deg,#353330,#080808 58%);box-shadow:12px 25px 35px #000, inset 0 0 0 2px #24211d;transform:rotate(7deg);padding:8px}
+.phone-screen{height:100%;border-radius:19px;background:linear-gradient(160deg,#1c1b19,#080808);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:12px}
+.check{width:42px;height:42px;border:1px solid var(--gold2);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-size:23px;margin-bottom:12px}
+.phone-screen strong{font:italic 15px Georgia,serif}.phone-screen small{font-size:10px;color:#c8bda9;margin-top:5px}
+.bank-card{position:absolute;right:10%;top:76px;width:210px;height:130px;border:1px solid #b89a64;border-radius:13px;background:linear-gradient(135deg,#3b3326,#17130e 65%,#090909);box-shadow:0 22px 35px #000;transform:rotate(-10deg);padding:17px}
+.card-chip{width:27px;height:21px;border:1px solid #c9a96d;border-radius:5px;background:linear-gradient(135deg,#a8894d,#4d3c20);margin-top:23px}
+.card-wave{position:absolute;right:17px;top:18px;color:var(--gold2);font-size:24px}
+.card-lines{height:5px;width:65%;background:rgba(220,190,130,.65);margin-top:14px;border-radius:5px}
+.hero-art .art-caption{position:absolute;bottom:4px;right:4%;font:italic 12px Georgia,serif;color:#a99b80;letter-spacing:.08em}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+.section-title{font:clamp(25px,3vw,34px)/1.12 Georgia,serif;font-weight:400;letter-spacing:-.02em;margin:0 0 5px;color:#f1eadd}
+.section-sub{font-size:13px;color:var(--muted);margin:0 0 20px}
+.flow{display:grid;grid-template-columns:1fr 26px 1fr 26px 1.08fr 26px 1fr 26px 1fr 26px 1fr;align-items:center;gap:8px;padding:3px 8px 2px}
+.flow-card{min-height:98px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#111,#0b0b0b);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:12px 7px;gap:7px}
+.flow-card.active{border-color:var(--gold2);background:linear-gradient(145deg,rgba(199,166,106,.18),#111)}
+.flow-card svg{width:30px;height:30px;stroke:var(--gold2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.flow-card b{font-size:12px;line-height:1.25}.flow-arrow{color:var(--gold2);font-size:24px;text-align:center}
+.quicklinks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.quick{border:1px solid var(--line);background:#101010;padding:14px 15px;display:flex;align-items:center;gap:12px;transition:.2s}
+.quick:hover,.reference:hover{border-color:var(--gold2);transform:translateY(-2px)}
+.quick svg{width:28px;height:28px;stroke:var(--gold2);fill:none;stroke-width:1.6;flex:none}
+.quick b{font-size:12px;display:block}.quick small{font-size:10px;color:var(--muted);display:block;margin-top:2px}
+.moves{display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:center}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{position:relative;text-align:center;padding:2px 5px}.step:not(:last-child):after{content:"⟶";position:absolute;right:-16px;top:30px;color:var(--gold2);font-size:21px}
+.step-icon{width:58px;height:58px;border-radius:50%;margin:0 auto 9px;background:radial-gradient(circle,#332919,#15120e);border:1px solid var(--line);display:grid;place-items:center}
+.step-icon svg{width:30px;height:30px;stroke:var(--gold2);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.step h3{font-size:12px;margin:0 0 6px}.step p{font-size:10px;color:var(--muted);line-height:1.5;margin:0}
+.step-num{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--gold2);color:#15110a;font-size:10px;font-weight:700;margin-right:5px}
+.info{border:1px solid var(--line);border-radius:10px;padding:19px;background:linear-gradient(145deg,#17130d,#0d0d0d)}
+.info h3{font:19px Georgia,serif;margin:0 0 8px;color:var(--gold2)}.info p{font-size:12px;color:#c9c1b4;line-height:1.7;margin:0}
+.dual{display:grid;grid-template-columns:1.18fr .82fr;gap:26px}
+.dual>article+article{border-left:1px solid var(--line);padding-left:25px}
+.economics{display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:center}
+.amount{border:1px solid var(--line);border-radius:10px;padding:18px;background:linear-gradient(145deg,#19150e,#0c0c0c)}
+.amount small{display:block;color:#c8bda9;font-size:11px}.amount strong{display:block;font:35px Georgia,serif;color:#f4ead8;margin:5px 0 12px}
+.amount .mdr{border-top:1px solid var(--line);padding-top:9px;font-size:11px;display:flex;justify-content:space-between}.amount .mdr b{color:var(--gold2);font-size:14px}
+.fee-table{border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.fee-row{display:grid;grid-template-columns:1fr 85px 54px;gap:8px;padding:9px 12px;border-bottom:1px solid rgba(199,166,106,.14);font-size:10px;align-items:center}
+.fee-row:last-child{border:0;background:rgba(199,166,106,.15);color:var(--gold2);font-weight:700}
+.fee-row .fee-name{display:flex;align-items:center;gap:8px}.fee-name svg{width:18px;height:18px;stroke:var(--gold2);fill:none;stroke-width:1.6;flex:none}.fee-row span:nth-child(2),.fee-row span:nth-child(3){text-align:right}
+.rate-intro{font-size:12px;color:var(--muted);line-height:1.7;margin:0 0 16px}
+.subvention{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr;align-items:center;gap:4px}
+.party{min-height:140px;border:1px solid var(--line);border-radius:10px;background:#111;padding:13px 8px;text-align:center}
+.party svg{width:28px;height:28px;stroke:var(--gold2);fill:none;stroke-width:1.6;margin-bottom:7px}
+.party b{display:block;font-size:11px}.party small{display:block;font-size:10px;line-height:1.45;color:var(--muted);margin-top:7px}.plus{color:var(--gold2);font-size:24px;text-align:center}
+.mccrails{display:grid;grid-template-columns:1.15fr .95fr;gap:25px}
+.mccrails>article+article{border-left:1px solid var(--line);padding-left:25px}
+.mccgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mcc{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#111;text-align:center}
+.mcc-visual{height:72px;display:grid;place-items:center;background:radial-gradient(circle at 50% 35%,#5c4829,#15120e 72%);font-size:28px}
+.mcc b{display:block;font-size:11px;margin:8px 3px 2px}.mcc small{display:block;color:var(--gold2);font-size:10px;margin-bottom:9px}
+.rails{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.rail{border:1px solid var(--line);border-radius:9px;padding:12px;background:#111;min-height:86px}
+.rail strong{font:22px Georgia,serif;color:#f1e8d8;display:block}.rail b{font-size:11px;display:block}.rail small{font-size:9px;color:var(--muted);line-height:1.4;display:block;margin-top:3px}
+.references{padding-bottom:32px}
+.reference-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.reference{min-height:128px;border:1px solid var(--line);border-radius:9px;background:linear-gradient(145deg,#121212,#0b0b0b);padding:13px 11px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}
+.logo{height:34px;display:flex;align-items:center;gap:7px;color:#f5eee2}
+.logo svg{height:30px;max-width:100%;overflow:visible}
+.logo .word{font-weight:800;font-size:18px;letter-spacing:-.04em}.logo .word.visa{font-style:italic;color:#f3e8d2}.logo .word.payu{color:#c8d95b}.logo .word.cash{color:#f2eadb}
+.logo .word.npci{font-style:italic;letter-spacing:-.06em}.logo .word.rzp{font-size:14px}.reference b{font-size:11px;margin-top:8px}.reference small{font-size:9px;color:var(--muted);line-height:1.4}
+.reference .out{align-self:flex-end;color:var(--gold2);font-size:13px}
+.note{font-size:10px;color:#827a6e;margin-top:13px;line-height:1.6}
+footer{padding:20px 0;color:#8f877a;font-size:11px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}footer a{color:var(--gold2)}
+@media(max-width:1000px){.navlinks{gap:12px;font-size:9px}.brand{width:120px}.flow{gap:4px}.flow-arrow{font-size:18px}.reference-grid{grid-template-columns:repeat(4,1fr)}.quicklinks{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.wrap{width:min(var(--max),calc(100% - 34px))}.nav{min-height:66px}.navlinks,.nav-social{display:none}.menu-toggle{display:block}.navcta{margin-left:auto}.hero{grid-template-columns:1fr;padding:38px 0 24px;gap:0}.hero-art{height:220px}.phone{left:27%;height:190px;width:120px}.bank-card{right:12%;width:170px;height:108px}.flow{grid-template-columns:1fr 20px 1fr 20px 1fr;row-gap:10px}.flow-card{min-height:86px}.flow-card:nth-of-type(7){grid-column:1}.flow-arrow:nth-of-type(8){display:none}.moves{grid-template-columns:1fr}.dual,.mccrails{grid-template-columns:1fr;gap:25px}.dual>article+article,.mccrails>article+article{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.reference-grid{grid-template-columns:repeat(2,1fr)}.steps{gap:9px}.step p{font-size:9px}}
+@media(max-width:480px){.wrap{width:calc(100% - 28px)}h1{font-size:42px}.hero p{font-size:14px}.quicklinks{grid-template-columns:1fr}.flow{grid-template-columns:1fr 16px 1fr 16px 1fr}.flow-card{padding:8px 4px}.flow-card b{font-size:10px}.flow-card svg{width:25px;height:25px}.flow-arrow{font-size:15px}.steps{grid-template-columns:repeat(2,1fr);row-gap:22px}.step:after{display:none}.economics{grid-template-columns:1fr}.subvention{grid-template-columns:1fr 18px 1fr 18px 1fr}.party{padding:10px 4px;min-height:135px}.party b{font-size:10px}.party small{font-size:9px}.mccgrid{grid-template-columns:repeat(2,1fr)}.rails{grid-template-columns:repeat(2,1fr)}.reference-grid{grid-template-columns:repeat(2,1fr)}.fee-row{grid-template-columns:1fr 62px 42px;padding:8px;font-size:9px}}
+</style>
+
+<!-- Google Analytics 4: same property as jafri.one homepage -->
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.clarity.ms">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTJ0FR8T4P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MTJ0FR8T4P');
+</script>
+<!-- Microsoft Clarity: same project as jafri.one homepage -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z7iblovjp4");
+</script>
+<meta property="og:image" content="https://jafri.one/assets/og-home.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Understanding the Payments Ecosystem | Afzal Jafri">
+<meta name="twitter:description" content="A practical guide to payment gateways, merchant economics, rate subvention, MCC and India's payment rails.">
+<meta name="twitter:image" content="https://jafri.one/assets/og-home.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jafri.one/#person",
+      "name": "Afzal Jafri",
+      "url": "https://jafri.one/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://jafri.one/payments-ecosystem.html#webpage",
+      "url": "https://jafri.one/payments-ecosystem.html",
+      "name": "Understanding the Payments Ecosystem",
+      "description": "A practical guide to payment gateways, merchant economics, rate subvention, MCC and India's payment rails.",
+      "isPartOf": {"@id": "https://jafri.one/#website"},
+      "about": {"@id": "https://jafri.one/#person"},
+      "breadcrumb": {"@id": "https://jafri.one/payments-ecosystem.html#breadcrumb"}
+    },
+    {
+      "@type": "Article",
+      "@id": "https://jafri.one/payments-ecosystem.html#article",
+      "headline": "Understanding the Payments Ecosystem",
+      "description": "A practical guide to payment gateways, merchant economics, rate subvention, MCC and India's payment rails.",
+      "author": {"@id": "https://jafri.one/#person"},
+      "publisher": {"@id": "https://jafri.one/#person"},
+      "mainEntityOfPage": {"@id": "https://jafri.one/payments-ecosystem.html#webpage"},
+      "inLanguage": "en-IN",
+      "articleSection": ["Digital Payments", "Payment Gateways", "Merchant Economics", "Payment Rails"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jafri.one/payments-ecosystem.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://jafri.one/"},
+        {"@type": "ListItem", "position": 2, "name": "Payments Ecosystem", "item": "https://jafri.one/payments-ecosystem.html"}
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="/" aria-label="Afzal Jafri homepage"><img src="/assets/afzal-jafri-signature-logo.webp" alt="Afzal Jafri signature logo" width="1141" height="579"></a>
+<nav class="navlinks" aria-label="Main navigation">
+<a href="/#about">About</a><a href="/#impact">Impact</a><a href="/fastag.html">B2B FASTag</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">Mobility</a><a href="/payments-ecosystem.html" aria-current="page">Payments</a><a href="/#expertise">Expertise</a><a href="/#career">Career</a><a href="/#contact">Contact</a>
+</nav>
+<a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn">in</a>
+<a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">Contact Me</a>
+</div></header>
+
+<main>
+<div class="wrap">
+<section class="hero" id="top">
+<div>
+<div class="eyebrow">Payments Intelligence <span class="dot">·</span> India</div>
+<h1>Understanding the<br><span>Payments Ecosystem.</span></h1>
+<p>A practical guide to payment gateways, merchant economics, rate subvention, MCC and the payment rails that power digital commerce in India.</p>
+<div class="byline"><div class="avatar">AJ</div><div><strong>Research by Afzal Jafri</strong><small>Digital Business &amp; Partnerships Leader</small></div></div>
+</div>
+<div class="hero-art" aria-label="Illustration of a successful mobile payment and bank card">
+<div class="phone"><div class="phone-screen"><div class="check">✓</div><strong>Payment<br>Successful</strong><small>Secure transaction</small></div></div>
+<div class="bank-card"><div class="card-wave">)))</div><div class="card-chip"></div><div class="card-lines"></div></div>
+<div class="art-caption">The mechanics behind every digital payment</div>
+</div>
+</section>
+
+<section id="flow">
+<h2 class="section-title">The payments flow</h2><p class="section-sub">A simplified view of the key players in a card or digital payment.</p>
+<div class="flow">
+<div class="flow-card"><svg viewBox="0 0 32 32"><circle cx="16" cy="8" r="5"/><path d="M5 27c0-6 4-10 11-10s11 4 11 10z"/></svg><b>Customer</b></div><div class="flow-arrow">→</div>
+<div class="flow-card"><svg viewBox="0 0 32 32"><path d="M3 13h26L26 5H6zM5 13v14h22V13M11 13v5m5-5v5m5-5v5"/></svg><b>Merchant</b></div><div class="flow-arrow">→</div>
+<div class="flow-card active"><svg viewBox="0 0 32 32"><path d="m16 3 13 7-13 7L3 10zM3 16l13 7 13-7M3 22l13 7 13-7"/></svg><b>Payment<br>Gateway</b></div><div class="flow-arrow">→</div>
+<div class="flow-card"><svg viewBox="0 0 32 32"><path d="M3 11h26L16 4zM5 27h22M8 11v16m6-16v16m4-16v16m6-16v16"/></svg><b>Acquiring<br>Bank</b></div><div class="flow-arrow">→</div>
+<div class="flow-card"><svg viewBox="0 0 32 32"><circle cx="12" cy="16" r="10" fill="#eb001b" stroke="none"/><circle cx="20" cy="16" r="10" fill="#f79e1b" fill-opacity=".92" stroke="none"/></svg><b>Card<br>Network</b></div><div class="flow-arrow">→</div>
+<div class="flow-card"><svg viewBox="0 0 32 32"><path d="M3 11h26L16 4zM5 27h22M8 11v16m6-16v16m4-16v16m6-16v16"/></svg><b>Issuing<br>Bank</b></div>
+</div>
+<div class="quicklinks">
+<a class="quick" href="#gateway"><svg viewBox="0 0 32 32"><path d="m16 3 13 7-13 7L3 10zM3 16l13 7 13-7M3 22l13 7 13-7"/></svg><span><b>Payment Gateway</b><small>What it is and how it works</small></span></a>
+<a class="quick" href="#economics"><svg viewBox="0 0 32 32"><path d="M4 27h25M7 25V16h5v9m4 0V9h5v16m4 0V4h5v21"/></svg><span><b>Merchant Pricing</b><small>MDR, fees and typical rates</small></span></a>
+<a class="quick" href="#subvention"><svg viewBox="0 0 32 32"><ellipse cx="13" cy="8" rx="9" ry="4"/><path d="M4 8v7c0 2 4 4 9 4s9-2 9-4V8m-18 7v7c0 2 4 4 9 4 2 0 4-.3 5.5-1M22 14c4 0 7 1.5 7 3.5S26 21 22 21s-7-1.5-7-3.5 3-3.5 7-3.5zm-7 3.5v7c0 2 3 3.5 7 3.5s7-1.5 7-3.5v-7"/></svg><span><b>Rate Subvention</b><small>How costs are shared</small></span></a>
+<a class="quick" href="#mcc"><svg viewBox="0 0 32 32"><path d="m11 7 3-3h14v14L15 31 2 18z"/><circle cx="22" cy="10" r="2"/></svg><span><b>MCC &amp; Payment Rails</b><small>Transaction coding and networks</small></span></a>
+</div>
+</section>
+
+<section id="gateway">
+<h2 class="section-title">How a payment moves</h2><p class="section-sub">The key steps from initiation to settlement.</p>
+<div class="moves"><div class="steps">
+<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><rect x="7" y="2" width="15" height="28" rx="2"/><path d="M12 6h5m-3 20h2M20 11h9v10h-9zM23 14h3"/></svg></div><h3><span class="step-num">1</span>Initiate Payment</h3><p>Customer pays (card/UPI/wallet) at the merchant.</p></div>
+<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="19" rx="2"/><path d="M1 28h30M13 14l3-3 3 3m-3-3v8m-4-2h8"/></svg></div><h3><span class="step-num">2</span>Process &amp; Secure</h3><p>Gateway captures, secures and routes the request.</p></div>
+<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><path d="M3 12h26L16 4zM5 28h22M8 12v16m6-16v16m4-16v16m6-16v16"/></svg></div><h3><span class="step-num">3</span>Authorise</h3><p>Banks and network validate and approve the transaction.</p></div>
+<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg></div><h3><span class="step-num">4</span>Complete &amp; Settle</h3><p>Payment is confirmed and merchant funds are settled (T+0 to T+2, typically).</p></div>
+</div>
+<aside class="info"><h3 id="gateway-definition">ⓘ &nbsp;What is a Payment Gateway?</h3><p>A technology platform that securely captures, authenticates and routes payment transactions between the merchant, banks and card networks, and helps settle the funds to the merchant. The gateway is one part of the payment stack; acquiring, processing and settlement may be handled by separate providers.</p></aside>
+</div>
+</section>
+
+<section>
+<div class="dual">
+<article id="economics">
+<h2 class="section-title">The economics behind every transaction</h2><p class="section-sub">How a typical card payment of ₹10,000 is split across the ecosystem (illustrative, MDR = 2.0%).</p>
+<div class="economics">
+<div class="amount"><small>Transaction Amount</small><strong>₹10,000</strong><div class="mdr"><span>MDR (2.0%)</span><b>₹200</b></div></div>
+<div class="fee-table">
+<div class="fee-row"><span class="fee-name">♧ &nbsp;Issuer Interchange</span><span>~1.30%</span><span>₹130</span></div>
+<div class="fee-row"><span class="fee-name">◇ &nbsp;Network Fees</span><span>~0.10%</span><span>₹10</span></div>
+<div class="fee-row"><span class="fee-name">♜ &nbsp;Acquirer (Bank)</span><span>~0.40%</span><span>₹40</span></div>
+<div class="fee-row"><span class="fee-name">▱ &nbsp;Gateway / PA</span><span>~0.20%</span><span>₹20</span></div>
+<div class="fee-row"><span>Total (MDR)</span><span>2.00%</span><span>₹200</span></div>
+</div>
+</div><p class="note">Illustrative model only. Actual MDR, interchange, network fees and provider economics vary by card type, merchant category, acquiring arrangement, volume, risk profile and commercial contract. The gateway / PA component is not necessarily a separately itemised share in every arrangement.</p>
+</article>
+<article id="subvention">
+<h2 class="section-title">Who pays for the rate?</h2><p class="rate-intro">Rate subvention is a commercial arrangement where the cost of acceptance (MDR) is partly or fully funded by a third party such as a brand, bank or platform.</p>
+<div class="subvention">
+<div class="party"><svg viewBox="0 0 32 32"><path d="M3 13h26L26 5H6zM5 13v14h22V13M11 13v5m5-5v5m5-5v5"/></svg><b>Merchant</b><small>Pays a lower or zero MDR</small></div><div class="plus">+</div>
+<div class="party"><svg viewBox="0 0 32 32"><path d="m11 7 3-3h14v14L15 31 2 18z"/><circle cx="22" cy="10" r="2"/></svg><b>Brand / Platform</b><small>Subsidises part of the cost (e.g. 0.5–1.0%)</small></div><div class="plus">+</div>
+<div class="party"><svg viewBox="0 0 32 32"><path d="M3 11h26L16 4zM5 27h22M8 11v16m6-16v16m4-16v16m6-16v16"/></svg><b>Bank</b><small>May co-fund as part of a scheme</small></div>
+</div><p class="note">The payer split is contract-specific. Funding can be fixed, percentage-based, capped, campaign-linked or conditional on transaction performance.</p>
+</article>
+</div>
+</section>
+
+<section id="mcc">
+<div class="mccrails">
+<article>
+<h2 class="section-title">Know the code behind the transaction</h2><p class="section-sub">MCC (Merchant Category Code) is a 4-digit code that classifies a merchant's business type and is used for routing, risk, interchange and incentives.</p>
+<div class="mccgrid">
+<div class="mcc"><div class="mcc-visual">✈</div><b>Airlines</b><small>MCC 4511</small></div>
+<div class="mcc"><div class="mcc-visual">🌴</div><b>Travel Agencies</b><small>MCC 4722</small></div>
+<div class="mcc"><div class="mcc-visual">♙</div><b>Hotels</b><small>MCC 7011</small></div>
+<div class="mcc"><div class="mcc-visual">♨</div><b>Restaurants</b><small>MCC 5812</small></div>
+</div><p class="note">Examples shown are common MCC associations; the assigned MCC depends on the merchant's actual business activity and acquirer classification.</p>
+</article>
+<article>
+<h2 class="section-title">India’s payment rails</h2><p class="section-sub">The underlying networks and systems that move money between banks, merchants and customers.</p>
+<div class="rails">
+<div class="rail"><strong>UPI</strong><b>UPI</b><small>Real-time, 24×7 account-to-account payments</small></div>
+<div class="rail"><strong>IMPS</strong><b>IMPS</b><small>Instant bank transfers, 24×7</small></div>
+<div class="rail"><strong>NEFT</strong><b>NEFT</b><small>Batch-based electronic fund transfers</small></div>
+<div class="rail"><strong>RTGS</strong><b>RTGS</b><small>High-value, real-time gross settlement</small></div>
+<div class="rail"><strong>NACH</strong><b>NACH</b><small>Automated, recurring payments and mandates</small></div>
+<div class="rail"><strong>▣</strong><b>Cards</b><small>Debit, credit and prepaid card networks</small></div>
+</div>
+</article>
+</div>
+</section>
+
+<section class="references" id="ecosystem">
+<h2 class="section-title">Explore the ecosystem</h2><p class="section-sub">Key reference links to learn more about regulations, networks and leading payment platforms.</p>
+<div class="reference-grid">
+<a class="reference" href="https://www.rbi.org.in/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><svg viewBox="0 0 40 40" aria-label="RBI emblem"><circle cx="20" cy="20" r="17" fill="#b99a5d"/><circle cx="20" cy="20" r="13" fill="none" stroke="#1c170d" stroke-width="1.3"/><path d="M10 22q10-13 20 0M13 25h14M16 15q4-5 8 0" stroke="#1c170d" fill="none" stroke-width="1.4"/><path d="M20 9v5" stroke="#1c170d"/></svg></div><b>RBI</b><small>Reserve Bank of India<br>(Payment Systems)</small></a>
+<a class="reference" href="https://www.npci.org.in/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><span class="word npci">NPCI</span><svg viewBox="0 0 28 30"><path d="M2 3v24M8 3v24M14 3v24" stroke="#f0a51c" stroke-width="3"/><path d="M18 3v24" stroke="#138c54" stroke-width="3"/></svg></div><b>NPCI</b><small>National Payments Corporation of India (UPI, RuPay, NACH)</small></a>
+<a class="reference" href="https://www.visa.co.in/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><span class="word visa">VISA</span></div><b>Visa</b><small>Visa India<br>(Products &amp; Resources)</small></a>
+<a class="reference" href="https://www.mastercard.co.in/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><svg viewBox="0 0 56 34"><circle cx="21" cy="17" r="14" fill="#eb001b"/><circle cx="35" cy="17" r="14" fill="#f79e1b"/><path d="M28 6a14 14 0 0 1 0 22 14 14 0 0 1 0-22" fill="#ff5f00"/></svg></div><b>Mastercard</b><small>Merchant and Acquirer Solutions</small></a>
+<a class="reference" href="https://razorpay.com/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><svg viewBox="0 0 30 32"><path d="M8 2 28 0 15 31H1z" fill="#2c83dc"/><path d="M16 17 28 0 23 17z" fill="#75b7fa"/></svg><span class="word rzp">Razorpay</span></div><b>Razorpay</b><small>Payment Gateway &amp; Business Payments</small></a>
+<a class="reference" href="https://payu.in/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><span class="word payu">PayU</span></div><b>PayU</b><small>Payment Acceptance &amp; Fintech Solutions</small></a>
+<a class="reference" href="https://www.cashfree.com/" target="_blank" rel="noopener noreferrer"><span class="out">↗</span><div class="logo"><svg viewBox="0 0 32 32"><path d="M5 25V7h8v7H12v11z" fill="#f2a51a"/><path d="M14 7h14v7H14z" fill="#20a56b"/><path d="M14 16h8v7h-8z" fill="#f2a51a"/></svg><span class="word cash">Cashfree</span></div><b>Cashfree</b><small>Payments, Payouts &amp; Collections</small></a>
+</div>
+<p class="note">Brand marks are recreated as lightweight vector-style references for this educational page. They are not intended to imply endorsement or partnership. External links open the respective organisations' websites.</p>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><span><strong style="color:#e8d5b1">Afzal Jafri</strong> · Strategy. Partnerships. Execution.</span><a href="/">Back to jafri.one &nbsp; →</a></div></footer>
+</body></html>

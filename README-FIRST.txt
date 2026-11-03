@@ -1,61 +1,48 @@
-JAFRI.ONE — GITHUB PAGES WEBSITE PACKAGE
+JAFRI.ONE — FULL WEBSITE PACKAGE
 
-This package is prepared for the GitHub repository:
-  Anvira-Labs/Afzal
-  Branch: main
-  Custom domain: jafri.one
+This is the complete static-site package assembled from the previously saved full website package, with the approved homepage employer-logo update and the new Payments Ecosystem page integrated.
 
-DEPLOYMENT
-1. Download and extract this ZIP.
-2. Open the Anvira-Labs/Afzal repository on GitHub.
-3. Upload/replace the package contents in the repository root.
-4. Preserve the assets/ folder structure.
-5. Commit the changes to the main branch.
-6. In GitHub repository Settings > Pages, confirm deployment is from the main branch and root folder.
-7. Confirm the custom domain is jafri.one and HTTPS is enabled.
-8. Check https://jafri.one/ and each case-study page after deployment.
+ROOT PAGES
+- index.html — homepage; updated Career Journey employer logos and Payments navigation.
+- fastag.html — B2B FASTag case study.
+- ncmc.html — NCMC case study / explainer.
+- mobility.html — Mobility payments page.
+- payments-ecosystem.html — new approved black-and-gold payments guide.
+- 404.html — custom not-found page.
 
-IMPORTANT
-- This package is for GitHub Pages, not Netlify.
-- CNAME contains jafri.one.
-- .nojekyll is included for static asset publishing.
-- Do not upload the ZIP itself as the website. Extract it and upload its contents.
-- Keep the assets/ directory at the repository root.
-- The website is plain HTML/CSS/JavaScript; no build command is required.
+SITE / SEO FILES
+- CNAME — custom domain jafri.one.
+- .nojekyll — GitHub Pages static asset handling.
+- robots.txt — crawler access and sitemap declaration.
+- sitemap.xml — all five canonical pages.
+- favicon.ico — site favicon.
 
-PAGES
-- index.html — homepage
-- fastag.html — B2B FASTag case study and NPCI reference section
-- ncmc.html — NCMC explainer, use cases and NPCI reference section
-- mobility.html — digital payments and mobility ecosystem explainer
-- 404.html — custom not-found page
-- robots.txt and sitemap.xml — crawl guidance and sitemap
+ASSETS
+- `assets/` contains the original supplied site images, page illustrations, portraits, company marks, social preview images, WhatsApp icon and signature logo.
+- `assets/company-logos/` contains polished locally hosted Airtel Payments Bank, Meru Cabs and TaxiForSure logos used on the homepage.
 
 ANALYTICS
-- Google Analytics 4 Measurement ID: G-MTJ0FR8T4P
-- Microsoft Clarity Project ID: z7iblovjp4
-- Outbound events tracked across all pages:
-  - whatsapp_click
-  - linkedin_click
-- GA4 and Clarity snippets are included on all HTML pages.
-- After deployment, test in GA4 Realtime and Clarity. GA4 custom events may take time to appear under Admin > Events.
-- In GA4, mark whatsapp_click and linkedin_click as key events only if you want to treat those actions as conversions.
+The homepage and existing case-study pages retain the existing tracking IDs:
+- Google Analytics 4: G-MTJ0FR8T4P
+- Microsoft Clarity: z7iblovjp4
+The new Payments Ecosystem page uses the same IDs. No new GA4 property or Clarity project was created.
 
-SEO
-- Canonical URLs, page titles, meta descriptions, Open Graph and Twitter metadata are included where applicable.
-- robots.txt points to https://jafri.one/sitemap.xml.
-- sitemap.xml lists the homepage and the three case-study pages.
-- Submit https://jafri.one/sitemap.xml in Google Search Console after deployment.
-- Check URL Inspection for the homepage, fastag.html, ncmc.html and mobility.html.
-- SEO metadata helps crawlers understand the pages; it does not guarantee indexing or rankings.
+DEPLOYMENT
+1. Extract this ZIP.
+2. Upload the entire extracted contents to the root of the existing GitHub repository `afzaljafri-one/Jafri` on the `main` branch.
+3. This package is intended as a complete root-site replacement. Keep a backup of the current repository before replacing it.
+4. Confirm the repository root contains index.html, fastag.html, ncmc.html, mobility.html, payments-ecosystem.html, 404.html, CNAME, .nojekyll, robots.txt, sitemap.xml, favicon.ico and the assets folder.
+5. Commit and push. GitHub Pages should serve the domain jafri.one.
 
-CONTACT
-- WhatsApp destination: +91 87777 786086
-- WhatsApp URL number: 918777786086
-- LinkedIn: https://www.linkedin.com/in/afzaljafri/
+POST-DEPLOYMENT QA
+- Open https://jafri.one/ and verify homepage sections, portraits, logo assets and navigation.
+- Open /fastag.html, /ncmc.html, /mobility.html and /payments-ecosystem.html.
+- Check desktop and mobile layouts.
+- Open /robots.txt and /sitemap.xml.
+- In Google Search Console, submit https://jafri.one/sitemap.xml and inspect each canonical page.
+- In GA4 Realtime, confirm page_view events and page_path for each page.
+- In Microsoft Clarity, confirm page visits and recordings after sufficient traffic.
+- Validate structured data with Schema Markup Validator and check page metadata / canonical URLs.
 
-CONTENT ACCURACY
-- Keep claims tied to the work described on the relevant pages.
-- Do not imply that a partner endorses this website or the individual.
-- Do not present a potential or emerging payment use case as universally deployed.
-- Do not invent transaction volumes, revenue or conversion statistics.
+IMPORTANT
+This package includes all pages and assets from the saved full website archive available to this build. It does not include GitHub repository settings, DNS configuration, Search Console account settings, or any external integrations not represented in the supplied website files. SEO metadata and tracking code are present, but indexing, search ranking and analytics data collection must still be verified after deployment.
