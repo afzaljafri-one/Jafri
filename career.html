@@ -118,32 +118,22 @@
 <style>
 :root{--bg:#07111e;--panel:#0d1a2a;--panel2:#102136;--gold:#e7b94e;--gold2:#f4d477;--white:#f4f1e9;--muted:#b9c3cf;--line:rgba(190,207,226,.19);--max:1480px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
-header{position:sticky;top:0;z-index:30;background:rgba(5,13,23,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav{height:56px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:inline-flex;align-items:center;gap:0;font-family:Georgia,serif;font-size:27px;font-weight:400;letter-spacing:.01em;white-space:nowrap}.brand .brand-name{display:inline-block;font:27px/1 Georgia,serif;color:var(--white);letter-spacing:.01em}.brand .brand-domain{display:inline-block;margin-left:14px;padding-left:14px;border-left:1px solid var(--line);font:14px/1.2 Inter,ui-sans-serif,system-ui,sans-serif;color:#c4ced9;letter-spacing:0}.navlinks{display:flex;align-items:center;gap:clamp(13px,1.7vw,27px);font-size:12px;letter-spacing:.045em;color:#e5e8ed;white-space:nowrap}.navlinks a{padding:22px 0 19px;border-bottom:3px solid transparent}.navlinks a:hover,.navlinks a[aria-current="page"]{color:var(--gold2);border-color:var(--gold)}
+
 .hero{position:relative;overflow:hidden;padding:20px 0 0;background:linear-gradient(90deg,#091523 0%,rgba(9,21,35,.97) 48%,rgba(9,21,35,.42) 100%),url('/assets/career-cityscape.jpg') right center/auto 100% no-repeat,linear-gradient(120deg,#0b1726,#101f30);border-bottom:1px solid var(--line)}.hero .wrap{position:relative}.eyebrow,.kicker{color:var(--gold2);font-size:13px;letter-spacing:.17em;text-transform:uppercase;font-weight:750}.hero h1{font:clamp(32px,2.55vw,39px)/1.08 Georgia,serif;font-weight:400;letter-spacing:-.025em;margin:7px 0 7px;max-width:none;white-space:nowrap}.hero p{max-width:none;color:#d1d8e0;font-size:14px;margin:0;line-height:1.5}.stats{display:grid;grid-template-columns:1fr 1fr 1fr 1.7fr;gap:0;border-top:1px solid var(--line);margin-top:14px;padding:10px 0 11px}.stat{display:flex;align-items:center;gap:15px;padding:0 26px;border-right:1px solid var(--line);min-height:52px}.stat:first-child{padding-left:4px}.stat:last-child{border:0}.stat-icon{width:32px;height:32px;flex:0 0 32px;color:var(--gold);display:grid;place-items:center}.stat-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.stat strong{display:block;color:var(--gold2);font:27px Georgia,serif;line-height:1.05}.stat:last-child strong{font:20px Georgia,serif;color:var(--white)}.stat span{display:block;font-size:12px;color:#d2d9e1;margin-top:3px;line-height:1.3}
 .selector{padding:10px 0 9px;background:#091522;border-bottom:1px solid var(--line)}.selector-inner{display:flex;align-items:center;gap:10px;flex-wrap:nowrap}.selector-label{font-size:13px;color:#f3dfaa;margin-right:15px;white-space:nowrap}.filter{border:1px solid rgba(190,207,226,.28);background:linear-gradient(180deg,#101f30,#0b1726);color:#e1e7ed;padding:10px 17px;border-radius:9px;font:600 12px inherit;cursor:pointer;white-space:nowrap;min-height:43px}.filter.active,.filter:hover{border-color:var(--gold);color:#101820;background:linear-gradient(180deg,#f6d98e,#e4b74c)}
 .workspace{padding:9px 0 42px;background:linear-gradient(180deg,#091522,#07111e)}.dashboard{display:grid;grid-template-columns:minmax(430px,38.5%) minmax(0,1fr);gap:12px;align-items:stretch;min-height:650px}.leftpanel,.detailpanel{border:1px solid var(--line);background:linear-gradient(155deg,rgba(17,33,51,.98),rgba(7,18,31,.99));border-radius:14px;overflow:hidden;min-width:0}.panelhead{padding:12px 18px 9px;border-bottom:1px solid var(--line)}.panelhead h2{font:25px Georgia,serif;font-weight:400;margin:0}.panelhead p{font-size:12px;color:var(--muted);margin:3px 0 0}.company-list{padding:5px 8px 10px;max-height:780px;overflow:auto;scrollbar-width:thin;scrollbar-color:rgba(228,184,79,.45) transparent}.company-item{width:100%;display:grid;grid-template-columns:78px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;padding:6px 8px;border:0;border-bottom:1px solid rgba(255,255,255,.075);background:transparent;color:inherit;cursor:pointer;border-radius:8px;min-height:59px}.company-row{display:grid;grid-template-columns:minmax(0,1fr) 25px;gap:4px;align-items:center;border-bottom:1px solid rgba(255,255,255,.075)}.company-row .company-item{border-bottom:0}.company-row .company-link{display:grid;place-items:center;width:24px;height:32px;border-radius:6px;text-decoration:none;font-size:16px;color:#d9e0e7}.company-row .company-link:hover{background:rgba(228,184,79,.12);color:var(--gold2)}.company-item:hover{background:rgba(255,255,255,.045)}.company-item.active{background:linear-gradient(90deg,rgba(225,178,70,.22),rgba(225,178,70,.055));outline:1px solid rgba(228,184,79,.78)}.company-logo{height:42px;width:78px;display:flex;align-items:center;justify-content:center;background:#f7f7f5;border-radius:8px;padding:6px}.company-logo img{max-width:100%;max-height:100%;object-fit:contain}.company-logo .fallback{color:#152338;font-size:12px;font-weight:800;text-align:center;line-height:1.1}.company-meta{min-width:0}.company-meta strong{display:block;font-size:12px;line-height:1.25}.company-meta span{display:block;color:#c0cad5;font-size:10px;margin-top:2px;line-height:1.25}.company-meta small{display:block;color:var(--gold2);font-size:9px;margin-top:2px}.company-link{font-size:11px;color:#d9e0e7;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}.company-link:hover{color:var(--gold2)}
 .detailpanel{padding:0 18px 18px}.detailtop{padding:14px 0 11px;border-bottom:1px solid var(--line)}.detailbrand{display:flex;align-items:center;gap:17px}.detail-logo{width:132px;height:72px;border-radius:9px;background:#f6f7f8;padding:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.detail-logo img{max-width:100%;max-height:100%;object-fit:contain}.detail-logo .fallback{font-size:15px;font-weight:800;color:#142238;text-align:center}.detail-title{flex:1;min-width:0}.detail-title h2{font:clamp(26px,2.2vw,34px)/1.08 Georgia,serif;font-weight:400;margin:0}.detail-title .role{font-size:16px;color:#f0f2f5;margin-top:4px;line-height:1.35}.detail-title .meta{font-size:12px;color:#bdc7d2;margin-top:6px}.visit{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold);color:var(--gold2);padding:10px 14px;border-radius:8px;font-size:12px;white-space:nowrap}.visit:hover{background:var(--gold);color:#101820}.intro{color:#d4dce5;font-size:14px;font-style:italic;margin:12px 0 0;max-width:1100px;line-height:1.5}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;padding:11px 0;border-bottom:1px solid var(--line)}.metric{border:1px solid rgba(201,215,231,.32);border-radius:9px;padding:9px 10px;min-height:70px;display:flex;align-items:center;gap:10px}.metric-icon{color:var(--gold);font-size:22px;line-height:1}.metric strong{display:block;color:var(--gold2);font:23px Georgia,serif;line-height:1.05}.metric span{display:block;color:#d0d8e0;font-size:11px;margin-top:3px;line-height:1.25}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:12px 0;border-bottom:1px solid var(--line)}.detail-section+ .detail-section{border-left:1px solid var(--line);padding-left:20px}.detail-section h3{font-size:15px;color:var(--gold2);margin:0 0 8px;display:flex;align-items:center;gap:8px}.detail-section h3 .section-icon{font-size:17px}.detail-section ul{padding-left:18px;margin:0;color:#e0e5eb;font-size:12px;line-height:1.55}.detail-section li{padding:2px 0}.detail-section li::marker{color:var(--gold)}.achievements{padding:11px 0;border-bottom:1px solid var(--line)}.achievements h3,.related h3{font-size:15px;color:var(--gold2);margin:0 0 9px}.achievement-list{display:flex;flex-wrap:wrap;gap:8px}.achievement{border:1px solid rgba(228,184,79,.6);background:rgba(228,184,79,.09);border-radius:8px;padding:8px 10px;font-size:11px;color:#f3e8ca;line-height:1.35}.related{padding-top:11px}.related h3{color:var(--white)}.related-links{display:flex;flex-wrap:wrap;gap:9px}.related-links a{border:1px solid rgba(190,207,226,.32);border-radius:8px;padding:9px 12px;font-size:11px;color:#e4eaf0;flex:1 1 180px;text-align:center}.related-links a:hover{border-color:var(--gold);color:var(--gold2)}.accuracy{margin-top:13px;border:1px solid var(--line);border-radius:9px;padding:11px 13px;color:#aeb8c4;font-size:11px;line-height:1.6}.accuracy strong{color:var(--gold2)}.empty{padding:50px 20px;color:var(--muted);text-align:center}.cta{border-top:1px solid var(--line);background:#0d1928;padding:34px 0}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.cta h2{font:30px Georgia,serif;font-weight:400;margin:0}.cta p{color:var(--muted);font-size:13px;margin:6px 0 0}.btn{display:inline-flex;border:1px solid var(--gold);padding:11px 16px;color:var(--gold2);font-size:11px;letter-spacing:.08em;text-transform:uppercase}.btn.fill{background:var(--gold);color:#111;font-weight:700}footer{padding:20px 0;border-top:1px solid var(--line);font-size:11px;color:#84909e}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:1250px){.hero h1{white-space:normal}}
-@media(max-width:1050px){.wrap{width:min(100% - 36px,var(--max))}.nav{height:auto;min-height:62px;align-items:center}.navlinks{gap:12px;font-size:10px}.dashboard{grid-template-columns:minmax(320px,38%) minmax(0,1fr)}.company-item{grid-template-columns:70px minmax(0,1fr);gap:9px}.company-link{display:grid}.company-logo{width:70px}.detailbrand{flex-wrap:wrap}.visit{margin-left:155px}.metrics{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:760px){.wrap{width:calc(100% - 28px)}.nav{height:auto;min-height:0;align-items:flex-start;padding:13px 0;gap:10px;flex-direction:column}.brand{font-size:22px}.brand span{font-size:12px}.navlinks{justify-content:flex-start;gap:16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;font-size:10px;max-width:100%;width:100%;padding:2px 0 8px}.navlinks a{flex:0 0 auto;padding:8px 0 6px}.hero{padding:25px 0 0;background:linear-gradient(90deg,rgba(9,21,35,.96),rgba(9,21,35,.82)),url('/assets/career-cityscape.jpg') right center/auto 100% no-repeat,#0b1726}.hero h1{font-size:36px}.hero p{font-size:13px}.stats{grid-template-columns:repeat(2,1fr);row-gap:12px;padding:12px 0}.stat{padding:0 10px;min-height:52px}.stat:nth-child(2){border:0}.stat:nth-child(3){padding-left:4px}.stat:last-child{grid-column:1/-1;border-top:1px solid var(--line);padding:10px 4px 0}.selector-inner{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.selector-label{font-size:11px;margin-right:3px}.filter{padding:8px 12px;font-size:11px;min-height:37px}.workspace{padding-top:10px}.dashboard{grid-template-columns:1fr;min-height:0}.company-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:410px;gap:4px}.company-row{grid-template-columns:minmax(0,1fr) 20px;gap:2px}.company-row .company-link{width:20px;font-size:14px}.company-item{grid-template-columns:54px minmax(0,1fr);padding:7px 5px;gap:7px;min-height:66px}.company-logo{width:54px;height:42px;padding:4px}.company-meta strong{font-size:10px}.company-meta span{font-size:9px}.company-meta small{font-size:9px}.detailpanel{padding:0 13px 15px}.detailbrand{gap:11px}.detail-title h2{font-size:26px}.detail-title .role{font-size:13px}.detail-title .meta{font-size:10px}.detail-logo{width:76px;height:55px}.visit{margin-left:87px;padding:8px 10px;font-size:10px}.intro{font-size:12px}.metrics{grid-template-columns:repeat(2,1fr);gap:7px}.metric{padding:8px;min-height:67px}.metric strong{font-size:20px}.metric span{font-size:10px}.detail-grid{grid-template-columns:1fr;gap:13px}.detail-section+ .detail-section{border-left:0;border-top:1px solid var(--line);padding:13px 0 0}.detail-section ul{font-size:11px}.cta-inner{display:block}.cta .btn{margin-top:14px}}
+@media(max-width:1050px){.wrap{width:min(100% - 36px,var(--max))}.dashboard{grid-template-columns:minmax(320px,38%) minmax(0,1fr)}.company-item{grid-template-columns:70px minmax(0,1fr);gap:9px}.company-link{display:grid}.company-logo{width:70px}.detailbrand{flex-wrap:wrap}.visit{margin-left:155px}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.wrap{width:calc(100% - 28px)}.hero{padding:25px 0 0;background:linear-gradient(90deg,rgba(9,21,35,.96),rgba(9,21,35,.82)),url('/assets/career-cityscape.jpg') right center/auto 100% no-repeat,#0b1726}.hero h1{font-size:36px}.hero p{font-size:13px}.stats{grid-template-columns:repeat(2,1fr);row-gap:12px;padding:12px 0}.stat{padding:0 10px;min-height:52px}.stat:nth-child(2){border:0}.stat:nth-child(3){padding-left:4px}.stat:last-child{grid-column:1/-1;border-top:1px solid var(--line);padding:10px 4px 0}.selector-inner{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px}.selector-label{font-size:11px;margin-right:3px}.filter{padding:8px 12px;font-size:11px;min-height:37px}.workspace{padding-top:10px}.dashboard{grid-template-columns:1fr;min-height:0}.company-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-height:410px;gap:4px}.company-row{grid-template-columns:minmax(0,1fr) 20px;gap:2px}.company-row .company-link{width:20px;font-size:14px}.company-item{grid-template-columns:54px minmax(0,1fr);padding:7px 5px;gap:7px;min-height:66px}.company-logo{width:54px;height:42px;padding:4px}.company-meta strong{font-size:10px}.company-meta span{font-size:9px}.company-meta small{font-size:9px}.detailpanel{padding:0 13px 15px}.detailbrand{gap:11px}.detail-title h2{font-size:26px}.detail-title .role{font-size:13px}.detail-title .meta{font-size:10px}.detail-logo{width:76px;height:55px}.visit{margin-left:87px;padding:8px 10px;font-size:10px}.intro{font-size:12px}.metrics{grid-template-columns:repeat(2,1fr);gap:7px}.metric{padding:8px;min-height:67px}.metric strong{font-size:20px}.metric span{font-size:10px}.detail-grid{grid-template-columns:1fr;gap:13px}.detail-section+ .detail-section{border-left:0;border-top:1px solid var(--line);padding:13px 0 0}.detail-section ul{font-size:11px}.cta-inner{display:block}.cta .btn{margin-top:14px}}
 @media(min-width:1500px){.dashboard{grid-template-columns:minmax(500px,38.5%) minmax(0,1fr)}.company-item{min-height:59px}.company-list{max-height:850px}}
 </style>
-<style id="jafri-consistent-wordmark">
-a.jafri-wordmark{display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;flex-wrap:nowrap!important;gap:14px!important;width:auto!important;min-width:0!important;max-width:none!important;overflow:visible!important;text-decoration:none!important;white-space:nowrap!important;color:#f3f0e9!important;font-family:Georgia,"Times New Roman",serif!important;font-size:25px!important;font-weight:400!important;line-height:1!important;letter-spacing:.01em!important;padding:0!important}
-a.jafri-wordmark .brand-name{display:inline-block!important;color:#f3f0e9!important;font:inherit!important;letter-spacing:.01em!important;border:0!important;padding:0!important;margin:0!important}
-a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px solid rgba(210,218,229,.38)!important;padding:2px 0 2px 14px!important;margin:0!important;color:#c6ced8!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:.01em!important}
-@media(max-width:760px){a.jafri-wordmark{gap:9px!important;font-size:20px!important}a.jafri-wordmark .brand-domain{font-size:12px!important;padding-left:9px!important}}
-</style>
+
 <style id="career-reference-layout">
 /* Career page visual treatment: matches the supplied full-width reference while retaining the existing interactive role data. */
 :root{--max:1920px}
 .wrap{width:min(var(--max),calc(100% - 72px))}
-header{background:rgba(5,13,23,.98)}
-.nav{height:78px;gap:30px}
-a.jafri-wordmark{font-size:31px!important;gap:15px!important}
-a.jafri-wordmark .brand-domain{font-size:16px!important;padding-left:15px!important}
-.navlinks{gap:clamp(15px,1.65vw,31px);font-size:14px;letter-spacing:.055em}
-.navlinks a{padding:30px 0 25px;border-bottom-width:3px}
+
 .hero{padding:30px 0 0;background:linear-gradient(90deg,#091523 0%,rgba(9,21,35,.96) 49%,rgba(9,21,35,.30) 100%),url('/assets/career-cityscape.jpg') right center/auto 100% no-repeat,linear-gradient(120deg,#0b1726,#101f30)}
 .hero h1{font-size:clamp(36px,2.45vw,49px);line-height:1.12;margin:10px 0 9px;white-space:nowrap;letter-spacing:-.025em}
 .hero p{font-size:clamp(15px,1.03vw,20px);line-height:1.42;max-width:1500px}
@@ -191,8 +181,7 @@ a.jafri-wordmark .brand-domain{font-size:16px!important;padding-left:15px!import
 .related-links a{font-size:13px;padding:10px 13px}
 @media(max-width:1500px){
  .wrap{width:min(var(--max),calc(100% - 52px))}
- .nav{height:70px}
- .navlinks{gap:clamp(10px,1.15vw,19px);font-size:12px}
+ 
  .hero h1{font-size:clamp(34px,2.45vw,42px)}
  .stat{padding:0 20px}
  .stat span{font-size:13px}
@@ -205,18 +194,14 @@ a.jafri-wordmark .brand-domain{font-size:16px!important;padding-left:15px!import
 }
 @media(max-width:1120px){
  .hero h1{white-space:normal}
- .navlinks{gap:10px;font-size:10px}
+ 
  .dashboard{grid-template-columns:minmax(300px,38%) minmax(0,1fr)}
  .selector-inner{overflow-x:auto}
  .detailbrand{flex-wrap:wrap}
 }
 @media(max-width:760px){
  .wrap{width:calc(100% - 28px)}
- .nav{height:auto;min-height:0;align-items:flex-start;padding:13px 0;gap:10px;flex-direction:column}
- a.jafri-wordmark{font-size:22px!important;gap:9px!important}
- a.jafri-wordmark .brand-domain{font-size:12px!important;padding-left:9px!important}
- .navlinks{justify-content:flex-start;gap:16px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;font-size:10px;max-width:100%;width:100%;padding:2px 0 8px}
- .navlinks a{flex:0 0 auto;padding:8px 0 6px}
+ 
  .hero{padding:25px 0 0;background:linear-gradient(90deg,rgba(9,21,35,.96),rgba(9,21,35,.82)),url('/assets/career-cityscape.jpg') right center/auto 100% no-repeat,#0b1726}
  .hero h1{font-size:35px;white-space:normal}
  .hero p{font-size:13px}
@@ -245,27 +230,85 @@ a.jafri-wordmark .brand-domain{font-size:16px!important;padding-left:15px!import
 .hero>.wrap{position:relative!important;z-index:2!important}
 @media(max-width:760px){.hero .hero-cityscape{width:100%!important;opacity:.48!important;object-position:center center!important}.hero::before{background:linear-gradient(90deg,rgba(9,21,35,.96),rgba(9,21,35,.76))!important}}
 </style>
-<style id="career-brand-and-whatsapp-fix">
-/* Keep the career-page wordmark consistent with the other jafri.one pages. */
-header .brand{display:inline-flex;align-items:center;flex:0 0 auto;min-width:max-content}
-header .brand .brand-name{display:inline-block;margin:0;padding:0;border:0;font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1;color:#f4f1e9;font-weight:400}
-header .brand .brand-domain{display:inline-block;margin:0 0 0 14px;padding:0 0 0 14px;border-left:1px solid var(--line);font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:14px;line-height:1.2;color:#c4ced9}
-.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:1000;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#20c96b;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.38);border:2px solid rgba(255,255,255,.22);transition:transform .18s ease,box-shadow .18s ease}
-.whatsapp-float svg{width:36px;height:36px;display:block}
-.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.45)}
-.whatsapp-float:focus-visible{outline:3px solid #f4d477;outline-offset:4px}
-@media(max-width:760px){header .nav{height:auto;min-height:60px;gap:12px;flex-wrap:wrap;padding-top:10px;padding-bottom:8px}header .brand .brand-name{font-size:24px}header .brand .brand-domain{font-size:12px;margin-left:10px;padding-left:10px}.whatsapp-float{width:56px;height:56px;right:16px;bottom:16px}.whatsapp-float svg{width:32px;height:32px}}
+<style>
+/* Shared header system across every page */
+header{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+header .wrap.nav{width:min(1380px,calc(100% - 48px));min-height:76px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,1.35vw,22px);padding:8px 0;overflow:visible}
+header .brand{display:flex;align-items:center;flex:0 0 142px;width:142px;min-width:142px;max-width:142px;overflow:visible}
+header .brand img,header .brand .brand-logo{display:block;width:142px!important;height:62px!important;max-height:62px!important;object-fit:contain!important;object-position:left center!important}
+header .navlinks{position:static;display:flex;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;gap:clamp(10px,1.25vw,19px);white-space:nowrap;overflow:visible}
+header .navlinks a{font-size:10px;letter-spacing:.105em;line-height:1.2;text-transform:uppercase;color:#d6d0c6;text-decoration:none;padding:10px 0}
+header .navlinks a:hover,header .navlinks a[aria-current="page"],header .navlinks a[aria-current="true"]{color:#e0c28b}
+header .nav-social{display:flex!important;align-items:center;justify-content:center;flex:0 0 36px;width:36px;height:36px;min-width:36px;margin:0!important;border:1px solid rgba(199,166,106,.55);border-radius:50%;color:#e0c28b;text-decoration:none;font-family:Arial,sans-serif;font-size:14px;font-weight:700;line-height:1}
+header .nav-social:hover{background:rgba(199,166,106,.16)}
+header .menu-toggle{display:none;flex:0 0 auto}
+header .navcta{display:flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:40px;margin:0!important;padding:0 15px!important;border:1px solid rgba(199,166,106,.85);border-radius:3px;color:#e0c28b;background:transparent;font-size:10px!important;letter-spacing:.11em!important;white-space:nowrap;text-decoration:none}
+header .navcta:hover{background:rgba(199,166,106,.13)}
+@media(max-width:1100px) and (min-width:801px){
+ header .wrap.nav{gap:10px;width:calc(100% - 32px)}
+ header .brand{flex-basis:118px;width:118px;min-width:118px;max-width:118px}
+ header .brand img,header .brand .brand-logo{width:118px!important}
+ header .navlinks{gap:9px}
+ header .navlinks a{font-size:9px;letter-spacing:.07em}
+ header .nav-social{flex-basis:32px;width:32px;height:32px;min-width:32px}
+ header .navcta{padding:0 10px!important;font-size:9px!important}
+}
+@media(max-width:800px){
+ header .wrap.nav{width:calc(100% - 32px);min-height:72px;height:auto;gap:7px;flex-wrap:nowrap;padding:7px 0}
+ header .brand{flex:0 1 104px;width:104px;min-width:82px;max-width:104px}
+ header .brand img,header .brand .brand-logo{width:100%!important;height:52px!important;max-height:52px!important}
+ header .navlinks{display:none!important;position:absolute!important;top:calc(100% + 7px)!important;left:0!important;right:0!important;z-index:200!important;width:100%!important;max-height:min(72vh,560px);overflow-y:auto!important;flex:initial!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:18px 20px 12px!important;background:linear-gradient(145deg,#17140f,#0d0d0d 58%);border:1px solid rgba(199,166,106,.45);box-shadow:0 18px 48px rgba(0,0,0,.72);border-radius:5px;white-space:normal!important}
+ header .navlinks.is-open{display:flex!important}
+ header .navlinks::before{content:"EXPLORE THE PORTFOLIO";display:block;color:#c7a66a;font-size:9px;font-weight:700;letter-spacing:.23em;padding:0 0 12px;margin-bottom:5px;border-bottom:1px solid rgba(199,166,106,.22)}
+ header .navlinks a{display:flex!important;align-items:center;min-height:44px;padding:10px 2px!important;border-bottom:1px solid rgba(255,255,255,.075)!important;color:#eee7da!important;font-size:11px!important;letter-spacing:.12em!important}
+ header .navlinks a::after{content:"↗";margin-left:auto;color:#a88b58}
+ header .navlinks a:last-child{border-bottom:0!important}
+ header .nav-social{flex:0 0 32px;width:32px;height:32px;min-width:32px;margin-left:auto!important}
+ header .menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;gap:6px;flex:0 0 76px;width:76px;min-width:76px;height:38px;min-height:38px;padding:0 8px;border:1px solid rgba(199,166,106,.78);border-radius:3px;background:linear-gradient(135deg,rgba(199,166,106,.18),rgba(199,166,106,.045));color:#e0c28b}
+ header .menu-icon{width:15px;height:11px;display:flex;flex-direction:column;justify-content:space-between}
+ header .menu-icon i{display:block;height:1.5px;background:currentColor;border-radius:2px}
+ header .menu-copy{display:flex;flex-direction:column;line-height:1;gap:3px}
+ header .menu-copy strong{font-size:8px;letter-spacing:.12em}
+ header .menu-copy small,header .menu-spark{display:none}
+ header .navcta{min-height:38px;height:38px;padding:0 9px!important;font-size:8px!important;letter-spacing:.07em!important}
+ body.menu-open{overflow:hidden}
+}
+@media(max-width:380px){
+ header .wrap.nav{gap:5px}
+ header .brand{flex-basis:88px;width:88px;min-width:76px}
+ header .menu-toggle{flex-basis:68px;width:68px;min-width:68px}
+ header .navcta{padding:0 6px!important;font-size:7px!important}
+ header .nav-social{flex-basis:30px;width:30px;height:30px;min-width:30px}
+}
+
+
+.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:9999;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#25D366;box-shadow:0 5px 20px rgba(0,0,0,.45);transition:transform .18s ease,box-shadow .18s ease}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.55)}
+.whatsapp-float:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.whatsapp-float img{display:block;width:62px;height:62px}
+@media(max-width:600px){.whatsapp-float{right:16px;bottom:18px;width:56px;height:56px}.whatsapp-float img{width:56px;height:56px}}
+
+</style>
+<style id="jafri-consistent-wordmark">
+a.jafri-wordmark{display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;flex-wrap:nowrap!important;gap:14px!important;width:auto!important;min-width:0!important;max-width:none!important;overflow:visible!important;text-decoration:none!important;white-space:nowrap!important;color:#f3f0e9!important;font-family:Georgia,"Times New Roman",serif!important;font-size:25px!important;font-weight:400!important;line-height:1!important;letter-spacing:.01em!important;padding:0!important}
+a.jafri-wordmark .brand-name{display:inline-block!important;color:#f3f0e9!important;font:inherit!important;letter-spacing:.01em!important;border:0!important;padding:0!important;margin:0!important}
+a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px solid rgba(210,218,229,.38)!important;padding:2px 0 2px 14px!important;margin:0!important;color:#c6ced8!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:.01em!important}
+@media(max-width:760px){a.jafri-wordmark{gap:9px!important;font-size:20px!important}a.jafri-wordmark .brand-domain{font-size:12px!important;padding-left:9px!important}}
 
 /* Afzal Jafri signature identity — shared across every page */
 .brand.jafri-wordmark{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto!important;width:clamp(132px,15vw,174px)!important;min-width:132px!important;max-width:174px!important;height:68px!important;overflow:visible!important;text-decoration:none!important;white-space:normal!important}
 .brand.jafri-wordmark .brand-logo{display:block!important;width:100%!important;height:66px!important;max-height:66px!important;object-fit:contain!important;object-position:left center!important;border:0!important;padding:0!important;margin:0!important;background:transparent!important}
 @media(max-width:760px){.brand.jafri-wordmark{width:132px!important;min-width:132px!important;max-width:132px!important;height:58px!important}.brand.jafri-wordmark .brand-logo{height:56px!important;max-height:56px!important}}
 </style>
+
 </head><body>
-<header role="banner"><div class="wrap nav"><a class="brand jafri-wordmark" href="/" aria-label="Afzal Jafri homepage"><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a><nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/#expertise">EXPERTISE</a><a href="/career.html" aria-current="page">CAREER</a><a href="/payments-ecosystem.html">PAYMENT ECOSYSTEM</a><a href="/fastag.html">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav></div></header>
-<a class="whatsapp-float" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="Contact Afzal Jafri on WhatsApp" title="Chat on WhatsApp">
-<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.02 3.2A12.65 12.65 0 0 0 5.16 22.34L3.4 28.8l6.62-1.73A12.65 12.65 0 1 0 16.02 3.2Zm0 23.1c-1.95 0-3.86-.52-5.53-1.5l-.4-.24-3.93 1.03 1.05-3.83-.26-.42a10.4 10.4 0 1 1 9.07 4.96Zm5.7-7.79c-.31-.16-1.84-.91-2.12-1.01-.28-.1-.49-.16-.7.16-.2.31-.8 1.01-.98 1.22-.18.2-.36.23-.67.08-.31-.16-1.31-.48-2.5-1.53-.92-.82-1.54-1.84-1.72-2.15-.18-.31-.02-.48.14-.64.14-.14.31-.36.46-.54.15-.18.2-.31.31-.52.1-.2.05-.39-.03-.54-.08-.16-.7-1.69-.96-2.31-.25-.6-.51-.52-.7-.53h-.6c-.2 0-.54.08-.82.39-.28.31-1.08 1.06-1.08 2.59s1.1 3 1.25 3.21c.15.2 2.17 3.31 5.26 4.64.74.32 1.31.51 1.76.65.74.24 1.42.2 1.95.12.59-.09 1.84-.75 2.1-1.48.26-.72.26-1.34.18-1.48-.08-.13-.28-.21-.59-.36Z"/></svg>
-</a>
+<header role="banner"><div class="wrap nav">
+<a class="brand jafri-wordmark" href="/" aria-label="Afzal Jafri homepage"><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
+<nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/#expertise">EXPERTISE</a><a href="/career.html" aria-current="page">CAREER</a><a href="/payments-ecosystem.html">PAYMENT ECOSYSTEM</a><a href="/fastag.html">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav>
+<a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn" title="LinkedIn">in</a>
+<button class="menu-toggle" type="button" aria-label="Explore the website navigation" aria-expanded="false" aria-controls="site-navigation"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-copy"><strong>EXPLORE</strong><small>THE SITE</small></span><span class="menu-spark" aria-hidden="true">✦</span></button>
+<a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">CONTACT ME</a>
+</div></header>
 <main id="main-content"><section class="hero"><img class="hero-cityscape" src="/assets/career-cityscape.jpg" alt="" aria-hidden="true" fetchpriority="high"><div class="wrap"><nav aria-label="Breadcrumb" class="crumb"><ol style="display:flex;align-items:center;list-style:none;margin:0 0 16px;padding:0;gap:8px;font-size:12px;letter-spacing:.08em;text-transform:uppercase"><li><a href="/" style="color:var(--gold2);text-decoration:none">Home</a></li><li aria-hidden="true" style="color:var(--line)">/</li><li aria-current="page" style="color:var(--white)">Career Journey</li></ol></nav>
 <div class="eyebrow">Career journey</div><h1>25 Years. Multiple Industries. Businesses Built From the Ground Up.</h1><p>A journey across operations, mobility, digital commerce, payments and strategic partnerships — building products, scaling businesses and creating new revenue models in India's evolving digital economy.</p><div class="stats">
 <div class="stat"><div class="stat-icon"><svg viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="21" rx="2"/><path d="M10 4v6M22 4v6M5 13h22"/></svg></div><div><strong>25+</strong><span>Years of professional experience</span></div></div>
@@ -278,6 +321,50 @@ header .brand .brand-domain{display:inline-block;margin:0 0 0 14px;padding:0 0 0
 <section class="cta"><div class="wrap cta-inner"><div><h2>From experience to impact.</h2><p>Explore the businesses and products developed across these roles.</p></div><div><a class="btn" href="/work.html">Business portfolio →</a> <a class="btn fill" href="/#contact">Get in touch</a></div></div></section><section class="wrap" aria-labelledby="faq-heading" style="padding:42px 0 18px;border-top:1px solid var(--line)"><div style="max-width:900px;margin:0 auto"><p style="color:var(--gold2);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin:0 0 10px">CAREER INSIGHTS</p><h2 id="faq-heading" style="font:32px Georgia,serif;color:var(--white);margin:0 0 20px">Frequently Asked Questions</h2><details style="border-top:1px solid var(--line);padding:18px 0"><summary style="cursor:pointer;color:var(--white);font-size:17px;font-weight:600;line-height:1.5">What are Afzal Jafri's primary areas of leadership expertise?</summary><p style="color:var(--muted);line-height:1.8;margin:12px 0 0">Afzal Jafri specializes in fintech business building, strategic banking alliances, transit payments (NCMC &amp; FASTag), PSP/gateway integrations, digital commerce, and executive operations leadership.</p></details><details style="border-top:1px solid var(--line);padding:18px 0"><summary style="cursor:pointer;color:var(--white);font-size:17px;font-weight:600;line-height:1.5">Which key organizations has Afzal Jafri worked with?</summary><p style="color:var(--muted);line-height:1.8;margin:12px 0 0">Over a 25-year career, Afzal has held leadership and consulting roles with Airtel Payments Bank, EaseMyTrip, Meru Cabs, Lenskart, CarDekho, TaxiForSure, and leading enterprise media organizations.</p></details></div></section>
 </main>
 <footer role="contentinfo"><div class="wrap"><span>© 2026 Afzal Jafri. All rights reserved.</span><span>Business building · Partnerships · Payments · Mobility</span></div></footer>
+<a href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Connect with Afzal on WhatsApp">
+  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" width="62" height="62" loading="lazy" decoding="async">
+</a>
+<script>
+document.addEventListener('click', function(event) {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  let url;
+  try { url = new URL(link.href, window.location.href); } catch (e) { return; }
+  const host = url.hostname.toLowerCase();
+  const label = (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 100);
+
+  if (host === 'wa.me' || host === 'whatsapp.com' || host.endsWith('.whatsapp.com')) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'whatsapp_click', {link_domain:host,link_text:label || 'WhatsApp',page_path:window.location.pathname});
+    }
+    if (typeof window.clarity === 'function') window.clarity('event','whatsapp_click');
+  }
+  if (host === 'linkedin.com' || host.endsWith('.linkedin.com')) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'linkedin_click', {link_domain:host,link_text:label || 'LinkedIn',page_path:window.location.pathname});
+    }
+    if (typeof window.clarity === 'function') window.clarity('event','linkedin_click');
+  }
+});
+</script>
+<script>
+(function(){
+  const toggle=document.querySelector('.menu-toggle');
+  const menu=document.getElementById('site-navigation');
+  if(!toggle||!menu)return;
+  function closeMenu(){toggle.setAttribute('aria-expanded','false');menu.classList.remove('is-open');document.body.classList.remove('menu-open');}
+  toggle.addEventListener('click',function(){
+    const opening=toggle.getAttribute('aria-expanded')!=='true';
+    toggle.setAttribute('aria-expanded',String(opening));
+    menu.classList.toggle('is-open',opening);
+    document.body.classList.toggle('menu-open',opening);
+  });
+  menu.addEventListener('click',function(event){if(event.target.closest('a'))closeMenu();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMenu();});
+  document.addEventListener('click',function(event){if(!menu.contains(event.target)&&!toggle.contains(event.target))closeMenu();});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)closeMenu();});
+})();
+</script>
 <script>
 const roles = [
 {id:'genz',company:'GenZDealz.ai',title:'Strategic Business Consultant / Advisor',dates:'Oct 2025 – Present',period:'2025–Present',url:'https://genzdealz.ai/',domain:'genzdealz.ai',chapter:'advisory',sector:'FinTech · Youth banking · Partnerships',intro:'Supporting the development of a youth-focused financial proposition, with emphasis on product direction, strategic partnerships and ecosystem development.',mandate:['Advise on the fintech product roadmap and commercial proposition.','Support development of the HDFC Bank co-branded credit-card proposition for Gen Z.','Contribute to strategic partner development and investor outreach.'],work:['Product and proposition refinement for a Gen Z audience.','Banking partnership coordination and commercial discussions.','Investor narrative and strategic outreach support.'],outcomes:['Contributed to the HDFC Bank co-branded card proposition.','Supported fintech roadmap and partnership development.'],metrics:[],links:[]},
