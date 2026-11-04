@@ -138,6 +138,114 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .whatsapp-float:focus-visible{outline:3px solid #fff;outline-offset:4px}
 .whatsapp-float img{display:block;width:62px;height:62px}
 @media(max-width:600px){.whatsapp-float{right:16px;bottom:18px;width:56px;height:56px}.whatsapp-float img{width:56px;height:56px}}
+
+/* --- Comprehensive Payments Architecture & MCC Directory Styles --- */
+.badge-yes{display:inline-flex;align-items:center;gap:4px;color:#4ade80;font-weight:600}
+.badge-no{display:inline-flex;align-items:center;gap:4px;color:#f87171;font-weight:600}
+.compare-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#131313,#0a0a0a);margin-top:16px;scrollbar-width:thin;scrollbar-color:rgba(199,166,106,.4) transparent}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;text-align:left}
+.compare-table th{padding:13px 16px;background:rgba(199,166,106,.09);color:var(--gold2);font-family:Georgia,serif;font-size:14.5px;font-weight:500;border-bottom:1px solid var(--line);letter-spacing:.02em}
+.compare-table th:first-child{width:22%}
+.compare-table th:nth-child(2),.compare-table th:nth-child(3){width:39%}
+.compare-table td{padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.05);color:#ddd4c7;vertical-align:top;line-height:1.5}
+.compare-table tr:last-child td{border-bottom:0}
+.compare-table tr:hover td{background:rgba(199,166,106,.04)}
+.compare-table .dim-label{font-weight:600;color:var(--white);font-size:13px}
+
+.lifecycle-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+.lifecycle-node{border:1px solid var(--line);border-radius:10px;background:linear-gradient(160deg,#151515,#0c0c0c);padding:14px 12px;text-align:center;position:relative;display:flex;flex-direction:column;justify-content:center}
+.lifecycle-node-step{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:5px}
+.lifecycle-node .node-icon{font-size:22px;color:var(--gold);margin-bottom:6px}
+.lifecycle-node strong{font-size:13px;color:var(--white);display:block}
+.lifecycle-node span{font-size:11px;color:var(--muted);display:block;margin-top:4px;line-height:1.35}
+@media(min-width:900px){
+  .lifecycle-node:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:16px;font-weight:bold;z-index:2;pointer-events:none}
+}
+
+.scenarios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.scenario-card{border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#131313,#0a0a0a);padding:16px 14px}
+.scenario-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.scenario-head .icon{font-size:20px;color:var(--gold)}
+.scenario-head h4{margin:0;font-size:14.5px;font-family:Georgia,serif;color:var(--gold2);font-weight:500}
+.scenario-card p{margin:0;font-size:12px;color:#ccc4b6;line-height:1.55}
+
+.tpap-container{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+.tpap-explainer{border:1px solid var(--line);border-radius:10px;background:rgba(199,166,106,.05);padding:14px 18px;font-size:13px;color:#e5ded3;line-height:1.6}
+.tpap-architecture{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(155deg,#131313,#0b0b0b);padding:18px 14px}
+.tpap-box{flex:1;text-align:center;border:1px solid rgba(199,166,106,.3);border-radius:8px;padding:12px 8px;background:rgba(255,255,255,.02)}
+.tpap-box .box-icon{font-size:22px;color:var(--gold);margin-bottom:4px}
+.tpap-box strong{display:block;font-size:13px;color:var(--gold2)}
+.tpap-box span{display:block;font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.3}
+.tpap-arrow{color:var(--gold);font-size:18px;font-weight:bold;flex-shrink:0}
+
+.bank-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+.bank-type-card{border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#131313,#0a0a0a);padding:14px 13px}
+.bank-type-head{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.bank-type-head .icon{font-size:18px;color:var(--gold)}
+.bank-type-head strong{font-size:13.5px;color:var(--white);font-family:Georgia,serif}
+.bank-type-card p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.45}
+.bank-type-card .bank-eg{display:block;margin-top:5px;color:var(--gold2);font-size:11px;font-weight:500}
+
+.takeaways-banner{border:1px solid var(--line);border-radius:10px;background:linear-gradient(90deg,rgba(199,166,106,.15) 0%,rgba(18,18,18,.98) 22%);padding:14px 18px;margin-top:20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.takeaways-label{display:flex;align-items:center;gap:8px;color:var(--gold2);font-family:Georgia,serif;font-size:15px;font-weight:600;white-space:nowrap}
+.takeaways-list{display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;flex:1}
+.takeaway-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#ded7cb}
+.takeaway-item .check{color:var(--gold);font-weight:bold}
+
+.mcc-value-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 22px}
+.mcc-value-pill{border:1px solid var(--line);border-radius:8px;padding:11px;background:rgba(199,166,106,.04);display:flex;align-items:center;gap:9px;font-size:12px;color:#dfd8cc;line-height:1.35}
+.mcc-value-pill .icon{font-size:18px;color:var(--gold);flex-shrink:0}
+
+.mcc-directory{display:grid;grid-template-columns:200px minmax(0,1fr) 270px;gap:16px;margin-top:18px;align-items:start}
+.mcc-sidebar{border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#131313,#0a0a0a);padding:12px 8px}
+.mcc-sidebar-title{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);font-weight:700;padding:0 8px 8px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.mcc-cat-list{display:flex;flex-direction:column;gap:2px}
+.mcc-cat-btn{display:flex;align-items:center;width:100%;padding:7px 9px;border:0;border-radius:6px;background:transparent;color:#ccc4b6;font-size:11.5px;text-align:left;cursor:pointer;transition:all .18s ease;line-height:1.25}
+.mcc-cat-btn:hover{background:rgba(199,166,106,.1);color:var(--white)}
+.mcc-cat-btn.active{background:linear-gradient(90deg,rgba(199,166,106,.25),rgba(199,166,106,.08));color:var(--gold2);font-weight:600;outline:1px solid rgba(199,166,106,.6)}
+
+.mcc-main{min-width:0}
+.mcc-search-bar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:9px;background:#111;padding:9px 12px;margin-bottom:12px}
+.mcc-search-bar input{flex:1;border:0;background:transparent;color:var(--white);font-size:13px;outline:none}
+.mcc-search-bar input::placeholder{color:#7a7266}
+.mcc-search-icon{color:var(--gold);font-size:14px}
+.mcc-count{font-size:11px;color:var(--muted);white-space:nowrap}
+.mcc-table-wrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0e0e0e}
+.mcc-table{width:100%;border-collapse:collapse;font-size:12.5px;text-align:left}
+.mcc-table th{padding:10px 12px;background:rgba(199,166,106,.08);color:var(--gold2);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line);font-weight:600}
+.mcc-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.05);color:#ddd4c7;vertical-align:middle}
+.mcc-table tr:hover td{background:rgba(199,166,106,.05)}
+.mcc-code-badge{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-weight:700;color:var(--gold2);background:rgba(199,166,106,.12);border:1px solid rgba(199,166,106,.3);padding:2px 7px;border-radius:5px;font-size:12px}
+.mcc-row.is-hidden{display:none!important}
+
+.online-mcc-panel{border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#131313,#0a0a0a);padding:14px 12px}
+.online-mcc-head{display:flex;align-items:center;gap:9px;padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:10px}
+.online-mcc-head .icon{font-size:20px;color:var(--gold)}
+.online-mcc-head h4{margin:0;font-size:13px;color:var(--gold2);font-family:Georgia,serif;line-height:1.3}
+.online-mcc-list{display:flex;flex-direction:column;gap:6px}
+.online-mcc-item{display:flex;align-items:center;gap:9px;padding:6px 7px;border-radius:6px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04)}
+.online-mcc-item .code{font-family:ui-monospace,SFMono-Regular,monospace;font-weight:700;font-size:11px;color:var(--gold2);background:rgba(199,166,106,.15);border:1px solid rgba(199,166,106,.28);padding:2px 6px;border-radius:4px;flex-shrink:0}
+.online-mcc-item .name{font-size:11.5px;color:#ddd4c7;line-height:1.3}
+
+@media(max-width:1050px){
+  .mcc-directory{grid-template-columns:1fr}
+  .mcc-sidebar{display:flex;overflow-x:auto;gap:6px;padding:8px;scrollbar-width:thin}
+  .mcc-sidebar-title{display:none}
+  .mcc-cat-list{flex-direction:row;gap:6px}
+  .mcc-cat-btn{white-space:nowrap;width:auto;padding:6px 11px;font-size:11px}
+  .mcc-value-pills{grid-template-columns:repeat(2,1fr)}
+  .lifecycle-flow{grid-template-columns:1fr;gap:8px}
+  .scenarios-grid{grid-template-columns:1fr}
+  .bank-types-grid{grid-template-columns:repeat(2,1fr)}
+  .tpap-architecture{flex-direction:column;gap:12px}
+  .tpap-arrow{transform:rotate(90deg)}
+}
+@media(max-width:600px){
+  .bank-types-grid{grid-template-columns:1fr}
+  .mcc-value-pills{grid-template-columns:1fr}
+  .takeaways-banner{flex-direction:column;align-items:flex-start}
+}
+
 </style>
 
 <!-- Google Analytics 4: same property as jafri.one homepage -->
@@ -227,6 +335,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Rate Subvention is a commercial arrangement where the cost of payment acceptance (MDR or EMI interest) is partly or fully sponsored by a third-party brand, platform, or financial partner rather than the merchant alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a Third Party Application Provider (TPAP) in UPI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A TPAP is a non-bank application (such as Google Pay, PhonePe, Paytm or WhatsApp Pay) that facilitates customer UPI payments by partnering with an authorised Sponsor PSP Bank to access NPCI’s central UPI switch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the core difference between a PPI wallet and a Bank account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Prepaid Payment Instrument (PPI) stores preloaded funds in escrow with a scheduled bank. Unlike full commercial banks, PPI issuers cannot pay interest on balances, open savings/current accounts, or extend direct credit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Merchant Category Codes (MCCs) and why are they important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An MCC is a standardised 4-digit code defined by ISO 18245 and card schemes to classify a merchant’s primary line of business. It determines interchange fees, MDR pricing, chargebacks, and reward point eligibility."
           }
         }
       ]
@@ -343,12 +475,132 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 <div class="flow-card"><svg viewBox="0 0 32 32"><circle cx="12" cy="16" r="10" fill="#eb001b" stroke="none"/><circle cx="20" cy="16" r="10" fill="#f79e1b" fill-opacity=".92" stroke="none"/></svg><b>Card<br>Network</b></div><div class="flow-arrow">→</div>
 <div class="flow-card"><svg viewBox="0 0 32 32"><path d="M3 11h26L16 4zM5 27h22M8 11v16m6-16v16m4-16v16m6-16v16"/></svg><b>Issuing<br>Bank</b></div>
 </div>
-<div class="quicklinks">
-<a class="quick" href="#gateway"><svg viewBox="0 0 32 32"><path d="m16 3 13 7-13 7L3 10zM3 16l13 7 13-7M3 22l13 7 13-7"/></svg><span><b>Payment Gateway</b><small>What it is and how it works</small></span></a>
-<a class="quick" href="#economics"><svg viewBox="0 0 32 32"><path d="M4 27h25M7 25V16h5v9m4 0V9h5v16m4 0V4h5v21"/></svg><span><b>Merchant Pricing</b><small>MDR, fees and typical rates</small></span></a>
-<a class="quick" href="#subvention"><svg viewBox="0 0 32 32"><ellipse cx="13" cy="8" rx="9" ry="4"/><path d="M4 8v7c0 2 4 4 9 4s9-2 9-4V8m-18 7v7c0 2 4 4 9 4 2 0 4-.3 5.5-1M22 14c4 0 7 1.5 7 3.5S26 21 22 21s-7-1.5-7-3.5 3-3.5 7-3.5zm-7 3.5v7c0 2 3 3.5 7 3.5s7-1.5 7-3.5v-7"/></svg><span><b>Rate Subvention</b><small>How costs are shared</small></span></a>
-<a class="quick" href="#mcc"><svg viewBox="0 0 32 32"><path d="m11 7 3-3h14v14L15 31 2 18z"/><circle cx="22" cy="10" r="2"/></svg><span><b>MCC &amp; Payment Rails</b><small>Transaction coding and networks</small></span></a>
+<div class="quicklinks" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
+<a class="quick" href="#pa-vs-pg"><span><b>PA vs PG</b><small>Licensing &amp; tech difference</small></span></a>
+<a class="quick" href="#lifecycle"><span><b>Payment Lifecycle</b><small>5-stage journey &amp; use cases</small></span></a>
+<a class="quick" href="#licences"><span><b>PPI vs Banking</b><small>Licences &amp; UPI TPAP layer</small></span></a>
+<a class="quick" href="#economics"><span><b>MDR Economics</b><small>Transaction cost breakdown</small></span></a>
+<a class="quick" href="#mcc"><span><b>MCC Directory</b><small>Search 4-digit category codes</small></span></a>
+<a class="quick" href="#rails"><span><b>Payment Rails</b><small>UPI, RuPay, IMPS, NACH</small></span></a>
 </div>
+</section>
+
+
+<section id="pa-vs-pg">
+  <div class="kicker">Regulatory Models &amp; Architecture</div>
+  <h2 class="section-title">PA vs PG: What’s the Difference?</h2>
+  <p class="section-sub">A comparative breakdown of Payment Aggregators (licensed, merchant-of-record entities) versus Payment Gateways (pure technology providers).</p>
+  
+  <div class="compare-table-wrap">
+    <table class="compare-table" aria-label="Comparison between Payment Aggregators and Payment Gateways">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>PA (Payment Aggregator)</th>
+          <th>PG (Payment Gateway)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dim-label">Role</td>
+          <td>End-to-end collections and merchant settlements for multiple merchants</td>
+          <td>Technology infrastructure that encrypts, authenticates and routes transactions for a merchant</td>
+        </tr>
+        <tr>
+          <td class="dim-label">RBI Regulated</td>
+          <td><span class="badge-yes">✔ Yes</span> — Operates under formal RBI PA Licence</td>
+          <td><span class="badge-no">❌ No</span> — Technology provider operating in conjunction with / under a PA</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Merchant Onboarding</td>
+          <td>Conducts direct merchant onboarding, risk underwriting &amp; KYC</td>
+          <td>Onboards merchants via an acquiring bank or licensed PA integration</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Settlement &amp; Escrow</td>
+          <td>Collects, pools funds in RBI-mandated nodal/escrow accounts, and settles (T+1/T+2) to merchants</td>
+          <td>Passes transaction tokens to acquiring bank / PA; does not pool or settle merchant funds</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Commercials</td>
+          <td>Charges Merchant Discount Rate (MDR) / take rate per transaction</td>
+          <td>Charges technology integration fee / per-transaction gateway processing fee</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Market Examples</td>
+          <td><strong>Razorpay, PayU, CCAvenue, Cashfree, Pine Labs</strong></td>
+          <td><strong>Juspay, CCAvenue PG, Cashfree PG, Easebuzz PG</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="lifecycle">
+  <div class="kicker">Transaction Journey</div>
+  <h2 class="section-title">How a Digital Payment Works</h2>
+  <p class="section-sub">From the moment a customer clicks 'Pay' to final merchant payout — 5 core stages across the payment stack.</p>
+
+  <div class="lifecycle-flow">
+    <div class="lifecycle-node">
+      <div class="lifecycle-node-step">Stage 1</div>
+      <div class="node-icon">📱</div>
+      <strong>Customer Pays</strong>
+      <span>Selects UPI, Card, NetBanking or Wallet at checkout</span>
+    </div>
+    <div class="lifecycle-node">
+      <div class="lifecycle-node-step">Stage 2</div>
+      <div class="node-icon">⚙️</div>
+      <strong>PG Processes</strong>
+      <span>Captures, encrypts &amp; authorises transaction payload</span>
+    </div>
+    <div class="lifecycle-node">
+      <div class="lifecycle-node-step">Stage 3</div>
+      <div class="node-icon">🥞</div>
+      <strong>PA Collects</strong>
+      <span>Aggregates &amp; pools funds in escrow account</span>
+    </div>
+    <div class="lifecycle-node">
+      <div class="lifecycle-node-step">Stage 4</div>
+      <div class="node-icon">🏛️</div>
+      <strong>Bank Moves Money</strong>
+      <span>Clears funds via RBI / NPCI interbank payment rails</span>
+    </div>
+    <div class="lifecycle-node">
+      <div class="lifecycle-node-step">Stage 5</div>
+      <div class="node-icon">🏪</div>
+      <strong>Merchant Settlement</strong>
+      <span>Receives net payout into current account (T+1 / T+2)</span>
+    </div>
+  </div>
+
+  <div style="margin-top:28px">
+    <h3 style="font:20px Georgia,serif;color:var(--white);margin:0 0 4px">Real-World Implementation Scenarios</h3>
+    <p style="font-size:12.5px;color:var(--muted);margin:0 0 14px">How enterprises, startups and high-frequency platforms combine PAs and PGs in practice.</p>
+    <div class="scenarios-grid">
+      <div class="scenario-card">
+        <div class="scenario-head">
+          <span class="icon">🛒</span>
+          <h4>D2C Brand</h4>
+        </div>
+        <p>Uses a licensed <strong>PA</strong> for multi-mode payment collections and fund reconciliation, paired with an optimized <strong>PG</strong> for frictionless 1-click checkout, tokenisation and higher transaction success rates.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-head">
+          <span class="icon">🎓</span>
+          <h4>EdTech Platform</h4>
+        </div>
+        <p>A licensed <strong>PA</strong> manages multi-institute partner onboarding, course fee split-settlements and refund automation, while the <strong>PG</strong> powers student fee collection interfaces and recurring subscriptions.</p>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-head">
+          <span class="icon">🚗</span>
+          <h4>Mobility &amp; Parking</h4>
+        </div>
+        <p>High-volume, micro-ticket and recurring automated collections executed across a unified <strong>PA-PG stack</strong> supporting UPI autopay, RFID FASTag wallet debit, card tokenisation and instant parking clearance.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="gateway">
@@ -361,6 +613,155 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 </div>
 <aside class="info"><h3 id="gateway-definition">ⓘ &nbsp;What is a Payment Gateway?</h3><p>A technology platform that securely captures, authenticates and routes payment transactions between the merchant, banks and card networks, and helps settle the funds to the merchant. The gateway is one part of the payment stack; acquiring, processing and settlement may be handled by separate providers.</p></aside>
 </div>
+</section>
+
+
+<section id="licences">
+  <div class="kicker">Banking &amp; Licensing Framework</div>
+  <h2 class="section-title">PPI (Wallet) vs. Banking Licence</h2>
+  <p class="section-sub">Comparing RBI Prepaid Payment Instruments with Full Commercial Banking Licences.</p>
+
+  <div class="compare-table-wrap">
+    <table class="compare-table" aria-label="Comparison between Prepaid Payment Instruments and Banking Licences">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>PPI (Prepaid Instrument / Wallet)</th>
+          <th>Banking Licence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="dim-label">Regulator &amp; Framework</td>
+          <td>RBI — Master Directions on PPIs</td>
+          <td>RBI — Banking Regulation Act, 1949</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Scope of Service</td>
+          <td>Stored-value wallet or prepaid card for transactions &amp; limited financial services</td>
+          <td>Full-service universal bank offering deposits, commercial lending, trade finance &amp; broader services</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Hold Customer Funds</td>
+          <td><span class="badge-yes">✔ Yes</span> — Held in escrow account with a scheduled commercial bank</td>
+          <td><span class="badge-yes">✔ Yes</span> — Held directly on the bank’s own balance sheet as public deposits</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Lending &amp; Credit</td>
+          <td><span class="badge-no">❌ No</span> — Lending from wallet balances is strictly prohibited (limited co-branded lines)</td>
+          <td><span class="badge-yes">✔ Yes</span> — Core capability (personal loans, mortgages, commercial credit, CCs)</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Savings / Current Accounts</td>
+          <td><span class="badge-no">❌ No</span> — Cannot open interest-bearing savings or current deposit accounts</td>
+          <td><span class="badge-yes">✔ Yes</span> — Demand deposits, time deposits (FD/RD), savings accounts</td>
+        </tr>
+        <tr>
+          <td class="dim-label">Market Examples</td>
+          <td><strong>Amazon Pay, Paytm Wallet, PhonePe Wallet (PPI)</strong></td>
+          <td><strong>SBI, HDFC Bank, ICICI Bank, Axis Bank, Kotak</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:32px" id="tpap-banks">
+    <div class="kicker">UPI Architecture</div>
+    <h3 style="font:22px Georgia,serif;color:var(--white);margin:4px 0 6px">UPI / TPAP: The Unified Payments Layer</h3>
+    <div class="tpap-container">
+      <div class="tpap-explainer">
+        <strong style="color:var(--gold2)">What is TPAP?</strong> A <em>Third Party Application Provider (TPAP)</em> is an RBI/NPCI-recognised entity that provides a customer-facing payment application (e.g., PhonePe, Google Pay, Paytm, WhatsApp Pay) enabling UPI transactions. Because TPAPs are not banks, they must partner with an authorised <strong>Sponsor PSP Bank</strong> to access NPCI’s core UPI switching and settlement network.
+      </div>
+      <div class="tpap-architecture">
+        <div class="tpap-box">
+          <div class="box-icon">📱</div>
+          <strong>TPAP Application</strong>
+          <span>Your App / Google Pay / PhonePe / Paytm</span>
+        </div>
+        <div class="tpap-arrow">⟷</div>
+        <div class="tpap-box">
+          <div class="box-icon">🏛️</div>
+          <strong>Sponsor PSP Bank</strong>
+          <span>Enables UPI API access, authentication &amp; settlement</span>
+        </div>
+        <div class="tpap-arrow">⟷</div>
+        <div class="tpap-box">
+          <div class="box-icon">⚡</div>
+          <strong>NPCI / UPI Switch</strong>
+          <span>Core interbank switching, routing &amp; clearing rails</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px">
+    <div class="kicker">Ecosystem Landscape</div>
+    <h3 style="font:22px Georgia,serif;color:var(--white);margin:4px 0 6px">Types of Banks in India</h3>
+    <p style="font-size:12.5px;color:var(--muted);margin:0 0 14px">A diverse institutional banking fabric powering retail finance, enterprise commerce, and India’s digital payment rails.</p>
+    <div class="bank-types-grid">
+      <div class="bank-type-card">
+        <div class="bank-type-head">
+          <span class="icon">🏛️</span>
+          <strong>Public Sector Banks (PSBs)</strong>
+        </div>
+        <p>Government-owned commercial banks with vast nationwide branch distribution and systemic infrastructure.</p>
+        <span class="bank-eg">e.g., State Bank of India (SBI), PNB, BoB, Canara</span>
+      </div>
+      <div class="bank-type-card">
+        <div class="bank-type-head">
+          <span class="icon">🤝</span>
+          <strong>Private Sector Banks</strong>
+        </div>
+        <p>Privately owned, technologically advanced commercial banks leading digital innovation, merchant acquiring &amp; corporate alliances.</p>
+        <span class="bank-eg">e.g., HDFC Bank, ICICI Bank, Axis Bank, Kotak</span>
+      </div>
+      <div class="bank-type-card">
+        <div class="bank-type-head">
+          <span class="icon">🌐</span>
+          <strong>Foreign Banks</strong>
+        </div>
+        <p>Overseas financial institutions operating branches in India, specialising in multinational enterprise banking, trade finance &amp; cross-border flows.</p>
+        <span class="bank-eg">e.g., HSBC, Standard Chartered, Citibank, Barclays</span>
+      </div>
+      <div class="bank-type-card">
+        <div class="bank-type-head">
+          <span class="icon">👥</span>
+          <strong>Cooperative Banks</strong>
+        </div>
+        <p>Member-owned credit institutions providing localized financial services to urban communities, agriculture, and rural markets.</p>
+        <span class="bank-eg">e.g., Saraswat Bank, Cosmos Bank, Shamrao Vithal</span>
+      </div>
+      <div class="bank-type-card">
+        <div class="bank-type-head">
+          <span class="icon">🌾</span>
+          <strong>Small Finance Banks (SFBs)</strong>
+        </div>
+        <p>RBI-chartered institutions with a dedicated mandate for financial inclusion, unserved micro-enterprises &amp; MSME lending.</p>
+        <span class="bank-eg">e.g., AU Small Finance, Ujjivan SFB, Equitas SFB</span>
+      </div>
+      <div class="bank-type-card">
+        <div class="bank-type-head">
+          <span class="icon">📱</span>
+          <strong>Payments Banks (PBs)</strong>
+        </div>
+        <p>Differentiated banks authorized for payments, domestic remittances, savings deposits up to ₹2 Lakh, and PPI wallets; no direct lending.</p>
+        <span class="bank-eg">e.g., Airtel Payments Bank, India Post PB, Fino</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaways-banner">
+    <div class="takeaways-label">
+      <span>🎯</span> Key Takeaways
+    </div>
+    <div class="takeaways-list">
+      <div class="takeaway-item"><span class="check">✔</span> <strong>PA = Regulated business</strong> (merchant onboarding &amp; settlement)</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>PG = Tech layer</strong> (operates in tandem with / under a PA)</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>PPI ≠ Bank</strong> (prepaid stored value, strictly zero lending)</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>TPAP = App layer</strong> (connects to UPI via a Sponsor PSP Bank)</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>Multiple bank tiers</strong> power the Indian payments landscape</div>
+    </div>
+  </div>
 </section>
 
 <section>
@@ -389,30 +790,203 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 </div>
 </section>
 
+
 <section id="mcc">
-<div class="mccrails">
-<article>
-<h2 class="section-title">Know the code behind the transaction</h2><p class="section-sub">MCC (Merchant Category Code) is a 4-digit code that classifies a merchant's business type and is used for routing, risk, interchange and incentives.</p>
-<div class="mccgrid">
-<div class="mcc"><div class="mcc-visual">✈</div><b>Airlines</b><small>MCC 4511</small></div>
-<div class="mcc"><div class="mcc-visual">🌴</div><b>Travel Agencies</b><small>MCC 4722</small></div>
-<div class="mcc"><div class="mcc-visual">♙</div><b>Hotels</b><small>MCC 7011</small></div>
-<div class="mcc"><div class="mcc-visual">♨</div><b>Restaurants</b><small>MCC 5812</small></div>
-</div><p class="note">Examples shown are common MCC associations; the assigned MCC depends on the merchant's actual business activity and acquirer classification.</p>
-</article>
-<article>
-<h2 class="section-title">India’s payment rails</h2><p class="section-sub">The underlying networks and systems that move money between banks, merchants and customers.</p>
-<div class="rails">
-<div class="rail"><strong>UPI</strong><b>UPI</b><small>Real-time, 24×7 account-to-account payments</small></div>
-<div class="rail"><strong>IMPS</strong><b>IMPS</b><small>Instant bank transfers, 24×7</small></div>
-<div class="rail"><strong>NEFT</strong><b>NEFT</b><small>Batch-based electronic fund transfers</small></div>
-<div class="rail"><strong>RTGS</strong><b>RTGS</b><small>High-value, real-time gross settlement</small></div>
-<div class="rail"><strong>NACH</strong><b>NACH</b><small>Automated, recurring payments and mandates</small></div>
-<div class="rail"><strong>▣</strong><b>Cards</b><small>Debit, credit and prepaid card networks</small></div>
-</div>
-</article>
-</div>
+  <div class="kicker">Merchant Classification</div>
+  <h2 class="section-title">MCC Directory (Merchant Category Codes)</h2>
+  <p class="section-sub">A practical reference of 4-digit codes used to classify merchants by their business activity — across online and offline commerce.</p>
+
+  <div class="mcc-value-pills">
+    <div class="mcc-value-pill">
+      <span class="icon">🥞</span>
+      <div><strong>Groups Businesses</strong><span>Categorises merchants strictly by activity type</span></div>
+    </div>
+    <div class="mcc-value-pill">
+      <span class="icon">🛒</span>
+      <div><strong>Omnichannel Standard</strong><span>Applies equally to online and offline merchants</span></div>
+    </div>
+    <div class="mcc-value-pill">
+      <span class="icon">🛡️</span>
+      <div><strong>Risk &amp; Interchange</strong><span>Determines interchange rates, risk tiers &amp; offers</span></div>
+    </div>
+    <div class="mcc-value-pill">
+      <span class="icon">⚙️</span>
+      <div><strong>Global Standardisation</strong><span>Regulated by ISO 18245, Visa, Mastercard &amp; RuPay</span></div>
+    </div>
+  </div>
+
+  <div class="mcc-directory">
+    <!-- Category sidebar -->
+    <aside class="mcc-sidebar">
+      <div class="mcc-sidebar-title">Browse by Category</div>
+      <div class="mcc-cat-list" role="tablist" aria-label="MCC Categories">
+        <button type="button" class="mcc-cat-btn active" data-cat="all">All Categories</button>
+        <button type="button" class="mcc-cat-btn" data-cat="grocery">🛒 Grocery &amp; Retail</button>
+        <button type="button" class="mcc-cat-btn" data-cat="food">🍴 Food &amp; Restaurants</button>
+        <button type="button" class="mcc-cat-btn" data-cat="clothing">👗 Clothing &amp; Fashion</button>
+        <button type="button" class="mcc-cat-btn" data-cat="electronics">💻 Electronics &amp; IT</button>
+        <button type="button" class="mcc-cat-btn" data-cat="furniture">🛋️ Furniture &amp; Home</button>
+        <button type="button" class="mcc-cat-btn" data-cat="healthcare">➕ Healthcare</button>
+        <button type="button" class="mcc-cat-btn" data-cat="education">🎓 Education</button>
+        <button type="button" class="mcc-cat-btn" data-cat="travel">✈️ Travel &amp; Hospitality</button>
+        <button type="button" class="mcc-cat-btn" data-cat="transportation">🚗 Transportation &amp; Mobility</button>
+        <button type="button" class="mcc-cat-btn" data-cat="fuel">⛽ Fuel &amp; Automotive</button>
+        <button type="button" class="mcc-cat-btn" data-cat="telecom">📡 Telecom &amp; Utilities</button>
+        <button type="button" class="mcc-cat-btn" data-cat="financial">🏛️ Financial Services</button>
+        <button type="button" class="mcc-cat-btn" data-cat="entertainment">🎬 Entertainment &amp; Recreation</button>
+        <button type="button" class="mcc-cat-btn" data-cat="personal">✂️ Personal Services</button>
+        <button type="button" class="mcc-cat-btn" data-cat="government">🏛️ Government &amp; Charities</button>
+      </div>
+    </aside>
+
+    <!-- Main directory table & search -->
+    <main class="mcc-main">
+      <div class="mcc-search-bar">
+        <span class="mcc-search-icon">🔍</span>
+        <input type="text" id="mccSearchInput" placeholder="Search MCC, category or business (e.g. 5811, Restaurant, Taxi, Cloud)..." aria-label="Search Merchant Category Codes">
+        <span class="mcc-count" id="mccCount">15 MCCs</span>
+      </div>
+
+      <div class="mcc-table-wrap">
+        <table class="mcc-table" id="mccTable" aria-label="Popular MCCs at a glance">
+          <thead>
+            <tr>
+              <th style="width:105px">MCC</th>
+              <th style="width:210px">Merchant Category</th>
+              <th>Examples (Online &amp; Offline)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="mcc-row" data-cat="grocery" data-keywords="5411 grocery supermarkets supermarket hypermarket provisions retail food store">
+              <td><span class="mcc-code-badge">5411</span></td>
+              <td><strong>🛒 Grocery &amp; Supermarkets</strong></td>
+              <td>Grocery stores, supermarkets, hypermarkets, online quick commerce, FMCG marts</td>
+            </tr>
+            <tr class="mcc-row" data-cat="food" data-keywords="5811 restaurants cafes dining food delivery qsr fast food eateries">
+              <td><span class="mcc-code-badge">5811</span></td>
+              <td><strong>🍴 Restaurants</strong></td>
+              <td>Restaurants, cafés, food delivery aggregators, quick service restaurants (QSR)</td>
+            </tr>
+            <tr class="mcc-row" data-cat="clothing" data-keywords="5651 clothing apparel fashion stores footwear accessories shoes boutique garments">
+              <td><span class="mcc-code-badge">5651</span></td>
+              <td><strong>👗 Clothing &amp; Apparel</strong></td>
+              <td>Apparel, fashion outlets, footwear, garment stores, fashion e-commerce</td>
+            </tr>
+            <tr class="mcc-row" data-cat="electronics" data-keywords="5732 electronics computers it stores gadgets laptops mobiles consumer electronics appliances">
+              <td><span class="mcc-code-badge">5732</span></td>
+              <td><strong>💻 Electronics</strong></td>
+              <td>Consumer electronics, computer &amp; IT stores, smartphone retailers, hardware outlets</td>
+            </tr>
+            <tr class="mcc-row" data-cat="furniture" data-keywords="5712 furniture home decor household stores interior furnishing bed bath">
+              <td><span class="mcc-code-badge">5712</span></td>
+              <td><strong>🛋️ Furniture &amp; Home</strong></td>
+              <td>Furniture showrooms, home décor, interior furnishings, household stores</td>
+            </tr>
+            <tr class="mcc-row" data-cat="healthcare" data-keywords="8011 healthcare services hospitals clinics nursing medical diagnostic pharma pharmacy">
+              <td><span class="mcc-code-badge">8011</span></td>
+              <td><strong>➕ Healthcare Services</strong></td>
+              <td>Hospitals, medical clinics, nursing services, specialized diagnostic laboratories</td>
+            </tr>
+            <tr class="mcc-row" data-cat="education" data-keywords="8211 education schools colleges universities training coaching institutions academies">
+              <td><span class="mcc-code-badge">8211</span></td>
+              <td><strong>🎓 Education</strong></td>
+              <td>Schools, universities, higher education colleges, coaching institutes, vocational training</td>
+            </tr>
+            <tr class="mcc-row" data-cat="travel" data-keywords="7011 hotels lodging resorts accommodation hospitality guest house homestay travel stay">
+              <td><span class="mcc-code-badge">7011</span></td>
+              <td><strong>✈️ Hotels &amp; Lodging</strong></td>
+              <td>Hotels, holiday resorts, guest accommodations, business lodging, homestays</td>
+            </tr>
+            <tr class="mcc-row" data-cat="transportation" data-keywords="4121 transportation taxis ride hailing limo services cabs mobility aggregators auto travel">
+              <td><span class="mcc-code-badge">4121</span></td>
+              <td><strong>🚗 Transportation</strong></td>
+              <td>Taxis, ride-hailing services, cab fleets, limousine bookings, passenger transport</td>
+            </tr>
+            <tr class="mcc-row" data-cat="fuel" data-keywords="5541 fuel automotive petrol pumps gas stations cng ev charging service stations oil">
+              <td><span class="mcc-code-badge">5541</span></td>
+              <td><strong>⛽ Fuel &amp; Automotive</strong></td>
+              <td>Petrol pumps, diesel dispensing stations, highway fuel outlets, automotive refuelling</td>
+            </tr>
+            <tr class="mcc-row" data-cat="telecom" data-keywords="4814 telecom services mobile internet telecom recharge broadband isp phone cellular">
+              <td><span class="mcc-code-badge">4814</span></td>
+              <td><strong>📡 Telecom Services</strong></td>
+              <td>Cellular operators, broadband internet service providers (ISPs), mobile recharges</td>
+            </tr>
+            <tr class="mcc-row" data-cat="financial" data-keywords="6012 financial services banks credit institutions lending fintech loans deposits nbfc">
+              <td><span class="mcc-code-badge">6012</span></td>
+              <td><strong>🏛️ Financial Services</strong></td>
+              <td>Banks, credit institutions, digital lending platforms, loan repayments, NBFCs</td>
+            </tr>
+            <tr class="mcc-row" data-cat="entertainment" data-keywords="7832 entertainment cinemas theatres live events movies ticketing shows multiplex concerts">
+              <td><span class="mcc-code-badge">7832</span></td>
+              <td><strong>🎬 Entertainment</strong></td>
+              <td>Cinemas, movie multiplexes, theatrical venues, live concert productions</td>
+            </tr>
+            <tr class="mcc-row" data-cat="personal" data-keywords="7230 personal services salons spas beauty wellness grooming barbershop aesthetics">
+              <td><span class="mcc-code-badge">7230</span></td>
+              <td><strong>✂️ Personal Services</strong></td>
+              <td>Salons, spas, wellness clinics, beauty parlours, professional grooming centers</td>
+            </tr>
+            <tr class="mcc-row" data-cat="government" data-keywords="9311 government services tax payments government fees public services municipal utilities e-governance">
+              <td><span class="mcc-code-badge">9311</span></td>
+              <td><strong>🏛️ Government Services</strong></td>
+              <td>Tax payments, municipal dues, court &amp; administrative fees, public service portals</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Online Specific MCCs sidebar -->
+    <aside class="online-mcc-panel">
+      <div class="online-mcc-head">
+        <span class="icon">💻</span>
+        <div>
+          <h4>Online-Specific &amp; Digital Commerce MCCs</h4>
+        </div>
+      </div>
+      <div class="online-mcc-list">
+        <div class="online-mcc-item"><span class="code">5815</span><span class="name">Digital Books, Music &amp; Movies</span></div>
+        <div class="online-mcc-item"><span class="code">5816</span><span class="name">Digital Games &amp; In-App Assets</span></div>
+        <div class="online-mcc-item"><span class="code">5817</span><span class="name">Mobile Apps &amp; Commercial Software</span></div>
+        <div class="online-mcc-item"><span class="code">5818</span><span class="name">Large Digital Goods Merchants</span></div>
+        <div class="online-mcc-item"><span class="code">4899</span><span class="name">Streaming &amp; Subscription (OTT, Media)</span></div>
+        <div class="online-mcc-item"><span class="code">4816</span><span class="name">Computer Network / Cloud Services</span></div>
+        <div class="online-mcc-item"><span class="code">5968</span><span class="name">Direct Marketing – Recurring Subscription</span></div>
+        <div class="online-mcc-item"><span class="code">5964</span><span class="name">Direct Marketing – Catalogue / eCommerce</span></div>
+        <div class="online-mcc-item"><span class="code">4722</span><span class="name">Online Travel Booking &amp; Aggregators</span></div>
+        <div class="online-mcc-item"><span class="code">7922</span><span class="name">Online Ticketing (Events, Shows, Sports)</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="takeaways-banner" style="margin-top:20px">
+    <div class="takeaways-label">
+      <span>🏷️</span> Classification Rules
+    </div>
+    <div class="takeaways-list">
+      <div class="takeaway-item"><span class="check">✔</span> <strong>MCC identifies</strong> the merchant's underlying line of business activity</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>Unified standards:</strong> Same MCC code applies across both online and physical POS checkouts</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>Commercial impact:</strong> Governs interchange pricing, MDR rates, chargeback liability &amp; card rewards</div>
+      <div class="takeaway-item"><span class="check">✔</span> <strong>Global governance:</strong> Standardized under ISO 18245, Visa, Mastercard, and RuPay operating regulations</div>
+    </div>
+  </div>
 </section>
+
+<section id="rails">
+  <div class="kicker">Underlying Infrastructure</div>
+  <h2 class="section-title">India’s Payment Rails</h2>
+  <p class="section-sub">The underlying networks and clearing systems that move money between banks, aggregators, merchants and consumers.</p>
+  <div class="rails" style="margin-top:16px">
+    <div class="rail"><strong>UPI</strong><b>Unified Payments Interface</b><small>Real-time, 24×7 account-to-account mobile payment switch</small></div>
+    <div class="rail"><strong>IMPS</strong><b>Immediate Payment Service</b><small>Instant 24×7 interbank electronic fund transfers</small></div>
+    <div class="rail"><strong>NEFT</strong><b>National Electronic Funds</b><small>Half-hourly batch-based electronic fund transfers</small></div>
+    <div class="rail"><strong>RTGS</strong><b>Real-Time Gross Settlement</b><small>High-value continuous gross fund settlement</small></div>
+    <div class="rail"><strong>NACH</strong><b>National Automated Clearing</b><small>Automated high-volume recurring mandates &amp; bulk debits</small></div>
+    <div class="rail"><strong>Cards</strong><b>Card Networks (RuPay, Visa, MC)</b><small>Tokenised global debit, credit &amp; prepaid switching</small></div>
+  </div>
+</section>
+
 
 <section class="references" id="ecosystem">
 <h2 class="section-title">Explore the ecosystem</h2><p class="section-sub">Key reference links to learn more about regulations, networks and leading payment platforms.</p>
@@ -442,6 +1016,18 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
     <details style="border-top:1px solid var(--line);padding:18px 0">
       <summary style="cursor:pointer;color:var(--white);font-size:17px;font-weight:600;line-height:1.5">What is Rate Subvention in merchant pricing?</summary>
       <p style="color:var(--muted);line-height:1.8;margin:12px 0 0">Rate Subvention is a commercial arrangement where the cost of payment acceptance (MDR or EMI interest) is partly or fully sponsored by a third-party brand, platform, or financial partner rather than the merchant alone.</p>
+    </details>
+    <details style="border-top:1px solid var(--line);padding:18px 0">
+      <summary style="cursor:pointer;color:var(--white);font-size:17px;font-weight:600;line-height:1.5">What is a Third Party Application Provider (TPAP) in UPI?</summary>
+      <p style="color:var(--muted);line-height:1.8;margin:12px 0 0">A TPAP is a non-bank application (such as Google Pay, PhonePe, Paytm or WhatsApp Pay) that facilitates customer UPI payments by partnering with an authorised Sponsor PSP Bank. The sponsor bank provides connectivity and settlement access to NPCI’s central UPI switch.</p>
+    </details>
+    <details style="border-top:1px solid var(--line);padding:18px 0">
+      <summary style="cursor:pointer;color:var(--white);font-size:17px;font-weight:600;line-height:1.5">What is the core difference between a PPI wallet and a Bank account?</summary>
+      <p style="color:var(--muted);line-height:1.8;margin:12px 0 0">A Prepaid Payment Instrument (PPI) allows customers to store preloaded funds in a digital wallet or prepaid card for transactions, with funds held in escrow with a scheduled bank. Unlike full commercial banks, PPI issuers cannot pay interest on balances, open savings/current accounts, or extend direct credit or loans from customer balances.</p>
+    </details>
+    <details style="border-top:1px solid var(--line);padding:18px 0">
+      <summary style="cursor:pointer;color:var(--white);font-size:17px;font-weight:600;line-height:1.5">What are Merchant Category Codes (MCCs) and why are they important?</summary>
+      <p style="color:var(--muted);line-height:1.8;margin:12px 0 0">An MCC is a standardised 4-digit code defined by ISO 18245 and card schemes (Visa, Mastercard, RuPay) to classify a merchant’s primary line of business. MCCs determine applicable interchange fees, MDR pricing tiers, chargeback rules, risk monitoring thresholds, and reward point eligibility on credit cards.</p>
     </details>
   </div>
 </section>
@@ -492,4 +1078,58 @@ document.addEventListener('click', function(event) {
  window.addEventListener('resize',function(){if(window.innerWidth>800)closeMenu();});
 })();
 </script>
+
+<script>
+// Interactive MCC Directory Filter & Search
+(function(){
+  const searchInput = document.getElementById('mccSearchInput');
+  const catButtons = document.querySelectorAll('.mcc-cat-btn');
+  const rows = document.querySelectorAll('.mcc-row');
+  const countDisplay = document.getElementById('mccCount');
+  if (!searchInput || !rows.length) return;
+
+  let currentCategory = 'all';
+  let searchQuery = '';
+
+  function filterMCCs() {
+    let visibleCount = 0;
+    const query = searchQuery.trim().toLowerCase();
+
+    rows.forEach(row => {
+      const rowCat = row.dataset.cat || '';
+      const rowKeywords = (row.dataset.keywords || '').toLowerCase();
+      const rowText = row.innerText.toLowerCase();
+
+      const matchesCat = (currentCategory === 'all' || rowCat === currentCategory);
+      const matchesQuery = (!query || rowKeywords.includes(query) || rowText.includes(query));
+
+      if (matchesCat && matchesQuery) {
+        row.classList.remove('is-hidden');
+        visibleCount++;
+      } else {
+        row.classList.add('is-hidden');
+      }
+    });
+
+    if (countDisplay) {
+      countDisplay.textContent = visibleCount + (visibleCount === 1 ? ' MCC' : ' MCCs');
+    }
+  }
+
+  catButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      catButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.dataset.cat || 'all';
+      filterMCCs();
+    });
+  });
+
+  searchInput.addEventListener('input', (e) => {
+    searchQuery = e.target.value;
+    filterMCCs();
+  });
+})();
+</script>
+
 </body></html>
