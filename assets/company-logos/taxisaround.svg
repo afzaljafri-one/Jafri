@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 56" width="160" height="56">
+  <g fill="none" fill-rule="evenodd">
+    <rect x="6" y="8" width="40" height="40" rx="10" fill="#181818"/>
+    <path d="M16 32 L20 23 C21 21 22.5 20 24.5 20 L27.5 20 C29.5 20 31 21 32 23 L36 32 C36.5 33 36 34 35 34 L17 34 C16 34 15.5 33 16 32 Z" fill="#c7a66a"/>
+    <circle cx="21" cy="33" r="2.5" fill="#181818"/>
+    <circle cx="31" cy="33" r="2.5" fill="#181818"/>
+    <rect x="23" y="17" width="6" height="3" rx="1" fill="#f4d27a"/>
+    <text x="56" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800" fill="#181818" letter-spacing="-0.3">TaxisAround</text>
+    <text x="56" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="700" fill="#888" letter-spacing="1.2">.COM</text>
+  </g>
+</svg>
