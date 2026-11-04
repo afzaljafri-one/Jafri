@@ -133,6 +133,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:1000px){.navlinks{gap:12px;font-size:9px}.brand{width:120px}.flow{gap:4px}.flow-arrow{font-size:18px}.reference-grid{grid-template-columns:repeat(4,1fr)}.quicklinks{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.wrap{width:min(var(--max),calc(100% - 34px))}.nav{min-height:66px}.navlinks,.nav-social{display:none}.menu-toggle{display:block}.navcta{margin-left:auto}.hero{grid-template-columns:1fr;padding:38px 0 24px;gap:0}.hero-art{height:220px}.phone{left:27%;height:190px;width:120px}.bank-card{right:12%;width:170px;height:108px}.flow{grid-template-columns:1fr 20px 1fr 20px 1fr;row-gap:10px}.flow-card{min-height:86px}.flow-card:nth-of-type(7){grid-column:1}.flow-arrow:nth-of-type(8){display:none}.moves{grid-template-columns:1fr}.dual,.mccrails{grid-template-columns:1fr;gap:25px}.dual>article+article,.mccrails>article+article{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.reference-grid{grid-template-columns:repeat(2,1fr)}.steps{gap:9px}.step p{font-size:9px}}
 @media(max-width:480px){.wrap{width:calc(100% - 28px)}h1{font-size:42px}.hero p{font-size:14px}.quicklinks{grid-template-columns:1fr}.flow{grid-template-columns:1fr 16px 1fr 16px 1fr}.flow-card{padding:8px 4px}.flow-card b{font-size:10px}.flow-card svg{width:25px;height:25px}.flow-arrow{font-size:15px}.steps{grid-template-columns:repeat(2,1fr);row-gap:22px}.step:after{display:none}.economics{grid-template-columns:1fr}.subvention{grid-template-columns:1fr 18px 1fr 18px 1fr}.party{padding:10px 4px;min-height:135px}.party b{font-size:10px}.party small{font-size:9px}.mccgrid{grid-template-columns:repeat(2,1fr)}.rails{grid-template-columns:repeat(2,1fr)}.reference-grid{grid-template-columns:repeat(2,1fr)}.fee-row{grid-template-columns:1fr 62px 42px;padding:8px;font-size:9px}}
+.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:9999;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#25D366;box-shadow:0 5px 20px rgba(0,0,0,.45);transition:transform .18s ease,box-shadow .18s ease}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.55)}
+.whatsapp-float:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.whatsapp-float img{display:block;width:62px;height:62px}
+@media(max-width:600px){.whatsapp-float{right:16px;bottom:18px;width:56px;height:56px}.whatsapp-float img{width:56px;height:56px}}
 </style>
 
 <!-- Google Analytics 4: same property as jafri.one homepage -->
@@ -442,6 +447,32 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 </div>
 </main>
 <footer role="contentinfo"><div class="wrap"><span><strong style="color:#e8d5b1">Afzal Jafri</strong> · Strategy. Partnerships. Execution.</span><a href="/">Back to jafri.one &nbsp; →</a></div></footer>
+<a href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Connect with Afzal on WhatsApp">
+  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" width="62" height="62" loading="lazy" decoding="async">
+</a>
+<script>
+document.addEventListener('click', function(event) {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  let url;
+  try { url = new URL(link.href, window.location.href); } catch (e) { return; }
+  const host = url.hostname.toLowerCase();
+  const label = (link.innerText || link.getAttribute('aria-label') || '').trim().slice(0, 100);
+
+  if (host === 'wa.me' || host === 'whatsapp.com' || host.endsWith('.whatsapp.com')) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'whatsapp_click', {link_domain:host,link_text:label || 'WhatsApp',page_path:window.location.pathname});
+    }
+    if (typeof window.clarity === 'function') window.clarity('event','whatsapp_click');
+  }
+  if (host === 'linkedin.com' || host.endsWith('.linkedin.com')) {
+    if (typeof gtag === 'function') {
+      gtag('event', 'linkedin_click', {link_domain:host,link_text:label || 'LinkedIn',page_path:window.location.pathname});
+    }
+    if (typeof window.clarity === 'function') window.clarity('event','linkedin_click');
+  }
+});
+</script>
 <script>
 (function(){
  const toggle=document.querySelector('.menu-toggle');
