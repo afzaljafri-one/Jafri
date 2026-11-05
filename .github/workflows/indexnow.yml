@@ -1,0 +1,52 @@
+name: IndexNow URL Submission
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: 'Submit all canonical URLs from sitemap.xml'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  notify-indexnow:
+    name: Submit changed URLs to IndexNow
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Await GitHub Pages deployment
+        run: |
+          echo "Waiting 45s for GitHub Pages deployment to complete..."
+          sleep 45
+
+      - name: Detect changed URLs and notify IndexNow
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+          SUBMIT_ALL: ${{ github.event.inputs.submit_all }}
+        run: |
+          python3 .github/scripts/indexnow.py
