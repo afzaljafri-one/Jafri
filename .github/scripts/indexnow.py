@@ -299,9 +299,16 @@ def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", t
             req = urllib.request.Request(url, headers=headers)
             with urllib.request.urlopen(req, timeout=15) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
-                runs = data.get("check_runs", [])
-                if runs:
-                    run = runs[0]
+              runs = data.get("check_runs", [])
+
+              matching_runs = [
+                    item for item in runs
+                    if item.get("name") == "deploy"
+                    and item.get("head_sha") == sha
+                ]
+
+            if matching_runs:
+                    run = matching_runs[0]
                     status = run.get("status")
                     conclusion = run.get("conclusion")
                     elapsed = int(time.time() - start)
@@ -313,7 +320,7 @@ def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", t
                         else:
                             print(f"FATAL: GitHub Pages deployment ended with conclusion '{conclusion}'. Aborting.")
                             return False
-                else:
+            else:
                     elapsed = int(time.time() - start)
                     print(f"Deploy check-run not created yet by GitHub Actions (elapsed: {elapsed}s)...")
                     
