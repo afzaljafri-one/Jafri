@@ -10,18 +10,22 @@ on:
 
 permissions:
   deployments: write
+  contents: write
 
 jobs:
   unlock:
     runs-on: ubuntu-latest
     steps:
-      - name: Clear in-progress deployments
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clear in-progress deployments and log details
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
         run: |
           python3 -c "
-          import os, json, urllib.request
+          import os, json, urllib.request, urllib.error
 
           token = os.environ['GITHUB_TOKEN']
           repo = os.environ['REPOSITORY']
@@ -32,32 +36,61 @@ jobs:
               'User-Agent': 'Unlock-Pages/1.0'
           }
 
+          log = []
+          def log_print(msg):
+              print(msg)
+              log.append(str(msg))
+
           url = f'https://api.github.com/repos/{repo}/deployments?environment=github-pages'
           req = urllib.request.Request(url, headers=headers)
-          with urllib.request.urlopen(req) as resp:
-              deployments = json.loads(resp.read().decode('utf-8'))
+          try:
+              with urllib.request.urlopen(req) as resp:
+                  deployments = json.loads(resp.read().decode('utf-8'))
+              log_print(f'Found {len(deployments)} deployments for github-pages.')
+              for d in deployments:
+                  dep_id = d['id']
+                  sha = d.get('sha', '')[:7]
+                  stat_url = f'https://api.github.com/repos/{repo}/deployments/{dep_id}/statuses'
+                  stat_req = urllib.request.Request(stat_url, headers=headers)
+                  with urllib.request.urlopen(stat_req) as s_resp:
+                      statuses = json.loads(s_resp.read().decode('utf-8'))
+                  latest_state = statuses[0]['state'] if statuses else 'unknown'
+                  log_print(f'Deployment {dep_id} ({sha}): latest state = {latest_state}')
+                  if latest_state in ['in_progress', 'queued', 'waiting']:
+                      log_print(f'Attempting status failure on {dep_id}...')
+                      post_req = urllib.request.Request(
+                          stat_url,
+                          data=json.dumps({'state': 'failure', 'description': 'Cancelled hung deployment'}).encode('utf-8'),
+                          headers={**headers, 'Content-Type': 'application/json'}
+                      )
+                      try:
+                          with urllib.request.urlopen(post_req) as p_resp:
+                              log_print(f'Status update HTTP: {p_resp.status}')
+                      except urllib.error.HTTPError as he:
+                          log_print(f'Status update HTTPError: {he.code} - {he.read().decode(\"utf-8\")}')
 
-          print(f'Found {len(deployments)} deployments for github-pages.')
-          for d in deployments:
-              dep_id = d['id']
-              sha = d.get('sha', '')[:7]
-              stat_url = f'https://api.github.com/repos/{repo}/deployments/{dep_id}/statuses'
-              stat_req = urllib.request.Request(stat_url, headers=headers)
-              with urllib.request.urlopen(stat_req) as s_resp:
-                  statuses = json.loads(s_resp.read().decode('utf-8'))
+                      log_print(f'Attempting DELETE on {dep_id}...')
+                      del_req = urllib.request.Request(
+                          f'https://api.github.com/repos/{repo}/deployments/{dep_id}',
+                          headers=headers,
+                          method='DELETE'
+                      )
+                      try:
+                          with urllib.request.urlopen(del_req) as d_resp:
+                              log_print(f'DELETE HTTP: {d_resp.status}')
+                      except urllib.error.HTTPError as he:
+                          log_print(f'DELETE HTTPError: {he.code} - {he.read().decode(\"utf-8\")}')
+          except Exception as e:
+              log_print(f'FATAL: {e}')
 
-              latest_state = statuses[0]['state'] if statuses else 'unknown'
-              print(f'Deployment {dep_id} ({sha}): latest state = {latest_state}')
-              if latest_state in ['in_progress', 'queued', 'waiting']:
-                  print(f'Marking stuck deployment {dep_id} as failure...')
-                  post_req = urllib.request.Request(
-                      stat_url,
-                      data=json.dumps({'state': 'failure', 'description': 'Cancelled hung deployment to unlock environment'}).encode('utf-8'),
-                      headers={**headers, 'Content-Type': 'application/json'}
-                  )
-                  try:
-                      with urllib.request.urlopen(post_req) as p_resp:
-                          print(f'Successfully marked {dep_id} as failure (HTTP {p_resp.status})')
-                  except Exception as e:
-                      print(f'Failed to update {dep_id}: {e}')
+          with open('debug_deploy.txt', 'w') as f:
+              f.write('\n'.join(log))
           "
+
+      - name: Commit and push debug output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add debug_deploy.txt
+          git commit -m "chore(debug): record deployment status details" || echo "No changes"
+          git push origin main || echo "Push failed"
