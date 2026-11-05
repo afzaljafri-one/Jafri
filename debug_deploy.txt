@@ -1,31 +1,8 @@
-Found 30 deployments for github-pages.
-Deployment 7583561982 (5724795): latest state = failure
-Deployment 7583535575 (d80572f): latest state = failure
-Deployment 7583501545 (db168ab): latest state = failure
-Deployment 7583492357 (824f7e5): latest state = error
-Deployment 7583415956 (721aeea): latest state = failure
-Deployment 7583149836 (7773e7e): latest state = failure
-Deployment 7582939583 (63b01b6): latest state = success
-Deployment 7582472537 (a8142a9): latest state = inactive
-Deployment 7581826894 (be53ab0): latest state = inactive
-Deployment 7581593883 (5f7c9e4): latest state = inactive
-Deployment 7580367454 (d6abe3c): latest state = inactive
-Deployment 7579122976 (a8871fb): latest state = inactive
-Deployment 7578829642 (68cd39c): latest state = inactive
-Deployment 7578538897 (8a8e43e): latest state = inactive
-Deployment 7577415353 (e8cc92d): latest state = inactive
-Deployment 7577343326 (02b829c): latest state = inactive
-Deployment 7577013387 (02e6c3b): latest state = inactive
-Deployment 7576867006 (6ad9d73): latest state = inactive
-Deployment 7576737832 (78d998d): latest state = inactive
-Deployment 7575564373 (fa64923): latest state = inactive
-Deployment 7575014416 (0ad2629): latest state = inactive
-Deployment 7573091925 (3d7be16): latest state = inactive
-Deployment 7571993768 (ce95af6): latest state = inactive
-Deployment 7569706905 (597b4c1): latest state = inactive
-Deployment 7569235424 (d6f56bb): latest state = inactive
-Deployment 7568852337 (f4ef95f): latest state = inactive
-Deployment 7568441508 (a160069): latest state = inactive
-Deployment 7567359520 (34276c0): latest state = inactive
-Deployment 7567293742 (72ddb2d): latest state = inactive
-Deployment 7567005669 (601249b): latest state = inactive
+Cancel 7773e7e1547e508d4447226fe7976b116356a6be: HTTP 204
+Cancel 7583149836 HTTPError: 404 - {"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment","status":"404"}
+Cancel latest HTTPError: 404 - {"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment","status":"404"}
+Pages info: status=errored, build_type=legacy
+Recent builds: 30
+  Build None: status=errored commit=0411f61d209934d9d0c8c980c0933fdc0850f368
+  Build None: status=errored commit=68d8b11197dcad29a73be30dd8c1d72beb246d44
+  Build None: status=errored commit=1cdfb50feb3651426baa2b397eb2fb79803a5689
