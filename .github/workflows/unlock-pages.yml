@@ -90,15 +90,18 @@ jobs:
           except Exception as e:
               log_print(f'Pages builds query failed: {e}')
 
-          # Query pages deployments
+          # Trigger fresh pages build
           try:
-              pages_dep_url = f'https://api.github.com/repos/{repo}/pages/deployments'
-              req = urllib.request.Request(pages_dep_url, headers=headers)
+              trigger_url = f'https://api.github.com/repos/{repo}/pages/builds'
+              req = urllib.request.Request(trigger_url, headers=headers, method='POST', data=b'')
               with urllib.request.urlopen(req) as resp:
-                  p_deps = json.loads(resp.read().decode('utf-8'))
-                  log_print(f'Pages deployments: {p_deps}')
+                  trigger_data = json.loads(resp.read().decode('utf-8'))
+                  log_print(f'Triggered manual page build: status={trigger_data.get(\"status\")} url={trigger_data.get(\"url\")}')
+          except urllib.error.HTTPError as he:
+              body = he.read().decode('utf-8', errors='replace')
+              log_print(f'Trigger page build HTTPError: {he.code} - {body}')
           except Exception as e:
-              log_print(f'Pages deployments list query: {e}')
+              log_print(f'Trigger page build failed: {e}')
 
           with open('debug_deploy.txt', 'w') as f:
               f.write('\n'.join(log))
