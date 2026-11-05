@@ -9,6 +9,8 @@ on:
   workflow_dispatch:
 
 permissions:
+  pages: write
+  id-token: write
   deployments: write
   contents: write
 
@@ -19,7 +21,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Clear in-progress deployments and log details
+      - name: Cancel stuck pages deployment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
@@ -41,51 +43,58 @@ jobs:
               print(msg)
               log.append(str(msg))
 
-          url = f'https://api.github.com/repos/{repo}/deployments?environment=github-pages'
-          req = urllib.request.Request(url, headers=headers)
-          try:
-              with urllib.request.urlopen(req) as resp:
-                  deployments = json.loads(resp.read().decode('utf-8'))
-              log_print(f'Found {len(deployments)} deployments for github-pages.')
-              for d in deployments:
-                  dep_id = d['id']
-                  sha = d.get('sha', '')[:7]
-                  stat_url = f'https://api.github.com/repos/{repo}/deployments/{dep_id}/statuses'
-                  stat_req = urllib.request.Request(stat_url, headers=headers)
-                  with urllib.request.urlopen(stat_req) as s_resp:
-                      statuses = json.loads(s_resp.read().decode('utf-8'))
-                  latest_state = statuses[0]['state'] if statuses else 'unknown'
-                  log_print(f'Deployment {dep_id} ({sha}): latest state = {latest_state}')
-                  if latest_state in ['in_progress', 'queued', 'waiting']:
-                      log_print(f'Attempting status failure on {dep_id}...')
-                      post_req = urllib.request.Request(
-                          stat_url,
-                          data=json.dumps({'state': 'failure', 'description': 'Cancelled hung deployment'}).encode('utf-8'),
-                          headers={**headers, 'Content-Type': 'application/json'}
-                      )
-                      try:
-                          with urllib.request.urlopen(post_req) as p_resp:
-                              log_print(f'Status update HTTP: {p_resp.status}')
-                      except urllib.error.HTTPError as he:
-                          log_print(f'Status update HTTPError: {he.code} - {he.read().decode(\"utf-8\")}')
+          candidates = [
+              '7773e7e1547e508d4447226fe7976b116356a6be',
+              '7583149836',
+              'latest'
+          ]
 
-                      log_print(f'Attempting DELETE on {dep_id}...')
-                      del_req = urllib.request.Request(
-                          f'https://api.github.com/repos/{repo}/deployments/{dep_id}',
-                          headers=headers,
-                          method='DELETE'
-                      )
-                      try:
-                          with urllib.request.urlopen(del_req) as d_resp:
-                              log_print(f'DELETE HTTP: {d_resp.status}')
-                      except urllib.error.HTTPError as he:
-                          log_print(f'DELETE HTTPError: {he.code} - {he.read().decode(\"utf-8\")}')
+          # Try cancel on candidates
+          for cand in candidates:
+              cancel_url = f'https://api.github.com/repos/{repo}/pages/deployments/{cand}/cancel'
+              req = urllib.request.Request(cancel_url, headers=headers, method='POST', data=b'')
+              try:
+                  with urllib.request.urlopen(req) as resp:
+                      log_print(f'Cancel {cand}: HTTP {resp.status}')
+              except urllib.error.HTTPError as he:
+                  body = he.read().decode('utf-8', errors='replace')
+                  log_print(f'Cancel {cand} HTTPError: {he.code} - {body}')
+              except Exception as e:
+                  log_print(f'Cancel {cand} Exception: {e}')
+
+          # Query pages info
+          try:
+              pages_url = f'https://api.github.com/repos/{repo}/pages'
+              req = urllib.request.Request(pages_url, headers=headers)
+              with urllib.request.urlopen(req) as resp:
+                  info = json.loads(resp.read().decode('utf-8'))
+                  log_print(f'Pages info: status={info.get(\"status\")}, build_type={info.get(\"build_type\")}')
           except Exception as e:
-              log_print(f'FATAL: {e}')
+              log_print(f'Pages info query failed: {e}')
+
+          # Query pages builds
+          try:
+              builds_url = f'https://api.github.com/repos/{repo}/pages/builds'
+              req = urllib.request.Request(builds_url, headers=headers)
+              with urllib.request.urlopen(req) as resp:
+                  builds = json.loads(resp.read().decode('utf-8'))
+                  log_print(f'Recent builds: {len(builds)}')
+                  for b in builds[:3]:
+                      log_print(f'  Build {b.get(\"id\")}: status={b.get(\"status\")} commit={b.get(\"commit\")}')
+          except Exception as e:
+              log_print(f'Pages builds query failed: {e}')
 
           with open('debug_deploy.txt', 'w') as f:
               f.write('\n'.join(log))
           "
+
+      - name: Commit and push debug output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add debug_deploy.txt
+          git commit -m "chore(debug): record cancel pages deployment attempt" || echo "No changes"
+          git push origin main || echo "Push failed"
 
       - name: Commit and push debug output
         run: |
