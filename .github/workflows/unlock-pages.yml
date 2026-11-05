@@ -72,17 +72,33 @@ jobs:
           except Exception as e:
               log_print(f'Pages info query failed: {e}')
 
-          # Query pages builds
+          # Query pages builds in detail
           try:
               builds_url = f'https://api.github.com/repos/{repo}/pages/builds'
               req = urllib.request.Request(builds_url, headers=headers)
               with urllib.request.urlopen(req) as resp:
                   builds = json.loads(resp.read().decode('utf-8'))
-                  log_print(f'Recent builds: {len(builds)}')
-                  for b in builds[:3]:
-                      log_print(f'  Build {b.get(\"id\")}: status={b.get(\"status\")} commit={b.get(\"commit\")}')
+                  log_print(f'Total builds: {len(builds)}')
+                  for b in builds:
+                      c_sha = (b.get('commit') or '')[:7]
+                      b_status = b.get('status')
+                      b_url = b.get('url')
+                      if '7773e7e' in (b.get('commit') or '') or b_status not in ['built', 'errored']:
+                          log_print(f'Special Build: id={b.get(\"id\")} status={b_status} commit={c_sha} error={b.get(\"error\", {})}')
+                      else:
+                          log_print(f'Build id={b.get(\"id\")} status={b_status} commit={c_sha}')
           except Exception as e:
               log_print(f'Pages builds query failed: {e}')
+
+          # Query pages deployments
+          try:
+              pages_dep_url = f'https://api.github.com/repos/{repo}/pages/deployments'
+              req = urllib.request.Request(pages_dep_url, headers=headers)
+              with urllib.request.urlopen(req) as resp:
+                  p_deps = json.loads(resp.read().decode('utf-8'))
+                  log_print(f'Pages deployments: {p_deps}')
+          except Exception as e:
+              log_print(f'Pages deployments list query: {e}')
 
           with open('debug_deploy.txt', 'w') as f:
               f.write('\n'.join(log))
