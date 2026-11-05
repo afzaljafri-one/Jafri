@@ -3,6 +3,9 @@ Cancel 7583149836 HTTPError: 404 - {"message":"Not Found","documentation_url":"h
 Cancel latest HTTPError: 404 - {"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment","status":"404"}
 Pages info: status=errored, build_type=legacy
 Total builds: 30
+Build id=None status=errored commit=fe94ca0
+Build id=None status=errored commit=378540d
+Build id=None status=errored commit=cac6794
 Build id=None status=errored commit=cac6794
 Build id=None status=errored commit=cff2c28
 Build id=None status=errored commit=b472131
@@ -30,7 +33,5 @@ Build id=None status=built commit=02e6c3b
 Build id=None status=built commit=6ad9d73
 Build id=None status=built commit=78d998d
 Build id=None status=built commit=fa64923
-Build id=None status=built commit=0ad2629
-Build id=None status=built commit=3d7be16
-Build id=None status=built commit=ce95af6
-Triggered manual page build: status=queued url=https://api.github.com/repositories/1444220561/pages/builds/latest
+Switch build_type HTTPError: 403 - {"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/pages/pages#update-information-about-a-apiname-pages-site","status":"403"}
+New Pages info: status=errored, build_type=legacy
