@@ -3,6 +3,8 @@ Cancel 7583149836 HTTPError: 404 - {"message":"Not Found","documentation_url":"h
 Cancel latest HTTPError: 404 - {"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment","status":"404"}
 Pages info: status=errored, build_type=legacy
 Total builds: 30
+Build id=None status=errored commit=cac6794
+Build id=None status=errored commit=cff2c28
 Build id=None status=errored commit=b472131
 Build id=None status=errored commit=3a46be8
 Build id=None status=errored commit=0411f61
@@ -31,6 +33,4 @@ Build id=None status=built commit=fa64923
 Build id=None status=built commit=0ad2629
 Build id=None status=built commit=3d7be16
 Build id=None status=built commit=ce95af6
-Build id=None status=built commit=597b4c1
-Build id=None status=built commit=d6f56bb
-Pages deployments list query: HTTP Error 404: Not Found
+Triggered manual page build: status=queued url=https://api.github.com/repositories/1444220561/pages/builds/latest
