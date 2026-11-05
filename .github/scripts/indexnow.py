@@ -214,7 +214,7 @@ def get_changed_urls(before_sha, head_sha, event_name, submit_all):
         # Handle rename lines (e.g. R100 old_file new_file)
         filename = parts[-1]
         
-        if filename == "sitemap.xml":
+        if filename == "sitemap.xml" or filename.startswith(".github/"):
             sitemap_changed = True
         
         canonical = file_to_canonical(filename)
