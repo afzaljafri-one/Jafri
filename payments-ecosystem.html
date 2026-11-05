@@ -91,7 +91,9 @@ section{padding:28px 0;border-bottom:1px solid var(--line)}
 .step{position:relative;text-align:center;padding:2px 5px}.step:not(:last-child):after{content:"⟶";position:absolute;right:-16px;top:30px;color:var(--gold2);font-size:21px}
 .step-icon{width:58px;height:58px;border-radius:50%;margin:0 auto 9px;background:radial-gradient(circle,#332919,#15120e);border:1px solid var(--line);display:grid;place-items:center}
 .step-icon svg{width:30px;height:30px;stroke:var(--gold2);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.step h3{font-size:12px;margin:0 0 6px}.step p{font-size:10px;color:var(--muted);line-height:1.5;margin:0}
+.step-content{display:block}
+.step h3{font-size:12px;margin:0 0 6px}
+.step p{font-size:10px;color:var(--muted);line-height:1.5;margin:0}
 .step-num{display:inline-grid;place-items:center;width:19px;height:19px;border-radius:50%;background:var(--gold2);color:#15110a;font-size:10px;font-weight:700;margin-right:5px}
 .info{border:1px solid var(--line);border-radius:10px;padding:19px;background:linear-gradient(145deg,#17130d,#0d0d0d)}
 .info h3{font:19px Georgia,serif;margin:0 0 8px;color:var(--gold2)}.info p{font-size:12px;color:#c9c1b4;line-height:1.7;margin:0}
@@ -197,11 +199,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .bank-type-card .bank-eg{display:block;margin-top:5px;color:var(--gold2);font-size:11px;font-weight:500}
 
 /* Takeaways banner */
-.takeaways-banner{border:1px solid var(--line);border-radius:10px;background:linear-gradient(90deg,rgba(199,166,106,.15) 0%,rgba(18,18,18,.98) 22%);padding:14px 18px;margin-top:20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.takeaways-banner{border:1px solid var(--line);border-radius:12px;background:linear-gradient(90deg,rgba(199,166,106,.15) 0%,rgba(18,18,18,.98) 22%);padding:14px 18px;margin-top:20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .takeaways-label{display:flex;align-items:center;gap:8px;color:var(--gold2);font-family:Georgia,serif;font-size:15px;font-weight:600;white-space:nowrap}
+.takeaways-label-icon{font-size:17px;line-height:1}
 .takeaways-list{display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;flex:1}
-.takeaway-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#ded7cb}
-.takeaway-item .check{color:var(--gold);font-weight:bold}
+.takeaway-item{display:inline-flex;align-items:flex-start;gap:8px;font-size:12px;color:#ded7cb}
+.takeaway-check{color:var(--gold);font-weight:bold;flex:0 0 auto;line-height:1.4}
+.takeaway-text{display:inline;line-height:1.4}
+.takeaway-text strong{color:var(--white);font-weight:600}
 
 /* MCC Directory */
 .mcc-value-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 22px}
@@ -322,18 +327,72 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
   .quick span b{font-size:12px!important}
   .quick span small{font-size:10px!important}
 
-  /* 3. Steps section */
+  /* 3. Steps section (mobile card stack) */
+  .moves{grid-template-columns:1fr!important;gap:16px!important}
   .steps{
-    grid-template-columns:repeat(2,1fr)!important;
+    grid-template-columns:1fr!important;
     gap:10px!important;
   }
   .step{
-    padding:12px 10px!important;
-    text-align:center!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:flex-start!important;
+    text-align:left!important;
+    gap:14px!important;
+    padding:14px 14px!important;
+    background:linear-gradient(150deg,#141414,#0b0b0b)!important;
+    border:1px solid var(--line)!important;
+    border-radius:12px!important;
+    box-sizing:border-box!important;
   }
-  .step h3{font-size:13px!important;margin:6px 0 3px!important}
-  .step p{font-size:11px!important;line-height:1.4!important;color:#ccc4b6!important}
-  .step-icon{width:46px!important;height:46px!important;margin-bottom:6px!important}
+  .step:after{display:none!important}
+  .step-icon{
+    flex:0 0 46px!important;
+    width:46px!important;
+    height:46px!important;
+    margin:0!important;
+    border-radius:50%!important;
+    background:radial-gradient(circle,#332919,#15120e)!important;
+    border:1px solid rgba(199,166,106,.3)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .step-icon svg{width:24px!important;height:24px!important}
+  .step-content{
+    flex:1!important;
+    min-width:0!important;
+  }
+  .step h3{
+    font-size:14.5px!important;
+    font-family:Georgia,serif!important;
+    color:var(--white)!important;
+    margin:0 0 4px!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:8px!important;
+    line-height:1.3!important;
+  }
+  .step-num{
+    width:20px!important;
+    height:20px!important;
+    font-size:11px!important;
+    border-radius:50%!important;
+    background:var(--gold2)!important;
+    color:#15110a!important;
+    font-weight:700!important;
+    margin-right:0!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex-shrink:0!important;
+  }
+  .step p{
+    font-size:12px!important;
+    color:#c7c0b3!important;
+    line-height:1.5!important;
+    margin:0!important;
+  }
   .info{padding:14px 16px!important;margin-top:14px!important}
   .info h3{font-size:16px!important}
   .info p{font-size:12px!important;line-height:1.55!important}
@@ -413,20 +472,75 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
     height:18px!important;
   }
 
-  /* 7. Takeaways Banner Mobile */
+  /* 7. Takeaways Banner Mobile (Single-flow text with gold check badges) */
   .takeaways-banner{
+    display:flex!important;
     flex-direction:column!important;
-    align-items:flex-start!important;
-    padding:14px 14px!important;
-    gap:10px!important;
+    align-items:stretch!important;
+    padding:16px 14px!important;
+    gap:12px!important;
+    background:linear-gradient(160deg,rgba(199,166,106,.12) 0%,#121212 28%,#0a0a0a 100%)!important;
+    border:1px solid var(--line)!important;
+    border-radius:12px!important;
+  }
+  .takeaways-label{
+    font-size:15px!important;
+    font-family:Georgia,serif!important;
+    font-weight:600!important;
+    color:var(--gold2)!important;
+    border-bottom:1px solid rgba(199,166,106,.2)!important;
+    padding-bottom:10px!important;
+    width:100%!important;
+    display:flex!important;
+    align-items:center!important;
+    gap:8px!important;
+    white-space:normal!important;
   }
   .takeaways-list{
+    display:flex!important;
     flex-direction:column!important;
-    align-items:flex-start!important;
-    gap:7px!important;
+    align-items:stretch!important;
+    gap:11px!important;
     width:100%!important;
   }
-  .takeaway-item{font-size:11.5px!important;line-height:1.4!important}
+  .takeaway-item{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:flex-start!important;
+    gap:10px!important;
+    width:100%!important;
+    padding:0!important;
+    box-sizing:border-box!important;
+  }
+  .takeaway-check{
+    flex:0 0 20px!important;
+    width:20px!important;
+    height:20px!important;
+    border-radius:50%!important;
+    background:rgba(199,166,106,.15)!important;
+    border:1px solid rgba(199,166,106,.35)!important;
+    color:var(--gold2)!important;
+    font-size:11px!important;
+    font-weight:700!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    margin-top:2px!important;
+  }
+  .takeaway-text{
+    flex:1!important;
+    min-width:0!important;
+    display:block!important;
+    font-size:12.5px!important;
+    line-height:1.55!important;
+    color:#ccc4b6!important;
+    text-align:left!important;
+  }
+  .takeaway-text strong{
+    color:var(--white)!important;
+    font-weight:600!important;
+    display:inline!important;
+  }
 
   /* 8. MCC Table transformed into mobile responsive cards */
   .mcc-table thead{display:none!important}
@@ -485,20 +599,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:480px){
   .wrap{width:calc(100% - 24px)!important}
   h1{font-size:34px!important}
-  .steps{grid-template-columns:1fr!important}
-  .step{
-    display:flex!important;
-    align-items:center!important;
-    text-align:left!important;
-    gap:12px!important;
-    padding:10px 12px!important;
-  }
-  .step-icon{
-    margin:0!important;
-    width:42px!important;
-    height:42px!important;
-    flex:0 0 42px!important;
-  }
+  /* .steps styling cleanly handled by <=760px query */
   .quicklinks{grid-template-columns:1fr!important}
   .bank-types-grid{grid-template-columns:1fr!important}
   .mcc-value-pills{grid-template-columns:1fr!important}
@@ -877,10 +978,34 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 <section id="gateway">
 <h2 class="section-title">How a payment moves</h2><p class="section-sub">The key steps from initiation to settlement.</p>
 <div class="moves"><div class="steps">
-<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><rect x="7" y="2" width="15" height="28" rx="2"/><path d="M12 6h5m-3 20h2M20 11h9v10h-9zM23 14h3"/></svg></div><h3><span class="step-num">1</span>Initiate Payment</h3><p>Customer pays (card/UPI/wallet) at the merchant.</p></div>
-<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="19" rx="2"/><path d="M1 28h30M13 14l3-3 3 3m-3-3v8m-4-2h8"/></svg></div><h3><span class="step-num">2</span>Process &amp; Secure</h3><p>Gateway captures, secures and routes the request.</p></div>
-<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><path d="M3 12h26L16 4zM5 28h22M8 12v16m6-16v16m4-16v16m6-16v16"/></svg></div><h3><span class="step-num">3</span>Authorise</h3><p>Banks and network validate and approve the transaction.</p></div>
-<div class="step"><div class="step-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg></div><h3><span class="step-num">4</span>Complete &amp; Settle</h3><p>Payment is confirmed and merchant funds are settled (T+0 to T+2, typically).</p></div>
+<div class="step">
+  <div class="step-icon"><svg viewBox="0 0 32 32"><rect x="7" y="2" width="15" height="28" rx="2"/><path d="M12 6h5m-3 20h2M20 11h9v10h-9zM23 14h3"/></svg></div>
+  <div class="step-content">
+    <h3><span class="step-num">1</span> Initiate Payment</h3>
+    <p>Customer pays (card/UPI/wallet) at the merchant.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-icon"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="19" rx="2"/><path d="M1 28h30M13 14l3-3 3 3m-3-3v8m-4-2h8"/></svg></div>
+  <div class="step-content">
+    <h3><span class="step-num">2</span> Process &amp; Secure</h3>
+    <p>Gateway captures, secures and routes the request.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-icon"><svg viewBox="0 0 32 32"><path d="M3 12h26L16 4zM5 28h22M8 12v16m6-16v16m4-16v16m6-16v16"/></svg></div>
+  <div class="step-content">
+    <h3><span class="step-num">3</span> Authorise</h3>
+    <p>Banks and network validate and approve the transaction.</p>
+  </div>
+</div>
+<div class="step">
+  <div class="step-icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="13"/><path d="m9 16 5 5 9-10"/></svg></div>
+  <div class="step-content">
+    <h3><span class="step-num">4</span> Complete &amp; Settle</h3>
+    <p>Payment is confirmed and merchant funds are settled (T+0 to T+2, typically).</p>
+  </div>
+</div>
 </div>
 <aside class="info"><h3 id="gateway-definition">ⓘ &nbsp;What is a Payment Gateway?</h3><p>A technology platform that securely captures, authenticates and routes payment transactions between the merchant, banks and card networks, and helps settle the funds to the merchant. The gateway is one part of the payment stack; acquiring, processing and settlement may be handled by separate providers.</p></aside>
 </div>
@@ -1024,14 +1149,29 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 
   <div class="takeaways-banner">
     <div class="takeaways-label">
-      <span>🎯</span> Key Takeaways
+      <span class="takeaways-label-icon">🎯</span> Key Takeaways
     </div>
     <div class="takeaways-list">
-      <div class="takeaway-item"><span class="check">✔</span> <strong>PA = Regulated business</strong> (merchant onboarding &amp; settlement)</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>PG = Tech layer</strong> (operates in tandem with / under a PA)</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>PPI ≠ Bank</strong> (prepaid stored value, strictly zero lending)</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>TPAP = App layer</strong> (connects to UPI via a Sponsor PSP Bank)</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>Multiple bank tiers</strong> power the Indian payments landscape</div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>PA = Regulated business:</strong> Merchant onboarding &amp; settlement escrow</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>PG = Tech layer:</strong> Operates in tandem with / under an RBI-licensed PA</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>PPI ≠ Bank:</strong> Prepaid stored value, strictly zero lending or credit</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>TPAP = App layer:</strong> Connects to UPI via an authorised Sponsor PSP Bank</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>Multiple bank tiers:</strong> PSBs, Private, Foreign, SFBs &amp; Payments Banks power ecosystem</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1218,13 +1358,25 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 
   <div class="takeaways-banner" style="margin-top:20px">
     <div class="takeaways-label">
-      <span>🏷️</span> Classification Rules
+      <span class="takeaways-label-icon">🏷️</span> Classification Rules
     </div>
     <div class="takeaways-list">
-      <div class="takeaway-item"><span class="check">✔</span> <strong>MCC identifies</strong> the merchant's underlying line of business activity</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>Unified standards:</strong> Same MCC code applies across both online and physical POS checkouts</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>Commercial impact:</strong> Governs interchange pricing, MDR rates, chargeback liability &amp; card rewards</div>
-      <div class="takeaway-item"><span class="check">✔</span> <strong>Global governance:</strong> Standardized under ISO 18245, Visa, Mastercard, and RuPay operating regulations</div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>MCC identifies:</strong> The merchant's primary underlying line of business activity</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>Unified standards:</strong> Same MCC code applies across both online and physical POS checkouts</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>Commercial impact:</strong> Governs interchange pricing, MDR rates, chargeback liability &amp; card rewards</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="takeaway-check" aria-hidden="true">✔</span>
+        <div class="takeaway-text"><strong>Global governance:</strong> Standardized under ISO 18245, Visa, Mastercard, and RuPay operating regulations</div>
+      </div>
     </div>
   </div>
 </section>
