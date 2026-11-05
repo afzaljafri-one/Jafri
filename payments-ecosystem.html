@@ -139,11 +139,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .whatsapp-float img{display:block;width:62px;height:62px}
 @media(max-width:600px){.whatsapp-float{right:16px;bottom:18px;width:56px;height:56px}.whatsapp-float img{width:56px;height:56px}}
 
-/* --- Comprehensive Payments Architecture & MCC Directory Styles --- */
+/* --- Comprehensive Payments Architecture & MCC Directory Styles (Mobile-Optimized) --- */
 .badge-yes{display:inline-flex;align-items:center;gap:4px;color:#4ade80;font-weight:600}
 .badge-no{display:inline-flex;align-items:center;gap:4px;color:#f87171;font-weight:600}
-.compare-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#131313,#0a0a0a);margin-top:16px;scrollbar-width:thin;scrollbar-color:rgba(199,166,106,.4) transparent}
-.compare-table{width:100%;border-collapse:collapse;font-size:13px;text-align:left}
+
+/* Swipe hints for mobile horizontal scrolling */
+.swipe-hint,.flow-swipe-hint{display:none;align-items:center;justify-content:center;gap:6px;padding:7px 12px;font-size:11px;color:var(--gold2);background:rgba(199,166,106,.09);border-bottom:1px solid var(--line);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.flow-swipe-hint{border:1px solid var(--line);border-bottom:0;border-radius:9px 9px 0 0;margin-bottom:0}
+
+/* Comparison Tables */
+.compare-table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#131313,#0a0a0a);margin-top:16px;scrollbar-width:thin;scrollbar-color:rgba(199,166,106,.4) transparent;-webkit-overflow-scrolling:touch}
+.compare-table{width:100%;min-width:600px;border-collapse:collapse;font-size:13px;text-align:left}
 .compare-table th{padding:13px 16px;background:rgba(199,166,106,.09);color:var(--gold2);font-family:Georgia,serif;font-size:14.5px;font-weight:500;border-bottom:1px solid var(--line);letter-spacing:.02em}
 .compare-table th:first-child{width:22%}
 .compare-table th:nth-child(2),.compare-table th:nth-child(3){width:39%}
@@ -152,16 +158,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .compare-table tr:hover td{background:rgba(199,166,106,.04)}
 .compare-table .dim-label{font-weight:600;color:var(--white);font-size:13px}
 
+/* Lifecycle flow */
 .lifecycle-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
 .lifecycle-node{border:1px solid var(--line);border-radius:10px;background:linear-gradient(160deg,#151515,#0c0c0c);padding:14px 12px;text-align:center;position:relative;display:flex;flex-direction:column;justify-content:center}
 .lifecycle-node-step{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:5px}
 .lifecycle-node .node-icon{font-size:22px;color:var(--gold);margin-bottom:6px}
 .lifecycle-node strong{font-size:13px;color:var(--white);display:block}
 .lifecycle-node span{font-size:11px;color:var(--muted);display:block;margin-top:4px;line-height:1.35}
-@media(min-width:900px){
+@media(min-width:901px){
   .lifecycle-node:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:16px;font-weight:bold;z-index:2;pointer-events:none}
 }
 
+/* Scenarios */
 .scenarios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .scenario-card{border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#131313,#0a0a0a);padding:16px 14px}
 .scenario-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
@@ -169,6 +177,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .scenario-head h4{margin:0;font-size:14.5px;font-family:Georgia,serif;color:var(--gold2);font-weight:500}
 .scenario-card p{margin:0;font-size:12px;color:#ccc4b6;line-height:1.55}
 
+/* TPAP */
 .tpap-container{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
 .tpap-explainer{border:1px solid var(--line);border-radius:10px;background:rgba(199,166,106,.05);padding:14px 18px;font-size:13px;color:#e5ded3;line-height:1.6}
 .tpap-architecture{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(155deg,#131313,#0b0b0b);padding:18px 14px}
@@ -178,6 +187,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .tpap-box span{display:block;font-size:10.5px;color:var(--muted);margin-top:3px;line-height:1.3}
 .tpap-arrow{color:var(--gold);font-size:18px;font-weight:bold;flex-shrink:0}
 
+/* Bank Types */
 .bank-types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .bank-type-card{border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#131313,#0a0a0a);padding:14px 13px}
 .bank-type-head{display:flex;align-items:center;gap:9px;margin-bottom:7px}
@@ -186,12 +196,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .bank-type-card p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.45}
 .bank-type-card .bank-eg{display:block;margin-top:5px;color:var(--gold2);font-size:11px;font-weight:500}
 
+/* Takeaways banner */
 .takeaways-banner{border:1px solid var(--line);border-radius:10px;background:linear-gradient(90deg,rgba(199,166,106,.15) 0%,rgba(18,18,18,.98) 22%);padding:14px 18px;margin-top:20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .takeaways-label{display:flex;align-items:center;gap:8px;color:var(--gold2);font-family:Georgia,serif;font-size:15px;font-weight:600;white-space:nowrap}
 .takeaways-list{display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;flex:1}
 .takeaway-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#ded7cb}
 .takeaway-item .check{color:var(--gold);font-weight:bold}
 
+/* MCC Directory */
 .mcc-value-pills{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 22px}
 .mcc-value-pill{border:1px solid var(--line);border-radius:8px;padding:11px;background:rgba(199,166,106,.04);display:flex;align-items:center;gap:9px;font-size:12px;color:#dfd8cc;line-height:1.35}
 .mcc-value-pill .icon{font-size:18px;color:var(--gold);flex-shrink:0}
@@ -212,10 +224,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .mcc-count{font-size:11px;color:var(--muted);white-space:nowrap}
 .mcc-table-wrap{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#0e0e0e}
 .mcc-table{width:100%;border-collapse:collapse;font-size:12.5px;text-align:left}
-.mcc-table th{padding:10px 12px;background:rgba(199,166,106,.08);color:var(--gold2);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line);font-weight:600}
-.mcc-table td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.05);color:#ddd4c7;vertical-align:middle}
+.mcc-table th{padding:10px 14px;background:rgba(199,166,106,.08);color:var(--gold2);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line);font-weight:600}
+.mcc-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.05);color:#ddd4c7;vertical-align:middle}
 .mcc-table tr:hover td{background:rgba(199,166,106,.05)}
-.mcc-code-badge{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-weight:700;color:var(--gold2);background:rgba(199,166,106,.12);border:1px solid rgba(199,166,106,.3);padding:2px 7px;border-radius:5px;font-size:12px}
+.mcc-cell-top{display:flex;align-items:center;gap:10px}
+.mcc-code-badge{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-weight:700;color:var(--gold2);background:rgba(199,166,106,.12);border:1px solid rgba(199,166,106,.3);padding:2px 7px;border-radius:5px;font-size:12px;flex-shrink:0}
+.mcc-category-title{font-size:13px;color:var(--white);font-weight:600}
+.mcc-cell-examples{font-size:12px;color:#ccc4b6;line-height:1.4}
 .mcc-row.is-hidden{display:none!important}
 
 .online-mcc-panel{border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#131313,#0a0a0a);padding:14px 12px}
@@ -227,25 +242,269 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .online-mcc-item .code{font-family:ui-monospace,SFMono-Regular,monospace;font-weight:700;font-size:11px;color:var(--gold2);background:rgba(199,166,106,.15);border:1px solid rgba(199,166,106,.28);padding:2px 6px;border-radius:4px;flex-shrink:0}
 .online-mcc-item .name{font-size:11.5px;color:#ddd4c7;line-height:1.3}
 
+/* =========================================================================
+   ROBUST MOBILE RESPONSIVE SYSTEM (Phones <=760px and Small Screens <=480px)
+   ========================================================================= */
+
 @media(max-width:1050px){
   .mcc-directory{grid-template-columns:1fr}
-  .mcc-sidebar{display:flex;overflow-x:auto;gap:6px;padding:8px;scrollbar-width:thin}
+  .mcc-sidebar{display:flex;overflow-x:auto;gap:6px;padding:8px 10px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
   .mcc-sidebar-title{display:none}
-  .mcc-cat-list{flex-direction:row;gap:6px}
-  .mcc-cat-btn{white-space:nowrap;width:auto;padding:6px 11px;font-size:11px}
+  .mcc-cat-list{flex-direction:row;gap:6px;flex-wrap:nowrap}
+  .mcc-cat-btn{white-space:nowrap;width:auto;flex:0 0 auto;padding:7px 13px;font-size:11.5px;border:1px solid rgba(199,166,106,.25);border-radius:20px;background:rgba(20,20,20,.6)}
+  .mcc-cat-btn.active{background:linear-gradient(90deg,#c7a66a,#e0c28b);color:#090909;font-weight:700;outline:0}
   .mcc-value-pills{grid-template-columns:repeat(2,1fr)}
   .lifecycle-flow{grid-template-columns:1fr;gap:8px}
   .scenarios-grid{grid-template-columns:1fr}
   .bank-types-grid{grid-template-columns:repeat(2,1fr)}
-  .tpap-architecture{flex-direction:column;gap:12px}
-  .tpap-arrow{transform:rotate(90deg)}
-}
-@media(max-width:600px){
-  .bank-types-grid{grid-template-columns:1fr}
-  .mcc-value-pills{grid-template-columns:1fr}
-  .takeaways-banner{flex-direction:column;align-items:flex-start}
+  .online-mcc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 }
 
+@media(max-width:760px){
+  .wrap{width:calc(100% - 28px)!important}
+  
+  /* Hero section mobile fix */
+  .hero{padding:28px 0 20px!important}
+  h1{font-size:38px!important;line-height:1.08!important;margin:12px 0 10px!important}
+  .hero p{font-size:14px!important;line-height:1.6!important}
+  .hero-art{height:190px!important;margin-top:10px!important}
+  .phone{left:18%!important;height:165px!important;width:105px!important}
+  .phone-screen strong{font-size:13px!important}
+  .check{width:34px!important;height:34px!important;font-size:18px!important;margin-bottom:8px!important}
+  .bank-card{right:10%!important;width:150px!important;height:95px!important;top:52px!important;padding:12px!important}
+
+  /* Show swipe hints */
+  .swipe-hint,.flow-swipe-hint{display:flex!important}
+
+  /* 1. Payment Flow Mobile Track */
+  .flow{
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    gap:8px!important;
+    overflow-x:auto!important;
+    padding:8px 8px 14px!important;
+    border:1px solid var(--line)!important;
+    border-radius:0 0 10px 10px!important;
+    background:#0d0d0d!important;
+    scrollbar-width:thin!important;
+    -webkit-overflow-scrolling:touch!important;
+  }
+  .flow-card{
+    flex:0 0 115px!important;
+    min-height:92px!important;
+    padding:10px 6px!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
+  }
+  .flow-card svg{width:28px!important;height:28px!important}
+  .flow-card b{font-size:11px!important;line-height:1.25!important;margin-top:4px!important}
+  .flow-arrow{
+    flex:0 0 auto!important;
+    font-size:18px!important;
+    color:var(--gold)!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+
+  /* 2. Quicklinks Mobile Grid */
+  .quicklinks{
+    display:grid!important;
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:8px!important;
+    margin-top:14px!important;
+  }
+  .quick{
+    padding:9px 11px!important;
+    min-height:50px!important;
+    box-sizing:border-box!important;
+  }
+  .quick span b{font-size:12px!important}
+  .quick span small{font-size:10px!important}
+
+  /* 3. Steps section */
+  .steps{
+    grid-template-columns:repeat(2,1fr)!important;
+    gap:10px!important;
+  }
+  .step{
+    padding:12px 10px!important;
+    text-align:center!important;
+  }
+  .step h3{font-size:13px!important;margin:6px 0 3px!important}
+  .step p{font-size:11px!important;line-height:1.4!important;color:#ccc4b6!important}
+  .step-icon{width:46px!important;height:46px!important;margin-bottom:6px!important}
+  .info{padding:14px 16px!important;margin-top:14px!important}
+  .info h3{font-size:16px!important}
+  .info p{font-size:12px!important;line-height:1.55!important}
+
+  /* 4. Economics & Subvention */
+  .dual{grid-template-columns:1fr!important;gap:20px!important}
+  .dual>article+article{border-left:0!important;border-top:1px solid var(--line)!important;padding:20px 0 0!important}
+  .economics{grid-template-columns:1fr!important;gap:12px!important}
+  .fee-row{grid-template-columns:1fr 72px 52px!important;padding:10px 12px!important;font-size:12px!important}
+  
+  .subvention{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:8px!important;
+  }
+  .subvention .plus{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:20px!important;
+    color:var(--gold)!important;
+    height:20px!important;
+    line-height:1!important;
+  }
+  .party{
+    min-height:auto!important;
+    padding:12px 14px!important;
+    display:flex!important;
+    align-items:center!important;
+    text-align:left!important;
+    gap:12px!important;
+  }
+  .party svg{margin-bottom:0!important;width:30px!important;height:30px!important;flex:0 0 30px!important}
+  .party b{font-size:13px!important;display:block!important;color:var(--white)!important}
+  .party small{font-size:11px!important;color:var(--muted)!important;margin-top:2px!important;display:block!important}
+
+  /* 5. 5-Node Lifecycle Mobile Card Sequence */
+  .lifecycle-flow{
+    grid-template-columns:1fr!important;
+    gap:8px!important;
+  }
+  .lifecycle-node{
+    padding:12px 14px!important;
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    text-align:left!important;
+    gap:12px!important;
+  }
+  .lifecycle-node .node-icon{
+    font-size:24px!important;
+    margin-bottom:0!important;
+    flex:0 0 32px!important;
+  }
+  .lifecycle-node-body{flex:1!important;min-width:0!important}
+  .lifecycle-node strong{font-size:13px!important}
+  .lifecycle-node span{font-size:11.5px!important;margin-top:2px!important}
+
+  /* 6. TPAP Mobile */
+  .tpap-architecture{
+    flex-direction:column!important;
+    gap:8px!important;
+    padding:14px 12px!important;
+  }
+  .tpap-box{
+    width:100%!important;
+    padding:12px!important;
+    box-sizing:border-box!important;
+  }
+  .tpap-arrow{
+    transform:none!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:18px!important;
+    color:var(--gold)!important;
+    height:18px!important;
+  }
+
+  /* 7. Takeaways Banner Mobile */
+  .takeaways-banner{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    padding:14px 14px!important;
+    gap:10px!important;
+  }
+  .takeaways-list{
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:7px!important;
+    width:100%!important;
+  }
+  .takeaway-item{font-size:11.5px!important;line-height:1.4!important}
+
+  /* 8. MCC Table transformed into mobile responsive cards */
+  .mcc-table thead{display:none!important}
+  .mcc-table,.mcc-table tbody,.mcc-table tr,.mcc-table td{
+    display:block!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+  }
+  .mcc-table-wrap{
+    overflow:visible!important;
+    border:1px solid var(--line)!important;
+    border-radius:12px!important;
+  }
+  .mcc-row{
+    padding:12px 14px!important;
+    border-bottom:1px solid rgba(255,255,255,.07)!important;
+    background:transparent!important;
+  }
+  .mcc-row:last-child{border-bottom:0!important}
+  .mcc-row:hover,.mcc-row:active{background:rgba(199,166,106,.06)!important}
+  .mcc-row td{padding:0!important;border:0!important}
+  .mcc-cell-top{
+    display:flex!important;
+    align-items:center!important;
+    gap:10px!important;
+    margin-bottom:5px!important;
+  }
+  .mcc-code-badge{
+    font-size:12px!important;
+    padding:2px 7px!important;
+  }
+  .mcc-category-title{
+    font-size:13.5px!important;
+    color:var(--white)!important;
+    font-weight:600!important;
+  }
+  .mcc-cell-examples{
+    font-size:12px!important;
+    color:#b8b0a2!important;
+    line-height:1.45!important;
+    display:block!important;
+  }
+
+  /* 9. Payment rails */
+  .rails{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  .rail{padding:10px 11px!important;min-height:auto!important}
+  .rail strong{font-size:17px!important}
+  .rail b{font-size:11px!important}
+  .rail small{font-size:10px!important;line-height:1.35!important}
+
+  /* 10. References grid */
+  .reference-grid{grid-template-columns:repeat(2,1fr)!important;gap:8px!important}
+  .reference{min-height:115px!important;padding:10px 9px!important}
+}
+
+@media(max-width:480px){
+  .wrap{width:calc(100% - 24px)!important}
+  h1{font-size:34px!important}
+  .steps{grid-template-columns:1fr!important}
+  .step{
+    display:flex!important;
+    align-items:center!important;
+    text-align:left!important;
+    gap:12px!important;
+    padding:10px 12px!important;
+  }
+  .step-icon{
+    margin:0!important;
+    width:42px!important;
+    height:42px!important;
+    flex:0 0 42px!important;
+  }
+  .quicklinks{grid-template-columns:1fr!important}
+  .bank-types-grid{grid-template-columns:1fr!important}
+  .mcc-value-pills{grid-template-columns:1fr!important}
+  .online-mcc-list{grid-template-columns:1fr!important}
+  .rails{grid-template-columns:1fr!important}
+}
 </style>
 
 <!-- Google Analytics 4: same property as jafri.one homepage -->
@@ -467,6 +726,7 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 
 <section id="flow">
 <h2 class="section-title">The payments flow</h2><p class="section-sub">A simplified view of the key players in a card or digital payment.</p>
+<div class="flow-swipe-hint"><span>⇄ Swipe to view full payment chain</span></div>
 <div class="flow">
 <div class="flow-card"><svg viewBox="0 0 32 32"><circle cx="16" cy="8" r="5"/><path d="M5 27c0-6 4-10 11-10s11 4 11 10z"/></svg><b>Customer</b></div><div class="flow-arrow">→</div>
 <div class="flow-card"><svg viewBox="0 0 32 32"><path d="M3 13h26L26 5H6zM5 13v14h22V13M11 13v5m5-5v5m5-5v5"/></svg><b>Merchant</b></div><div class="flow-arrow">→</div>
@@ -492,6 +752,7 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
   <p class="section-sub">A comparative breakdown of Payment Aggregators (licensed, merchant-of-record entities) versus Payment Gateways (pure technology providers).</p>
   
   <div class="compare-table-wrap">
+    <div class="swipe-hint"><span>⇄ Swipe to compare full table</span></div>
     <table class="compare-table" aria-label="Comparison between Payment Aggregators and Payment Gateways">
       <thead>
         <tr>
@@ -543,34 +804,44 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 
   <div class="lifecycle-flow">
     <div class="lifecycle-node">
-      <div class="lifecycle-node-step">Stage 1</div>
       <div class="node-icon">📱</div>
-      <strong>Customer Pays</strong>
-      <span>Selects UPI, Card, NetBanking or Wallet at checkout</span>
+      <div class="lifecycle-node-body">
+        <div class="lifecycle-node-step">Stage 1</div>
+        <strong>Customer Pays</strong>
+        <span>Selects UPI, Card, NetBanking or Wallet at checkout</span>
+      </div>
     </div>
     <div class="lifecycle-node">
-      <div class="lifecycle-node-step">Stage 2</div>
       <div class="node-icon">⚙️</div>
-      <strong>PG Processes</strong>
-      <span>Captures, encrypts &amp; authorises transaction payload</span>
+      <div class="lifecycle-node-body">
+        <div class="lifecycle-node-step">Stage 2</div>
+        <strong>PG Processes</strong>
+        <span>Captures, encrypts &amp; authorises transaction payload</span>
+      </div>
     </div>
     <div class="lifecycle-node">
-      <div class="lifecycle-node-step">Stage 3</div>
       <div class="node-icon">🥞</div>
-      <strong>PA Collects</strong>
-      <span>Aggregates &amp; pools funds in escrow account</span>
+      <div class="lifecycle-node-body">
+        <div class="lifecycle-node-step">Stage 3</div>
+        <strong>PA Collects</strong>
+        <span>Aggregates &amp; pools funds in escrow account</span>
+      </div>
     </div>
     <div class="lifecycle-node">
-      <div class="lifecycle-node-step">Stage 4</div>
       <div class="node-icon">🏛️</div>
-      <strong>Bank Moves Money</strong>
-      <span>Clears funds via RBI / NPCI interbank payment rails</span>
+      <div class="lifecycle-node-body">
+        <div class="lifecycle-node-step">Stage 4</div>
+        <strong>Bank Moves Money</strong>
+        <span>Clears funds via RBI / NPCI interbank payment rails</span>
+      </div>
     </div>
     <div class="lifecycle-node">
-      <div class="lifecycle-node-step">Stage 5</div>
       <div class="node-icon">🏪</div>
-      <strong>Merchant Settlement</strong>
-      <span>Receives net payout into current account (T+1 / T+2)</span>
+      <div class="lifecycle-node-body">
+        <div class="lifecycle-node-step">Stage 5</div>
+        <strong>Merchant Settlement</strong>
+        <span>Receives net payout into current account (T+1 / T+2)</span>
+      </div>
     </div>
   </div>
 
@@ -622,6 +893,7 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
   <p class="section-sub">Comparing RBI Prepaid Payment Instruments with Full Commercial Banking Licences.</p>
 
   <div class="compare-table-wrap">
+    <div class="swipe-hint"><span>⇄ Swipe to compare full table</span></div>
     <table class="compare-table" aria-label="Comparison between Prepaid Payment Instruments and Banking Licences">
       <thead>
         <tr>
@@ -851,86 +1123,70 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
         <table class="mcc-table" id="mccTable" aria-label="Popular MCCs at a glance">
           <thead>
             <tr>
-              <th style="width:105px">MCC</th>
-              <th style="width:210px">Merchant Category</th>
+              <th style="width:310px">MCC &amp; Merchant Category</th>
               <th>Examples (Online &amp; Offline)</th>
             </tr>
           </thead>
           <tbody>
             <tr class="mcc-row" data-cat="grocery" data-keywords="5411 grocery supermarkets supermarket hypermarket provisions retail food store">
-              <td><span class="mcc-code-badge">5411</span></td>
-              <td><strong>🛒 Grocery &amp; Supermarkets</strong></td>
-              <td>Grocery stores, supermarkets, hypermarkets, online quick commerce, FMCG marts</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">5411</span><strong class="mcc-category-title">🛒 Grocery &amp; Supermarkets</strong></td>
+              <td class="mcc-cell-examples">Grocery stores, supermarkets, hypermarkets, online quick commerce, FMCG marts</td>
             </tr>
             <tr class="mcc-row" data-cat="food" data-keywords="5811 restaurants cafes dining food delivery qsr fast food eateries">
-              <td><span class="mcc-code-badge">5811</span></td>
-              <td><strong>🍴 Restaurants</strong></td>
-              <td>Restaurants, cafés, food delivery aggregators, quick service restaurants (QSR)</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">5811</span><strong class="mcc-category-title">🍴 Restaurants</strong></td>
+              <td class="mcc-cell-examples">Restaurants, cafés, food delivery aggregators, quick service restaurants (QSR)</td>
             </tr>
             <tr class="mcc-row" data-cat="clothing" data-keywords="5651 clothing apparel fashion stores footwear accessories shoes boutique garments">
-              <td><span class="mcc-code-badge">5651</span></td>
-              <td><strong>👗 Clothing &amp; Apparel</strong></td>
-              <td>Apparel, fashion outlets, footwear, garment stores, fashion e-commerce</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">5651</span><strong class="mcc-category-title">👗 Clothing &amp; Apparel</strong></td>
+              <td class="mcc-cell-examples">Apparel, fashion outlets, footwear, garment stores, fashion e-commerce</td>
             </tr>
             <tr class="mcc-row" data-cat="electronics" data-keywords="5732 electronics computers it stores gadgets laptops mobiles consumer electronics appliances">
-              <td><span class="mcc-code-badge">5732</span></td>
-              <td><strong>💻 Electronics</strong></td>
-              <td>Consumer electronics, computer &amp; IT stores, smartphone retailers, hardware outlets</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">5732</span><strong class="mcc-category-title">💻 Electronics</strong></td>
+              <td class="mcc-cell-examples">Consumer electronics, computer &amp; IT stores, smartphone retailers, hardware outlets</td>
             </tr>
             <tr class="mcc-row" data-cat="furniture" data-keywords="5712 furniture home decor household stores interior furnishing bed bath">
-              <td><span class="mcc-code-badge">5712</span></td>
-              <td><strong>🛋️ Furniture &amp; Home</strong></td>
-              <td>Furniture showrooms, home décor, interior furnishings, household stores</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">5712</span><strong class="mcc-category-title">🛋️ Furniture &amp; Home</strong></td>
+              <td class="mcc-cell-examples">Furniture showrooms, home décor, interior furnishings, household stores</td>
             </tr>
             <tr class="mcc-row" data-cat="healthcare" data-keywords="8011 healthcare services hospitals clinics nursing medical diagnostic pharma pharmacy">
-              <td><span class="mcc-code-badge">8011</span></td>
-              <td><strong>➕ Healthcare Services</strong></td>
-              <td>Hospitals, medical clinics, nursing services, specialized diagnostic laboratories</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">8011</span><strong class="mcc-category-title">➕ Healthcare Services</strong></td>
+              <td class="mcc-cell-examples">Hospitals, medical clinics, nursing services, specialized diagnostic laboratories</td>
             </tr>
             <tr class="mcc-row" data-cat="education" data-keywords="8211 education schools colleges universities training coaching institutions academies">
-              <td><span class="mcc-code-badge">8211</span></td>
-              <td><strong>🎓 Education</strong></td>
-              <td>Schools, universities, higher education colleges, coaching institutes, vocational training</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">8211</span><strong class="mcc-category-title">🎓 Education</strong></td>
+              <td class="mcc-cell-examples">Schools, universities, higher education colleges, coaching institutes, vocational training</td>
             </tr>
             <tr class="mcc-row" data-cat="travel" data-keywords="7011 hotels lodging resorts accommodation hospitality guest house homestay travel stay">
-              <td><span class="mcc-code-badge">7011</span></td>
-              <td><strong>✈️ Hotels &amp; Lodging</strong></td>
-              <td>Hotels, holiday resorts, guest accommodations, business lodging, homestays</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">7011</span><strong class="mcc-category-title">✈️ Hotels &amp; Lodging</strong></td>
+              <td class="mcc-cell-examples">Hotels, holiday resorts, guest accommodations, business lodging, homestays</td>
             </tr>
             <tr class="mcc-row" data-cat="transportation" data-keywords="4121 transportation taxis ride hailing limo services cabs mobility aggregators auto travel">
-              <td><span class="mcc-code-badge">4121</span></td>
-              <td><strong>🚗 Transportation</strong></td>
-              <td>Taxis, ride-hailing services, cab fleets, limousine bookings, passenger transport</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">4121</span><strong class="mcc-category-title">🚗 Transportation</strong></td>
+              <td class="mcc-cell-examples">Taxis, ride-hailing services, cab fleets, limousine bookings, passenger transport</td>
             </tr>
             <tr class="mcc-row" data-cat="fuel" data-keywords="5541 fuel automotive petrol pumps gas stations cng ev charging service stations oil">
-              <td><span class="mcc-code-badge">5541</span></td>
-              <td><strong>⛽ Fuel &amp; Automotive</strong></td>
-              <td>Petrol pumps, diesel dispensing stations, highway fuel outlets, automotive refuelling</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">5541</span><strong class="mcc-category-title">⛽ Fuel &amp; Automotive</strong></td>
+              <td class="mcc-cell-examples">Petrol pumps, diesel dispensing stations, highway fuel outlets, automotive refuelling</td>
             </tr>
             <tr class="mcc-row" data-cat="telecom" data-keywords="4814 telecom services mobile internet telecom recharge broadband isp phone cellular">
-              <td><span class="mcc-code-badge">4814</span></td>
-              <td><strong>📡 Telecom Services</strong></td>
-              <td>Cellular operators, broadband internet service providers (ISPs), mobile recharges</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">4814</span><strong class="mcc-category-title">📡 Telecom Services</strong></td>
+              <td class="mcc-cell-examples">Cellular operators, broadband internet service providers (ISPs), mobile recharges</td>
             </tr>
             <tr class="mcc-row" data-cat="financial" data-keywords="6012 financial services banks credit institutions lending fintech loans deposits nbfc">
-              <td><span class="mcc-code-badge">6012</span></td>
-              <td><strong>🏛️ Financial Services</strong></td>
-              <td>Banks, credit institutions, digital lending platforms, loan repayments, NBFCs</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">6012</span><strong class="mcc-category-title">🏛️ Financial Services</strong></td>
+              <td class="mcc-cell-examples">Banks, credit institutions, digital lending platforms, loan repayments, NBFCs</td>
             </tr>
             <tr class="mcc-row" data-cat="entertainment" data-keywords="7832 entertainment cinemas theatres live events movies ticketing shows multiplex concerts">
-              <td><span class="mcc-code-badge">7832</span></td>
-              <td><strong>🎬 Entertainment</strong></td>
-              <td>Cinemas, movie multiplexes, theatrical venues, live concert productions</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">7832</span><strong class="mcc-category-title">🎬 Entertainment</strong></td>
+              <td class="mcc-cell-examples">Cinemas, movie multiplexes, theatrical venues, live concert productions</td>
             </tr>
             <tr class="mcc-row" data-cat="personal" data-keywords="7230 personal services salons spas beauty wellness grooming barbershop aesthetics">
-              <td><span class="mcc-code-badge">7230</span></td>
-              <td><strong>✂️ Personal Services</strong></td>
-              <td>Salons, spas, wellness clinics, beauty parlours, professional grooming centers</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">7230</span><strong class="mcc-category-title">✂️ Personal Services</strong></td>
+              <td class="mcc-cell-examples">Salons, spas, wellness clinics, beauty parlours, professional grooming centers</td>
             </tr>
             <tr class="mcc-row" data-cat="government" data-keywords="9311 government services tax payments government fees public services municipal utilities e-governance">
-              <td><span class="mcc-code-badge">9311</span></td>
-              <td><strong>🏛️ Government Services</strong></td>
-              <td>Tax payments, municipal dues, court &amp; administrative fees, public service portals</td>
+              <td class="mcc-cell-top"><span class="mcc-code-badge">9311</span><strong class="mcc-category-title">🏛️ Government Services</strong></td>
+              <td class="mcc-cell-examples">Tax payments, municipal dues, court &amp; administrative fees, public service portals</td>
             </tr>
           </tbody>
         </table>
