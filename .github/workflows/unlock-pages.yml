@@ -90,18 +90,32 @@ jobs:
           except Exception as e:
               log_print(f'Pages builds query failed: {e}')
 
-          # Trigger fresh pages build
+          # Switch build_type to workflow or reset pages
           try:
-              trigger_url = f'https://api.github.com/repos/{repo}/pages/builds'
-              req = urllib.request.Request(trigger_url, headers=headers, method='POST', data=b'')
+              switch_url = f'https://api.github.com/repos/{repo}/pages'
+              req = urllib.request.Request(
+                  switch_url,
+                  headers={**headers, 'Content-Type': 'application/json'},
+                  method='PUT',
+                  data=json.dumps({'build_type': 'workflow'}).encode('utf-8')
+              )
               with urllib.request.urlopen(req) as resp:
-                  trigger_data = json.loads(resp.read().decode('utf-8'))
-                  log_print(f'Triggered manual page build: status={trigger_data.get(\"status\")} url={trigger_data.get(\"url\")}')
+                  log_print(f'Switch build_type to workflow: HTTP {resp.status}')
           except urllib.error.HTTPError as he:
               body = he.read().decode('utf-8', errors='replace')
-              log_print(f'Trigger page build HTTPError: {he.code} - {body}')
+              log_print(f'Switch build_type HTTPError: {he.code} - {body}')
           except Exception as e:
-              log_print(f'Trigger page build failed: {e}')
+              log_print(f'Switch build_type Exception: {e}')
+
+          # Switch back or inspect pages info
+          try:
+              pages_url = f'https://api.github.com/repos/{repo}/pages'
+              req = urllib.request.Request(pages_url, headers=headers)
+              with urllib.request.urlopen(req) as resp:
+                  info = json.loads(resp.read().decode('utf-8'))
+                  log_print(f'New Pages info: status={info.get(\"status\")}, build_type={info.get(\"build_type\")}')
+          except Exception as e:
+              log_print(f'Pages info query failed: {e}')
 
           with open('debug_deploy.txt', 'w') as f:
               f.write('\n'.join(log))
