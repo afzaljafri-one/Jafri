@@ -703,6 +703,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
         "FinTech",
         "Digital Payments",
         "Payment Gateways",
+        "Payment Aggregators",
+        "Payment Orchestration",
+        "Card-on-File Tokenisation",
         "Merchant Discount Rate (MDR)",
         "Rate Subvention",
         "Merchant Category Codes (MCC)",
@@ -734,7 +737,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
       "mainEntityOfPage": {"@id": "https://jafri.one/payments-ecosystem.html#webpage"},
       "image": "https://jafri.one/assets/og-home.webp",
       "inLanguage": "en-IN",
-      "articleSection": ["Digital Payments", "Payment Gateways", "Merchant Economics", "Payment Rails"]
+      "articleSection": ["Digital Payments", "Payment Gateways", "Payment Aggregators", "Payment Orchestration", "Card Tokenisation", "Merchant Economics", "Payment Rails"]
     },
     {
       "@type": "BreadcrumbList",
@@ -871,7 +874,7 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 <body>
 <header role="banner"><div class="wrap nav">
 <a class="brand jafri-wordmark" href="/" aria-label="Afzal Jafri homepage"><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
-<nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/#expertise">EXPERTISE</a><a href="/career.html">CAREER</a><a href="/payments-ecosystem.html" aria-current="page">PAYMENT ECOSYSTEM</a><a href="/fastag.html">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav>
+<nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/expertise.html">EXPERTISE</a><a href="/career.html">CAREER</a><a href="/payments-ecosystem.html" aria-current="page">PAYMENT ECOSYSTEM</a><a href="/fastag.html">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav>
 <a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn" title="LinkedIn">in</a>
 <button class="menu-toggle" type="button" aria-label="Explore the website navigation" aria-expanded="false" aria-controls="site-navigation"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-copy"><strong>EXPLORE</strong><small>THE SITE</small></span><span class="menu-spark" aria-hidden="true">✦</span></button>
 <a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">CONTACT ME</a>
@@ -914,6 +917,7 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 <div class="quicklinks" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px">
 <a class="quick" href="#pa-vs-pg"><span><b>PA vs PG</b><small>Licensing &amp; tech difference</small></span></a>
 <a class="quick" href="#lifecycle"><span><b>Payment Lifecycle</b><small>5-stage journey &amp; use cases</small></span></a>
+<a class="quick" href="#orchestration"><span><b>Orchestration &amp; Security</b><small>Smart routing &amp; tokenisation</small></span></a>
 <a class="quick" href="#licences"><span><b>PPI vs Banking</b><small>Licences &amp; UPI TPAP layer</small></span></a>
 <a class="quick" href="#economics"><span><b>MDR Economics</b><small>Transaction cost breakdown</small></span></a>
 <a class="quick" href="#mcc"><span><b>MCC Directory</b><small>Search 4-digit category codes</small></span></a>
@@ -1084,6 +1088,54 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 </div>
 <aside class="info"><h3 id="gateway-definition">ⓘ &nbsp;What is a Payment Gateway?</h3><p>A technology platform that securely captures, authenticates and routes payment transactions between the merchant, banks and card networks, and helps settle the funds to the merchant. The gateway is one part of the payment stack; acquiring, processing and settlement may be handled by separate providers.</p></aside>
 </div>
+</section>
+
+<section id="orchestration">
+  <div class="kicker">Infrastructure, Routing &amp; Security</div>
+  <h2 class="section-title">Payment Orchestration &amp; Tokenisation</h2>
+  <p class="section-sub">How modern enterprise payments achieve 99.99% processing resilience, dynamic cost routing and end-to-end credential security.</p>
+
+  <div class="scenarios-grid" style="margin-top:20px">
+    <div class="scenario-card">
+      <div class="scenario-head">
+        <span class="icon">🔀</span>
+        <h4>Multi-Acquirer Orchestration</h4>
+      </div>
+      <p>Single-gateway dependency exposes merchants to downtime and processing bottlenecks. Payment orchestration layers sit above multiple payment aggregators (PAs) and banks, dynamically balancing traffic and switching between backup rails in real time.</p>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head">
+        <span class="icon">⚡</span>
+        <h4>Dynamic Smart Routing</h4>
+      </div>
+      <p>Algorithms route transactions based on card BIN, issuer health metrics, latency and commercial processing costs (MDR). If an acquiring bank switch experiences elevated failure rates, the engine instantly re-routes authorization to a healthy alternate bank.</p>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-head">
+        <span class="icon">🛡️</span>
+        <h4>Card-on-File Tokenisation (CoFT)</h4>
+      </div>
+      <p>In accordance with RBI security guidelines, merchant platforms cannot store raw 16-digit card numbers (PAN) or CVVs. Token Requestors generate device and merchant-specific encrypted cryptograms via card networks (RuPay, Visa, Mastercard) for friction-free repeat checkout.</p>
+    </div>
+  </div>
+
+  <div class="takeaways-banner" style="margin-top:24px">
+    <div class="takeaways-label">Key Pillars of Payment Switch Architecture</div>
+    <div class="takeaways-list">
+      <div class="takeaway-item">
+        <span class="badge-yes" style="font-size:16px">✔</span>
+        <div><strong style="color:var(--white);font-size:13px">Cascade Failover:</strong> Automatically retries dropped card or UPI transactions on secondary processors without forcing the customer to restart checkout.</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="badge-yes" style="font-size:16px">✔</span>
+        <div><strong style="color:var(--white);font-size:13px">Zero Data at Rest Exposure:</strong> End-to-end PCI-DSS Level 1 compliance through hardware security modules (HSM) and symmetric AES-256 field-level encryption.</div>
+      </div>
+      <div class="takeaway-item">
+        <span class="badge-yes" style="font-size:16px">✔</span>
+        <div><strong style="color:var(--white);font-size:13px">Automated Multi-Rail Reconciliation:</strong> Three-way reconciliation matching internal order IDs against gateway settlement files and bank MIS feeds to eliminate revenue leakage.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1467,6 +1519,9 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
     <div class="rail"><strong>RTGS</strong><b>Real-Time Gross Settlement</b><small>High-value continuous gross fund settlement</small></div>
     <div class="rail"><strong>NACH</strong><b>National Automated Clearing</b><small>Automated high-volume recurring mandates &amp; bulk debits</small></div>
     <div class="rail"><strong>Cards</strong><b>Card Networks (RuPay, Visa, MC)</b><small>Tokenised global debit, credit &amp; prepaid switching</small></div>
+    <div class="rail"><strong>BBPS</strong><b>Bharat Bill Payment System</b><small>Interoperable utility &amp; recurring biller clearinghouse</small></div>
+    <div class="rail"><strong>NETC</strong><b>National Electronic Toll Collection</b><small>Interoperable RFID FASTag electronic toll &amp; parking rail</small></div>
+    <div class="rail"><strong>QR</strong><b>Interoperable QR (Bharat / UPI)</b><small>Standardized zero-hardware digital merchant acceptance rail</small></div>
   </div>
 </section>
 
