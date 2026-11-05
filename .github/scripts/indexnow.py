@@ -177,12 +177,20 @@ def get_changed_urls(before_sha, head_sha, event_name, submit_all):
     
     # Ensure both commits are present locally; if not, fetch them explicitly
     for sha, name in [(before_sha, "before"), (head_sha, "head")]:
-        check = subprocess.run(["git", "rev-parse", "--verify", f"{sha}^{{commit}}"],
-                               stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        check = subprocess.run(
+            ["git", "rev-parse", "--verify", f"{sha}^{{commit}}"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
         if check.returncode != 0:
             print(f"Commit {name} ({sha}) not in shallow clone. Fetching commit from origin...")
-            fetch_res = subprocess.run(["git", "fetch", "origin", sha],
-                                       stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            fetch_res = subprocess.run(
+                ["git", "fetch", "origin", sha],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
+            )
             if fetch_res.returncode != 0:
                 raise RuntimeError(
                     f"Fatal error: Unable to resolve {name} commit {sha} in git history. "
@@ -277,12 +285,26 @@ def verify_live_key(key_location, expected_key, retries=5, delay=10):
     print("FATAL: Live key verification failed after all retries.")
     return False
 
-def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", timeout=360, interval=10):
+def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", timeout=300, interval=10):
     """
     Requirement 2: Replaces static sleep with live polling of GitHub Pages deployment completion.
-    Verifies that the deployment check-run for the commit has completed successfully.
+    Verifies that the GitHub Actions deploy check-run for the commit has completed successfully.
+    Strictly verifies complete 40-character hexadecimal commit SHAs.
     """
-    print(f"\n[Deployment Verification] Checking GitHub Pages deployment for {repo} at commit {sha} (event: {event_name})...")
+    if sha and sha.upper() == "HEAD":
+        try:
+            sha = subprocess.check_output(
+                ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.PIPE
+            ).strip()
+        except Exception:
+            pass
+
+    sha = (sha or "").strip().lower()
+    if len(sha) != 40 or not all(c in "0123456789abcdef" for c in sha):
+        print(f"FATAL: Invalid commit SHA '{sha}'. Deployment verification requires a complete 40-character hexadecimal SHA.")
+        return False
+
+    print(f"\n[Deployment Verification] Checking GitHub Pages deployment for {repo} at commit {sha[:7]}...")
     
     headers = {
         "User-Agent": "IndexNow-Deploy-Checker/1.0",
@@ -294,50 +316,33 @@ def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", t
     url = f"https://api.github.com/repos/{repo}/commits/{sha}/check-runs?check_name=deploy"
     start = time.time()
     
-   while time.time() - start < timeout:
-            try:
-                req = urllib.request.Request(url, headers=headers)
-                with urllib.request.urlopen(req, timeout=15) as resp:
-                    data = json.loads(resp.read().decode("utf-8"))
-                    runs = data.get("check_runs", [])
+    while time.time() - start < timeout:
+        elapsed = int(time.time() - start)
+        try:
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+                runs = data.get("check_runs", [])
 
-                matching_runs = [
-                    item for item in runs
-                    if item.get("name") == "deploy"
-                    and item.get("head_sha") == sha
-                ]
+            matching_runs = [
+                r for r in runs
+                if r.get("name") == "deploy" and r.get("head_sha", "").strip().lower() == sha
+            ]
 
-                
-                if matching_runs:
-                    run = matching_runs[0]
-                    status = run.get("status")
-                    conclusion = run.get("conclusion")
-                    elapsed = int(time.time() - start)
-                    print(f"Deploy check-run: status='{status}', conclusion='{conclusion}' (elapsed: {elapsed}s)")
-                    if status == "completed":
-                        if conclusion == "success":
-                            print(f"PASS: GitHub Pages deployment for commit {sha} completed successfully!")
-                            return True
-                        else:
-                            print(f"FATAL: GitHub Pages deployment ended with conclusion '{conclusion}'. Aborting.")
-                            return False
-                else:
-                    elapsed = int(time.time() - start)
-                    print(f"Deploy check-run not created yet by GitHub Actions (elapsed: {elapsed}s)...")
-                    
-                    # On manual workflow_dispatch, verify if latest deployment is active
-                    if event_name == "workflow_dispatch" and elapsed >= 15:
-                        dep_url = f"https://api.github.com/repos/{repo}/deployments?environment=github-pages&per_page=1"
-                        try:
-                            dep_req = urllib.request.Request(dep_url, headers=headers)
-                            with urllib.request.urlopen(dep_req, timeout=15) as dep_resp:
-                                deps = json.loads(dep_resp.read().decode("utf-8"))
-                                if deps:
-                                    latest_dep = deps[0]
-                                    print(f"PASS: Manual dispatch verified on active deployment {latest_dep.get('id')} ({latest_dep.get('sha')[:7]}).")
-                                    return True
-                        except Exception as e_dep:
-                            print(f"Deployment fallback check: {e_dep}")
+            if matching_runs:
+                run = matching_runs[0]
+                status = run.get("status")
+                conclusion = run.get("conclusion")
+                print(f"Deploy check-run: status='{status}', conclusion='{conclusion}' (elapsed: {elapsed}s)")
+                if status == "completed":
+                    if conclusion == "success":
+                        print(f"PASS: GitHub Pages deployment for commit {sha[:7]} completed successfully!")
+                        return True
+                    else:
+                        print(f"FATAL: GitHub Pages deployment ended with conclusion '{conclusion}'. Aborting.")
+                        return False
+            else:
+                print(f"Deploy check-run not created yet for {sha[:7]} (elapsed: {elapsed}s)...")
         except Exception as e:
             print(f"Check-runs API query notice: {e}")
             
