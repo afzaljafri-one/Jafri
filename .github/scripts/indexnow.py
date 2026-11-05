@@ -285,7 +285,7 @@ def verify_live_key(key_location, expected_key, retries=5, delay=10):
     print("FATAL: Live key verification failed after all retries.")
     return False
 
-def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", timeout=300, interval=10):
+def wait_for_github_pages_deployment(repo, sha, token=None, event_name="push", timeout=600, interval=15):
     """
     Requirement 2: Replaces static sleep with live polling of GitHub Pages deployment completion.
     Verifies that the GitHub Actions deploy check-run for the commit has completed successfully.
