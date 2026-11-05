@@ -2,7 +2,35 @@ Cancel 7773e7e1547e508d4447226fe7976b116356a6be: HTTP 204
 Cancel 7583149836 HTTPError: 404 - {"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment","status":"404"}
 Cancel latest HTTPError: 404 - {"message":"Not Found","documentation_url":"https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment","status":"404"}
 Pages info: status=errored, build_type=legacy
-Recent builds: 30
-  Build None: status=errored commit=0411f61d209934d9d0c8c980c0933fdc0850f368
-  Build None: status=errored commit=68d8b11197dcad29a73be30dd8c1d72beb246d44
-  Build None: status=errored commit=1cdfb50feb3651426baa2b397eb2fb79803a5689
+Total builds: 30
+Build id=None status=errored commit=b472131
+Build id=None status=errored commit=3a46be8
+Build id=None status=errored commit=0411f61
+Build id=None status=errored commit=68d8b11
+Build id=None status=errored commit=1cdfb50
+Build id=None status=errored commit=5724795
+Build id=None status=errored commit=d80572f
+Build id=None status=errored commit=db168ab
+Build id=None status=errored commit=824f7e5
+Build id=None status=errored commit=721aeea
+Special Build: id=None status=errored commit=7773e7e error={'message': 'Page build failed.'}
+Build id=None status=built commit=63b01b6
+Build id=None status=built commit=a8142a9
+Build id=None status=built commit=be53ab0
+Build id=None status=built commit=5f7c9e4
+Build id=None status=built commit=d6abe3c
+Build id=None status=built commit=a8871fb
+Build id=None status=built commit=68cd39c
+Build id=None status=built commit=8a8e43e
+Build id=None status=built commit=e8cc92d
+Build id=None status=built commit=02b829c
+Build id=None status=built commit=02e6c3b
+Build id=None status=built commit=6ad9d73
+Build id=None status=built commit=78d998d
+Build id=None status=built commit=fa64923
+Build id=None status=built commit=0ad2629
+Build id=None status=built commit=3d7be16
+Build id=None status=built commit=ce95af6
+Build id=None status=built commit=597b4c1
+Build id=None status=built commit=d6f56bb
+Pages deployments list query: HTTP Error 404: Not Found
