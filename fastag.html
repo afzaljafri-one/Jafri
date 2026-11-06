@@ -322,8 +322,17 @@ footer{border-top:1px solid var(--line);padding:22px 0;margin-top:32px;color:#aa
 /* Shared header system across every page */
 header{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
 header .wrap.nav{width:min(var(--max,1260px),calc(100% - 48px));min-height:76px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(6px,0.8vw,14px);padding:8px 0;overflow:visible}
-header .brand{display:flex;align-items:center;flex:0 0 138px;width:138px;min-width:138px;max-width:138px;overflow:visible}
-header .brand img,header .brand .brand-logo{display:block;width:138px!important;height:60px!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important}
+header .brand{position:relative;display:flex;align-items:center;flex:0 0 138px;width:138px;min-width:138px;max-width:138px;overflow:visible}
+header .brand-video{position:absolute;top:0;left:0;width:100%!important;height:100%!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important;mix-blend-mode:screen;z-index:2;pointer-events:none;transition:opacity .8s ease}
+header .brand-logo{display:block;width:138px!important;height:60px!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important;transition:opacity .8s ease}
+header .brand.is-playing .brand-video{opacity:1}
+header .brand.is-playing .brand-logo{opacity:0}
+header .brand.has-ended .brand-video{opacity:0;pointer-events:none}
+header .brand.has-ended .brand-logo{opacity:1!important}
+@media (prefers-reduced-motion: reduce){
+ header .brand-video{display:none!important}
+ header .brand-logo{opacity:1!important}
+}
 header .navlinks{position:static;display:flex;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;gap:clamp(5px,0.75vw,12px);white-space:nowrap;overflow:visible}
 header .navlinks a{font-size:9.5px;letter-spacing:.075em;line-height:1.2;text-transform:uppercase;color:#d6d0c6;text-decoration:none;padding:10px 0}
 header .navlinks a:hover,header .navlinks a[aria-current="page"],header .navlinks a[aria-current="true"]{color:#e0c28b}
@@ -335,7 +344,7 @@ header .navcta:hover{background:rgba(199,166,106,.13)}
 @media(max-width:1150px) and (min-width:801px){
  header .wrap.nav{gap:6px;width:calc(100% - 24px)}
  header .brand{flex-basis:110px;width:110px;min-width:110px;max-width:110px}
- header .brand img,header .brand .brand-logo{width:110px!important;height:48px!important;max-height:48px!important}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:110px!important;height:48px!important;max-height:48px!important}
  header .navlinks{gap:clamp(4px,0.6vw,7px)}
  header .navlinks a{font-size:8px;letter-spacing:.045em}
  header .nav-social{flex-basis:28px;width:28px;height:28px;min-width:28px;font-size:12px}
@@ -344,7 +353,7 @@ header .navcta:hover{background:rgba(199,166,106,.13)}
 @media(max-width:920px) and (min-width:801px){
  header .wrap.nav{gap:4px;width:calc(100% - 16px)}
  header .brand{flex-basis:92px;width:92px;min-width:92px;max-width:92px}
- header .brand img,header .brand .brand-logo{width:92px!important;height:40px!important;max-height:40px!important}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:92px!important;height:40px!important;max-height:40px!important}
  header .navlinks{gap:4px}
  header .navlinks a{font-size:7.5px;letter-spacing:.035em}
  header .nav-social{flex-basis:26px;width:26px;height:26px;min-width:26px;font-size:11px}
@@ -353,7 +362,7 @@ header .navcta:hover{background:rgba(199,166,106,.13)}
 @media(max-width:800px){
  header .wrap.nav{width:calc(100% - 24px);min-height:62px;height:auto;gap:6px;flex-wrap:nowrap;padding:6px 0}
  header .brand{flex:0 0 102px;width:102px;min-width:88px;max-width:106px}
- header .brand img,header .brand .brand-logo{width:100%!important;height:46px!important;max-height:46px!important}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:100%!important;height:46px!important;max-height:46px!important}
  header .navlinks{display:none!important;position:absolute!important;top:calc(100% + 7px)!important;left:0!important;right:0!important;z-index:200!important;width:100%!important;max-height:min(72vh,560px);overflow-y:auto!important;flex:initial!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:18px 20px 12px!important;background:linear-gradient(145deg,#17140f,#0d0d0d 58%);border:1px solid rgba(199,166,106,.45);box-shadow:0 18px 48px rgba(0,0,0,.72);border-radius:5px;white-space:normal!important}
  header .navlinks.is-open{display:flex!important}
  header .navlinks::before{content:"EXPLORE THE PORTFOLIO";display:block;color:#c7a66a;font-size:9px;font-weight:700;letter-spacing:.23em;padding:0 0 12px;margin-bottom:5px;border-bottom:1px solid rgba(199,166,106,.22)}
@@ -394,7 +403,7 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 </head>
 <body>
 <header role="banner"><div class="wrap nav">
-<a class="brand jafri-wordmark" href="/" aria-label="Afzal Jafri homepage"><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
+<a class="brand jafri-wordmark is-playing" href="/" aria-label="Afzal Jafri homepage"><video class="brand-video" autoplay muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="/assets/brand/afzal-jafri-logo.mp4" type="video/mp4"></video><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
 <nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/expertise.html">EXPERTISE</a><a href="/operations-transformation.html">OPERATIONS</a><a href="/career.html">CAREER</a><a href="/payments-ecosystem.html">PAYMENT ECOSYSTEM</a><a href="/fastag.html" aria-current="page">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav>
 <a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn" title="LinkedIn">in</a>
 <button class="menu-toggle" type="button" aria-label="Explore the website navigation" aria-expanded="false" aria-controls="site-navigation"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-copy"><strong>EXPLORE</strong><small>THE SITE</small></span><span class="menu-spark" aria-hidden="true">✦</span></button>
@@ -564,4 +573,45 @@ document.addEventListener('click', function(event) {
 })();
 </script>
 
+<script>
+(function(){
+  const brand = document.querySelector('header .brand');
+  const video = brand ? brand.querySelector('.brand-video') : null;
+  if (!brand || !video) return;
+
+  function finish(immediate) {
+    if (brand.classList.contains('has-ended')) return;
+    brand.classList.remove('is-playing');
+    brand.classList.add('has-ended');
+    if (immediate) {
+      try { video.remove(); } catch(e){}
+    } else {
+      setTimeout(function(){
+        try { video.pause(); video.remove(); } catch(e){}
+      }, 900);
+    }
+  }
+
+  // Check reduced motion
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    finish(true);
+    return;
+  }
+
+  // Play animation once when homepage initially loads
+  video.addEventListener('ended', function(){ finish(false); }, { once: true });
+  video.addEventListener('error', function(){ finish(true); }, { once: true });
+
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function(){
+      // Autoplay blocked on mobile or power-saver mode
+      finish(true);
+    });
+  }
+
+  // Safety fallback: video is ~10s duration
+  setTimeout(function(){ finish(false); }, 11500);
+})();
+</script>
 </body></html>
