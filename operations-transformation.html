@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TD4H6773');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Operations &amp; Business Transformation | Afzal Jafri</title>
@@ -326,8 +333,20 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 @media(max-width:800px){.brand.jafri-wordmark{width:clamp(84px,22vw,102px)!important;min-width:76px!important;max-width:104px!important;height:44px!important}.brand.jafri-wordmark .brand-logo{height:42px!important;max-height:42px!important}}
 @media(max-width:360px){.brand.jafri-wordmark{width:76px!important;min-width:70px!important;max-width:80px!important;height:40px!important}.brand.jafri-wordmark .brand-logo{height:38px!important;max-height:38px!important}}
 </style>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z7iblovjp4");
+</script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD4H6773"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header role="banner"><div class="wrap nav">
 <a class="brand jafri-wordmark is-playing" href="/" aria-label="Afzal Jafri homepage"><video class="brand-video" autoplay muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="/assets/brand/afzal-jafri-logo.mp4" type="video/mp4"></video><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
@@ -835,6 +854,52 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
   // Safety fallback: video is ~10s duration
   setTimeout(function(){ finish(false); }, 11500);
 })();
+</script>
+<!-- Outbound Click Tracking: Google Tag Manager (dataLayer) & Microsoft Clarity -->
+<script>
+document.addEventListener('click', function(event) {
+  var link = event.target.closest('a[href]');
+  if (!link) return;
+
+  var url;
+  try {
+    url = new URL(link.href, window.location.href);
+  } catch (e) {
+    return;
+  }
+
+  var host = url.hostname.toLowerCase();
+
+  // WhatsApp click tracking
+  if (host === 'wa.me' || host === 'whatsapp.com' || host.endsWith('.whatsapp.com')) {
+    var waLabel = (link.innerText || link.getAttribute('aria-label') || 'WhatsApp').trim().slice(0, 100);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'whatsapp_click',
+      link_domain: host,
+      link_text: waLabel,
+      page_path: window.location.pathname
+    });
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'whatsapp_click');
+    }
+  }
+
+  // LinkedIn click tracking
+  if (host === 'linkedin.com' || host.endsWith('.linkedin.com')) {
+    var liLabel = (link.innerText || link.getAttribute('aria-label') || 'LinkedIn').trim().slice(0, 100);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'linkedin_click',
+      link_domain: host,
+      link_text: liLabel,
+      page_path: window.location.pathname
+    });
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'linkedin_click');
+    }
+  }
+});
 </script>
 </body>
 </html>

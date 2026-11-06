@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TD4H6773');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Executive Expertise &amp; Strategic Capabilities | Afzal Jafri</title>
@@ -211,16 +218,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.sectionhead{display:block}.stats{grid-template-columns:repeat(2,1fr);gap:18px}.cta .inner{display:block}.cta .btn{margin-top:18px}}
 </style>
 
-<!-- Google Analytics 4 -->
-<link rel=preconnect href="https://www.googletagmanager.com">
 <link rel=preconnect href="https://www.clarity.ms">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTJ0FR8T4P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MTJ0FR8T4P');
-</script>
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){
@@ -318,6 +316,10 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD4H6773"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <header role="banner"><div class="wrap nav">
 <a class="brand jafri-wordmark is-playing" href="/" aria-label="Afzal Jafri homepage"><video class="brand-video" autoplay muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="/assets/brand/afzal-jafri-logo.mp4" type="video/mp4"></video><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
 <nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/expertise.html" aria-current="page">EXPERTISE</a><a href="/operations-transformation.html">OPERATIONS</a><a href="/career.html">CAREER</a><a href="/payments-ecosystem.html">PAYMENT ECOSYSTEM</a><a href="/fastag.html">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav>
@@ -725,6 +727,52 @@ document.addEventListener('DOMContentLoaded', function() {
   // Safety fallback: video is ~10s duration
   setTimeout(function(){ finish(false); }, 11500);
 })();
+</script>
+<!-- Outbound Click Tracking: Google Tag Manager (dataLayer) & Microsoft Clarity -->
+<script>
+document.addEventListener('click', function(event) {
+  var link = event.target.closest('a[href]');
+  if (!link) return;
+
+  var url;
+  try {
+    url = new URL(link.href, window.location.href);
+  } catch (e) {
+    return;
+  }
+
+  var host = url.hostname.toLowerCase();
+
+  // WhatsApp click tracking
+  if (host === 'wa.me' || host === 'whatsapp.com' || host.endsWith('.whatsapp.com')) {
+    var waLabel = (link.innerText || link.getAttribute('aria-label') || 'WhatsApp').trim().slice(0, 100);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'whatsapp_click',
+      link_domain: host,
+      link_text: waLabel,
+      page_path: window.location.pathname
+    });
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'whatsapp_click');
+    }
+  }
+
+  // LinkedIn click tracking
+  if (host === 'linkedin.com' || host.endsWith('.linkedin.com')) {
+    var liLabel = (link.innerText || link.getAttribute('aria-label') || 'LinkedIn').trim().slice(0, 100);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'linkedin_click',
+      link_domain: host,
+      link_text: liLabel,
+      page_path: window.location.pathname
+    });
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'linkedin_click');
+    }
+  }
+});
 </script>
 </body>
 </html>
