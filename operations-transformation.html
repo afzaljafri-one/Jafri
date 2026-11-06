@@ -245,12 +245,63 @@ details p{margin:14px 0 0;font-size:14px;line-height:1.8;color:var(--muted)}
   .navcta{padding:0 5px!important;font-size:7.5px!important}
 }
 </style>
+<style id="site-header-unified">
+/* Shared header system across every page */
+header{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+header .wrap.nav{width:min(var(--max,1260px),calc(100% - 48px));min-height:76px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(8px,1vw,16px);padding:8px 0;overflow:visible}
+header .brand{display:flex;align-items:center;flex:0 0 138px;width:138px;min-width:138px;max-width:138px;overflow:visible}
+header .brand img,header .brand .brand-logo{display:block;width:138px!important;height:60px!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important}
+header .navlinks{position:static;display:flex;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;gap:clamp(7px,0.95vw,15px);white-space:nowrap;overflow:visible}
+header .navlinks a{font-size:10px;letter-spacing:.085em;line-height:1.2;text-transform:uppercase;color:#d6d0c6;text-decoration:none;padding:10px 0}
+header .navlinks a:hover,header .navlinks a[aria-current="page"],header .navlinks a[aria-current="true"]{color:#e0c28b}
+header .nav-social{display:flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;min-width:34px;margin:0!important;border:1px solid rgba(199,166,106,.55);border-radius:50%;color:#e0c28b;text-decoration:none;font-family:Arial,sans-serif;font-size:14px;font-weight:700;line-height:1}
+header .nav-social:hover{background:rgba(199,166,106,.16)}
+header .menu-toggle{display:none;flex:0 0 auto}
+header .navcta{display:flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:38px;margin:0!important;padding:0 14px!important;border:1px solid rgba(199,166,106,.85);border-radius:3px;color:#e0c28b;background:transparent;font-size:9.5px!important;letter-spacing:.1em!important;white-space:nowrap;text-decoration:none}
+header .navcta:hover{background:rgba(199,166,106,.13)}
+@media(max-width:1100px) and (min-width:801px){
+ header .wrap.nav{gap:8px;width:calc(100% - 32px)}
+ header .brand{flex-basis:114px;width:114px;min-width:114px;max-width:114px}
+ header .brand img,header .brand .brand-logo{width:114px!important}
+ header .navlinks{gap:7px}
+ header .navlinks a{font-size:8.5px;letter-spacing:.06em}
+ header .nav-social{flex-basis:30px;width:30px;height:30px;min-width:30px}
+ header .navcta{padding:0 9px!important;font-size:8.5px!important}
+}
+@media(max-width:800px){
+ header .wrap.nav{width:calc(100% - 24px);min-height:62px;height:auto;gap:6px;flex-wrap:nowrap;padding:6px 0}
+ header .brand{flex:0 0 102px;width:102px;min-width:88px;max-width:106px}
+ header .brand img,header .brand .brand-logo{width:100%!important;height:46px!important;max-height:46px!important}
+ header .navlinks{display:none!important;position:absolute!important;top:calc(100% + 7px)!important;left:0!important;right:0!important;z-index:200!important;width:100%!important;max-height:min(72vh,560px);overflow-y:auto!important;flex:initial!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:18px 20px 12px!important;background:linear-gradient(145deg,#17140f,#0d0d0d 58%);border:1px solid rgba(199,166,106,.45);box-shadow:0 18px 48px rgba(0,0,0,.72);border-radius:5px;white-space:normal!important}
+ header .navlinks.is-open{display:flex!important}
+ header .navlinks::before{content:"EXPLORE THE PORTFOLIO";display:block;color:#c7a66a;font-size:9px;font-weight:700;letter-spacing:.23em;padding:0 0 12px;margin-bottom:5px;border-bottom:1px solid rgba(199,166,106,.22)}
+ header .navlinks a{display:flex!important;align-items:center;min-height:44px;padding:10px 2px!important;border-bottom:1px solid rgba(255,255,255,.075)!important;color:#eee7da!important;font-size:11px!important;letter-spacing:.12em!important}
+ header .navlinks a::after{content:"↗";margin-left:auto;color:#a88b58}
+ header .navlinks a:last-child{border-bottom:0!important}
+ header .nav-social{flex:0 0 30px;width:30px;height:30px;min-width:30px;font-size:13px;margin-left:auto!important}
+ header .menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;gap:5px;flex:0 0 68px;width:68px;min-width:68px;height:34px;min-height:34px;padding:0 6px;border:1px solid rgba(199,166,106,.78);border-radius:3px;background:linear-gradient(135deg,rgba(199,166,106,.18),rgba(199,166,106,.045));color:#e0c28b}
+ header .menu-icon{width:13px;height:10px;display:flex;flex-direction:column;justify-content:space-between}
+ header .menu-icon i{display:block;height:1.5px;background:currentColor;border-radius:2px}
+ header .menu-copy{display:flex;flex-direction:column;line-height:1;gap:2px}
+ header .menu-copy strong{font-size:7.5px;letter-spacing:.1em}
+ header .menu-copy small,header .menu-spark{display:none}
+ header .navcta{min-height:34px;height:34px;padding:0 8px!important;font-size:8px!important;letter-spacing:.06em!important;flex:0 0 auto}
+ body.menu-open{overflow:hidden}
+}
+@media(max-width:375px){
+ header .wrap.nav{gap:4px;width:calc(100% - 16px)}
+ header .brand{flex-basis:82px;width:82px;min-width:76px}
+ header .menu-toggle{flex-basis:60px;width:60px;min-width:60px;padding:0 4px}
+ header .navcta{padding:0 5px!important;font-size:7.5px!important}
+ header .nav-social{flex-basis:28px;width:28px;height:28px;min-width:28px}
+}
+</style>
 </head>
 <body>
 
 <header role="banner"><div class="wrap nav">
 <a class="brand jafri-wordmark" href="/" aria-label="Afzal Jafri homepage"><img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async"></a>
-<nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/expertise.html">EXPERTISE</a><a href="/operations-transformation.html" aria-current="page">OPERATIONS</a><a href="/payments-ecosystem.html">PAYMENTS &amp; FINTECH</a><a href="/mobility.html">MOBILITY</a><a href="/career.html">CAREER</a><a href="/work.html">WORK</a></nav>
+<nav id="site-navigation" class="navlinks" aria-label="Main navigation"><a href="/#about">ABOUT</a><a href="/#impact">IMPACT</a><a href="/expertise.html">EXPERTISE</a><a href="/career.html">CAREER</a><a href="/payments-ecosystem.html">PAYMENT ECOSYSTEM</a><a href="/fastag.html">B2B FASTAG</a><a href="/ncmc.html">NCMC</a><a href="/mobility.html">MOBILITY</a><a href="/#contact">CONTACT</a></nav>
 <a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn" title="LinkedIn">in</a>
 <button class="menu-toggle" type="button" aria-label="Explore the website navigation" aria-expanded="false" aria-controls="site-navigation"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-copy"><strong>EXPLORE</strong><small>THE SITE</small></span><span class="menu-spark" aria-hidden="true">✦</span></button>
 <a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">CONTACT ME</a>
