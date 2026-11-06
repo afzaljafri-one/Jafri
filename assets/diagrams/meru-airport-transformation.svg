@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="100%" role="img" aria-label="Meru Cabs Airport Mobility Transformation: Transition from Prepaid to Postpaid Model">
+  <defs>
+    <linearGradient id="meruBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1017"/>
+      <stop offset="100%" stop-color="#07090d"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#151b26"/>
+      <stop offset="100%" stop-color="#0e131d"/>
+    </linearGradient>
+    <linearGradient id="goldCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f1a12"/>
+      <stop offset="100%" stop-color="#14110b"/>
+    </linearGradient>
+    <linearGradient id="redesignGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c2436"/>
+      <stop offset="100%" stop-color="#121824"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="420" fill="url(#meruBg)" rx="12"/>
+  <rect x="1" y="1" width="958" height="418" fill="none" stroke="rgba(199,166,106,0.22)" stroke-width="1" rx="11"/>
+
+  <!-- Title & Kicker -->
+  <text x="480" y="36" text-anchor="middle" fill="#c7a66a" font-family="Inter, -apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="3">MERU CABS · AIRPORT OPERATING MODEL TRANSFORMATION</text>
+  <text x="480" y="64" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="20" font-weight="400">Commercial Redesign &amp; Operational Transition: Prepaid to Postpaid</text>
+
+  <!-- STEP 1: PREPAID MODEL (Left) -->
+  <g transform="translate(32, 90)" filter="url(#boxShadow)">
+    <rect width="268" height="295" rx="8" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="268" height="38" rx="8" fill="#1b2230"/>
+    <text x="16" y="24" fill="#a5b4fc" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">STEP 1 · PREPAID MODEL</text>
+    
+    <g transform="translate(16, 54)">
+      <text x="0" y="14" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Counter-Led Operations</text>
+      <text x="0" y="34" fill="#8b949e" font-family="Inter, sans-serif" font-size="11" line-height="1.5">
+        <tspan x="0" dy="0">• Upfront booking counter queues</tspan>
+        <tspan x="0" dy="20">• Manual cash collection &amp; paper slips</tspan>
+        <tspan x="0" dy="20">• Static zone-based destination fare</tspan>
+        <tspan x="0" dy="20">• High passenger curb wait times</tspan>
+        <tspan x="0" dy="20">• Cash reconciliation overhead</tspan>
+      </text>
+      
+      <rect x="0" y="180" width="236" height="42" rx="4" fill="#111622" stroke="rgba(255,255,255,0.06)"/>
+      <text x="118" y="198" text-anchor="middle" fill="#8b949e" font-family="Inter, sans-serif" font-size="10" font-weight="600">BOTTLENECK</text>
+      <text x="118" y="213" text-anchor="middle" fill="#e2e8f0" font-family="Inter, sans-serif" font-size="10.5">Terminal congestion &amp; slow turnover</text>
+    </g>
+  </g>
+
+  <!-- ARROW 1 -->
+  <g transform="translate(308, 222)">
+    <line x1="0" y1="0" x2="32" y2="0" stroke="#c7a66a" stroke-width="2" stroke-dasharray="4,4"/>
+    <polygon points="32,-5 42,0 32,5" fill="#c7a66a"/>
+  </g>
+
+  <!-- STEP 2: COMMERCIAL REDESIGN (Middle) -->
+  <g transform="translate(354, 90)" filter="url(#boxShadow)">
+    <rect width="252" height="295" rx="8" fill="url(#redesignGrad)" stroke="rgba(199,166,106,0.3)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="252" height="38" rx="8" fill="#242c3d"/>
+    <text x="16" y="24" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">STEP 2 · COMMERCIAL REDESIGN</text>
+    
+    <g transform="translate(16, 54)">
+      <text x="0" y="14" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Architecture Shift</text>
+      <text x="0" y="34" fill="#cbd5e1" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• Redesigned curb dispatch protocols</tspan>
+        <tspan x="0" dy="20">• Integrated digital trip metering</tspan>
+        <tspan x="0" dy="20">• Automated trip initiation at barrier</tspan>
+        <tspan x="0" dy="20">• Driver settlement reconfiguration</tspan>
+        <tspan x="0" dy="20">• DIAL / airport stakeholder alignment</tspan>
+      </text>
+
+      <rect x="0" y="180" width="220" height="42" rx="4" fill="#161e2b" stroke="rgba(199,166,106,0.2)"/>
+      <text x="110" y="198" text-anchor="middle" fill="#c7a66a" font-family="Inter, sans-serif" font-size="10" font-weight="700">CORE INTERVENTION</text>
+      <text x="110" y="213" text-anchor="middle" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="10.5">Commercial &amp; operational alignment</text>
+    </g>
+  </g>
+
+  <!-- ARROW 2 -->
+  <g transform="translate(614, 222)">
+    <line x1="0" y1="0" x2="32" y2="0" stroke="#c7a66a" stroke-width="2"/>
+    <polygon points="32,-5 42,0 32,5" fill="#e0c28b"/>
+  </g>
+
+  <!-- STEP 3: POSTPAID MODEL (Right) -->
+  <g transform="translate(660, 90)" filter="url(#boxShadow)">
+    <rect width="268" height="295" rx="8" fill="url(#goldCardGrad)" stroke="rgba(199,166,106,0.5)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="268" height="38" rx="8" fill="#292013"/>
+    <text x="16" y="24" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">STEP 3 · POSTPAID MODEL</text>
+    
+    <g transform="translate(16, 54)">
+      <text x="0" y="14" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Streamlined Curb Throughput</text>
+      <text x="0" y="34" fill="#e0d5c1" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• Direct passenger curb boarding</tspan>
+        <tspan x="0" dy="20">• Fare settlement at trip destination</tspan>
+        <tspan x="0" dy="20">• 3× faster vehicle turnaround</tspan>
+        <tspan x="0" dy="20">• Zero counter bottlenecks</tspan>
+        <tspan x="0" dy="20">• Higher driver trip earnings &amp; volume</tspan>
+      </text>
+
+      <rect x="0" y="180" width="236" height="42" rx="4" fill="#1f180e" stroke="rgba(199,166,106,0.3)"/>
+      <text x="118" y="198" text-anchor="middle" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10" font-weight="700">BUSINESS IMPACT</text>
+      <text x="118" y="213" text-anchor="middle" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="10.5">Higher fleet productivity &amp; revenue</text>
+    </g>
+  </g>
+</svg>

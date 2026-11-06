@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="100%" role="img" aria-label="B2B FASTag and NCMC Multimodal Transit and Commercial Ecosystem">
+  <defs>
+    <linearGradient id="transBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e16"/>
+      <stop offset="100%" stop-color="#06090e"/>
+    </linearGradient>
+    <linearGradient id="fastagGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b2316"/>
+      <stop offset="100%" stop-color="#0f160c"/>
+    </linearGradient>
+    <linearGradient id="ncmcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c2c"/>
+      <stop offset="100%" stop-color="#0d131f"/>
+    </linearGradient>
+    <linearGradient id="coreBank" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#231b11"/>
+      <stop offset="100%" stop-color="#141009"/>
+    </linearGradient>
+    <filter id="tShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="960" height="420" fill="url(#transBg)" rx="12"/>
+  <rect x="1" y="1" width="958" height="418" fill="none" stroke="rgba(199,166,106,0.22)" stroke-width="1" rx="11"/>
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" fill="#c7a66a" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="3">TRANSIT PAYMENTS · B2B FASTAG &amp; NCMC ECOSYSTEM</text>
+  <text x="480" y="62" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="20" font-weight="400">Institutional Issuance, Acquiring &amp; Multi-modal Clearing Architecture</text>
+
+  <!-- Left: B2B FASTag (NETC / NPCI) -->
+  <g transform="translate(36, 92)" filter="url(#tShadow)">
+    <rect width="270" height="295" rx="8" fill="url(#fastagGrad)" stroke="rgba(199,166,106,0.3)" stroke-width="1"/>
+    <rect x="0" y="0" width="270" height="36" rx="8" fill="#1b2416"/>
+    <text x="16" y="23" fill="#86efac" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">B2B FASTAG ECOSYSTEM</text>
+    <g transform="translate(16, 52)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Corporate &amp; Commercial Scale</text>
+      <text x="0" y="32" fill="#d1fae5" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• ~₹500 Cr annual business volume</tspan>
+        <tspan x="0" dy="18">• Commercial fleet tie-ups (BlackBuck, WheelsEye)</tspan>
+        <tspan x="0" dy="18">• Parking automation (Park+, ValetEZ, GoParkk)</tspan>
+        <tspan x="0" dy="18">• HPCL / IOCL fuel payment clearing</tspan>
+        <tspan x="0" dy="18">• Bulk tag issuance &amp; enterprise wallet API</tspan>
+      </text>
+
+      <rect x="0" y="145" width="238" height="42" rx="4" fill="#121a0f" stroke="rgba(134,239,172,0.2)"/>
+      <text x="119" y="162" text-anchor="middle" fill="#86efac" font-family="Inter, sans-serif" font-size="10" font-weight="700">SCALE OUTCOME</text>
+      <text x="119" y="177" text-anchor="middle" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="10.5">~₹500 Cr Annual FASTag Volume</text>
+    </g>
+  </g>
+
+  <!-- Center: Banking & Clearing Infrastructure -->
+  <g transform="translate(338, 92)" filter="url(#tShadow)">
+    <rect width="284" height="295" rx="10" fill="url(#coreBank)" stroke="rgba(199,166,106,0.6)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="284" height="36" rx="10" fill="#241e12"/>
+    <text x="142" y="23" text-anchor="middle" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10.5" font-weight="700">CORE BANKING &amp; ALLIANCES</text>
+    <g transform="translate(16, 52)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Georgia, serif" font-size="15">Airtel Payments Bank Hub</text>
+      <text x="0" y="32" fill="#e0d5c1" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• Sponsor bank clearing connectivity</tspan>
+        <tspan x="0" dy="18">• NPCI NETC &amp; RuPay qSPARC integration</tspan>
+        <tspan x="0" dy="18">• Public-sector tender groundwork (DMRC)</tspan>
+        <tspan x="0" dy="18">• TSP selection &amp; consortium management</tspan>
+        <tspan x="0" dy="18">• Digital float &amp; settlement reconciliation</tspan>
+      </text>
+
+      <rect x="0" y="145" width="252" height="42" rx="4" fill="#1b160e" stroke="rgba(199,166,106,0.3)"/>
+      <text x="126" y="162" text-anchor="middle" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10" font-weight="700">LEADERSHIP ROLE</text>
+      <text x="126" y="177" text-anchor="middle" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="10.5">Origination, Tender Groundwork &amp; Alliances</text>
+    </g>
+  </g>
+
+  <!-- Right: NCMC Transit Ticketing -->
+  <g transform="translate(654, 92)" filter="url(#tShadow)">
+    <rect width="270" height="295" rx="8" fill="url(#ncmcGrad)" stroke="rgba(137,162,196,0.3)" stroke-width="1"/>
+    <rect x="0" y="0" width="270" height="36" rx="8" fill="#1a2233"/>
+    <text x="16" y="23" fill="#93c5fd" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">NCMC &amp; METRO TICKETING</text>
+    <g transform="translate(16, 52)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Transit Agency Rails</text>
+      <text x="0" y="32" fill="#bfdbfe" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• DMRC smart card recharge origination</tspan>
+        <tspan x="0" dy="18">• Metro AFC tender preparation &amp; bidding</tspan>
+        <tspan x="0" dy="18">• RuPay contactless card issuance</tspan>
+        <tspan x="0" dy="18">• Account-Based Ticketing (ABT) architecture</tspan>
+        <tspan x="0" dy="18">• Multimodal interoperability (Bus, Metro, Toll)</tspan>
+      </text>
+
+      <rect x="0" y="145" width="238" height="42" rx="4" fill="#101622" stroke="rgba(147,197,253,0.2)"/>
+      <text x="119" y="162" text-anchor="middle" fill="#93c5fd" font-family="Inter, sans-serif" font-size="10" font-weight="700">INFRASTRUCTURE IMPACT</text>
+      <text x="119" y="177" text-anchor="middle" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="10.5">National Open-Loop Transit Rails</text>
+    </g>
+  </g>
+
+  <!-- Bi-directional connections -->
+  <line x1="306" y1="239" x2="338" y2="239" stroke="#c7a66a" stroke-width="2"/>
+  <line x1="622" y1="239" x2="654" y2="239" stroke="#c7a66a" stroke-width="2"/>
+</svg>

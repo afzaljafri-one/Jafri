@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="100%" height="100%" role="img" aria-label="Meru Cabs Daily Driver Subscription Operating Ecosystem">
+  <defs>
+    <linearGradient id="driverBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="100%" stop-color="#07090f"/>
+    </linearGradient>
+    <linearGradient id="ecoPillar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a26"/>
+      <stop offset="100%" stop-color="#0e131d"/>
+    </linearGradient>
+    <linearGradient id="ecoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f1a11"/>
+      <stop offset="100%" stop-color="#14110b"/>
+    </linearGradient>
+    <filter id="ecoShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="960" height="400" fill="url(#driverBg)" rx="12"/>
+  <rect x="1" y="1" width="958" height="398" fill="none" stroke="rgba(199,166,106,0.22)" stroke-width="1" rx="11"/>
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" fill="#c7a66a" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="3">MERU CABS · DRIVER OPERATING ECOSYSTEM</text>
+  <text x="480" y="62" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="20" font-weight="400">Daily Driver Subscription Operating Model (Covering 2,000–5,000 Drivers)</text>
+
+  <!-- 4 Step Circular / Continuous Flow Layout -->
+  
+  <!-- Step 1: Vehicle & Asset Allocation -->
+  <g transform="translate(36, 100)" filter="url(#ecoShadow)">
+    <rect width="204" height="250" rx="8" fill="url(#ecoPillar)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="204" height="34" rx="8" fill="#1c2333"/>
+    <text x="14" y="22" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10" font-weight="700">01 / ALLOCATION</text>
+    
+    <g transform="translate(14, 50)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Dedicated Asset</text>
+      <text x="0" y="32" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• Sedan taxi allotted</tspan>
+        <tspan x="0" dy="18">• Micro-entrepreneur mindset</tspan>
+        <tspan x="0" dy="18">• Driver ownership of shift</tspan>
+        <tspan x="0" dy="18">• Standardised handover SOP</tspan>
+      </text>
+
+      <rect x="0" y="124" width="176" height="34" rx="4" fill="#0f141f"/>
+      <text x="88" y="145" text-anchor="middle" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10.5">Asset Utilization</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1-2 -->
+  <g transform="translate(244, 215)">
+    <line x1="0" y1="0" x2="22" y2="0" stroke="#c7a66a" stroke-width="1.5"/>
+    <polygon points="22,-4 28,0 22,4" fill="#c7a66a"/>
+  </g>
+
+  <!-- Step 2: Tech Dispatch & Demand Routing -->
+  <g transform="translate(276, 100)" filter="url(#ecoShadow)">
+    <rect width="204" height="250" rx="8" fill="url(#ecoPillar)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="204" height="34" rx="8" fill="#1c2333"/>
+    <text x="14" y="22" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10" font-weight="700">02 / DISPATCH</text>
+    
+    <g transform="translate(14, 50)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">24×7 Network Demand</text>
+      <text x="0" y="32" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• GPS MDT unit trip dispatch</tspan>
+        <tspan x="0" dy="18">• Airport counter allocations</tspan>
+        <tspan x="0" dy="18">• Point-to-point city trips</tspan>
+        <tspan x="0" dy="18">• Maximised trip earnings</tspan>
+      </text>
+
+      <rect x="0" y="124" width="176" height="34" rx="4" fill="#0f141f"/>
+      <text x="88" y="145" text-anchor="middle" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10.5">24×7 Active Fleets</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2-3 -->
+  <g transform="translate(484, 215)">
+    <line x1="0" y1="0" x2="22" y2="0" stroke="#c7a66a" stroke-width="1.5"/>
+    <polygon points="22,-4 28,0 22,4" fill="#c7a66a"/>
+  </g>
+
+  <!-- Step 3: Daily Subscription Collection -->
+  <g transform="translate(516, 100)" filter="url(#ecoShadow)">
+    <rect width="204" height="250" rx="8" fill="url(#ecoGold)" stroke="rgba(199,166,106,0.4)" stroke-width="1.5"/>
+    <rect x="0" y="0" width="204" height="34" rx="8" fill="#241e13"/>
+    <text x="14" y="22" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10" font-weight="700">03 / SUBSCRIPTION</text>
+    
+    <g transform="translate(14, 50)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Daily Fixed Fee Model</text>
+      <text x="0" y="32" fill="#d2c5af" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• Predictable subscription fee</tspan>
+        <tspan x="0" dy="18">• Surplus earnings kept by driver</tspan>
+        <tspan x="0" dy="18">• Daily bank &amp; kiosk settlement</tspan>
+        <tspan x="0" dy="18">• Transparent revenue ledger</tspan>
+      </text>
+
+      <rect x="0" y="124" width="176" height="34" rx="4" fill="#1a150e" stroke="rgba(199,166,106,0.2)"/>
+      <text x="88" y="145" text-anchor="middle" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10.5">Predictable Revenue</text>
+    </g>
+  </g>
+
+  <!-- Arrow 3-4 -->
+  <g transform="translate(724, 215)">
+    <line x1="0" y1="0" x2="22" y2="0" stroke="#c7a66a" stroke-width="1.5"/>
+    <polygon points="22,-4 28,0 22,4" fill="#c7a66a"/>
+  </g>
+
+  <!-- Step 4: Maintenance, Training & Retention -->
+  <g transform="translate(756, 100)" filter="url(#ecoShadow)">
+    <rect width="172" height="250" rx="8" fill="url(#ecoPillar)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="0" y="0" width="172" height="34" rx="8" fill="#1c2333"/>
+    <text x="14" y="22" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10" font-weight="700">04 / SUPPORT</text>
+    
+    <g transform="translate(14, 50)">
+      <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Ecosystem Care</text>
+      <text x="0" y="32" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+        <tspan x="0" dy="0">• Scheduled fleet R&amp;M</tspan>
+        <tspan x="0" dy="18">• Behavioral training</tspan>
+        <tspan x="0" dy="18">• Driver welfare programs</tspan>
+        <tspan x="0" dy="18">• Multi-city scale retention</tspan>
+      </text>
+
+      <rect x="0" y="124" width="144" height="34" rx="4" fill="#0f141f"/>
+      <text x="72" y="145" text-anchor="middle" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10.5">High Fleet Uptime</text>
+    </g>
+  </g>
+</svg>

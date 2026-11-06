@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="100%" height="100%" role="img" aria-label="Meru Cabs Pan-India Process and Policy Transformation Framework with KPMG">
+  <defs>
+    <linearGradient id="kpmgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="100%" stop-color="#06090f"/>
+    </linearGradient>
+    <linearGradient id="pillarBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c2b"/>
+      <stop offset="100%" stop-color="#0d131f"/>
+    </linearGradient>
+    <linearGradient id="spocCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#241d13"/>
+      <stop offset="100%" stop-color="#16120b"/>
+    </linearGradient>
+    <filter id="fShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="960" height="400" fill="url(#kpmgBg)" rx="12"/>
+  <rect x="1" y="1" width="958" height="398" fill="none" stroke="rgba(199,166,106,0.22)" stroke-width="1" rx="11"/>
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" fill="#c7a66a" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="3">MERU CABS · PAN-INDIA PROCESS &amp; POLICY ARCHITECTURE</text>
+  <text x="480" y="62" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="20" font-weight="400">Meru Pan-India SPOC Coordination Framework for KPMG Engagement</text>
+
+  <!-- 4 Connected Nodes Layout -->
+  
+  <!-- NODE 1: KPMG Engagement (Left Top) -->
+  <g transform="translate(40, 95)" filter="url(#fShadow)">
+    <rect width="250" height="120" rx="8" fill="url(#pillarBlue)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="16" y="26" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">EXTERNAL ADVISORY</text>
+    <text x="16" y="48" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="14" font-weight="600">KPMG Consulting Team</text>
+    <text x="16" y="70" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+      <tspan x="16" dy="0">• Standard operating procedure audit</tspan>
+      <tspan x="16" dy="18">• Governance benchmarking &amp; templates</tspan>
+      <tspan x="16" dy="18">• Statutory compliance frameworks</tspan>
+    </text>
+  </g>
+
+  <!-- NODE 2: Internal Stakeholders (Left Bottom) -->
+  <g transform="translate(40, 240)" filter="url(#fShadow)">
+    <rect width="250" height="120" rx="8" fill="url(#pillarBlue)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="16" y="26" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">INTERNAL ORGANISATION</text>
+    <text x="16" y="48" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="14" font-weight="600">Cross-Functional Heads</text>
+    <text x="16" y="70" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+      <tspan x="16" dy="0">• Operations, Fleet, Tech &amp; Dispatch</tspan>
+      <tspan x="16" dy="18">• Finance, HR &amp; Customer Support</tspan>
+      <tspan x="16" dy="18">• City General Managers across India</tspan>
+    </text>
+  </g>
+
+  <!-- CENTRAL NODE: Afzal Jafri - Pan-India SPOC (Center) -->
+  <g transform="translate(340, 110)" filter="url(#fShadow)">
+    <rect width="280" height="230" rx="10" fill="url(#spocCenter)" stroke="rgba(199,166,106,0.6)" stroke-width="2"/>
+    <rect x="0" y="0" width="280" height="38" rx="10" fill="#292013"/>
+    <text x="140" y="24" text-anchor="middle" fill="#e0c28b" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" letter-spacing="1.5">CENTRAL SPOC COORDINATION</text>
+    
+    <text x="140" y="66" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="16">Afzal Jafri</text>
+    <text x="140" y="84" text-anchor="middle" fill="#c7a66a" font-family="Inter, sans-serif" font-size="11" font-weight="600">Meru Pan-India SPOC for KPMG</text>
+
+    <line x1="24" y1="98" x2="256" y2="98" stroke="rgba(199,166,106,0.25)" stroke-width="1"/>
+
+    <text x="24" y="120" fill="#e0d5c1" font-family="Inter, sans-serif" font-size="11">
+      <tspan x="24" dy="0">• Facilitated continuous process review</tspan>
+      <tspan x="24" dy="18">• Ensured policies matched field realities</tspan>
+      <tspan x="24" dy="18">• Reconciled theoretical models with ops</tspan>
+      <tspan x="24" dy="18">• Coordinated multi-city policy rollout</tspan>
+      <tspan x="24" dy="18">• Iterative updates as business scaled</tspan>
+    </text>
+  </g>
+
+  <!-- NODE 3: Operational Reality & Feedback (Right Top) -->
+  <g transform="translate(670, 95)" filter="url(#fShadow)">
+    <rect width="250" height="120" rx="8" fill="url(#pillarBlue)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="16" y="26" fill="#89a2c4" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">FIELD EXECUTION</text>
+    <text x="16" y="48" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="14" font-weight="600">Ground Reality Testing</text>
+    <text x="16" y="70" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+      <tspan x="16" dy="0">• Driver subscription ground mechanics</tspan>
+      <tspan x="16" dy="18">• 24×7 dispatch adherence &amp; SLAs</tspan>
+      <tspan x="16" dy="18">• Airport counter &amp; curb bottlenecks</tspan>
+    </text>
+  </g>
+
+  <!-- NODE 4: Pan-India Codified Policies (Right Bottom) -->
+  <g transform="translate(670, 240)" filter="url(#fShadow)">
+    <rect width="250" height="120" rx="8" fill="url(#pillarBlue)" stroke="rgba(199,166,106,0.3)" stroke-width="1"/>
+    <text x="16" y="26" fill="#c7a66a" font-family="Inter, sans-serif" font-size="10" font-weight="700" letter-spacing="1">ORGANISATIONAL OUTCOME</text>
+    <text x="16" y="48" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="14" font-weight="600">Pan-India Policy Manuals</text>
+    <text x="16" y="70" fill="#8b949e" font-family="Inter, sans-serif" font-size="11">
+      <tspan x="16" dy="0">• Standardised operational operating manual</tspan>
+      <tspan x="16" dy="18">• Practical, enforceable frontline rules</tspan>
+      <tspan x="16" dy="18">• Scaled across Delhi, Mumbai &amp; key hubs</tspan>
+    </text>
+  </g>
+
+  <!-- CONNECTING LINES WITH ARROWS -->
+  <!-- Left to Center -->
+  <path d="M 290 155 L 340 185" stroke="#89a2c4" stroke-width="1.5" stroke-dasharray="3,3" fill="none"/>
+  <path d="M 290 300 L 340 255" stroke="#89a2c4" stroke-width="1.5" stroke-dasharray="3,3" fill="none"/>
+
+  <!-- Center to Right -->
+  <path d="M 620 185 L 670 155" stroke="#c7a66a" stroke-width="1.5" fill="none"/>
+  <path d="M 620 255 L 670 300" stroke="#c7a66a" stroke-width="1.5" fill="none"/>
+</svg>
