@@ -45,8 +45,8 @@
 <meta name="twitter:image:alt" content="Understanding the Payments Ecosystem - Afzal Jafri">
 <style>
 :root{--bg:#090909;--panel:#101010;--panel2:#15130f;--gold:#c7a66a;--gold2:#e5c78e;--white:#f4f0e8;--muted:#aaa398;--line:rgba(199,166,106,.25);--max:1240px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}
-body{margin:0;background:radial-gradient(ellipse at 82% 5%,rgba(126,91,42,.13),transparent 28%),var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px;overflow-x:hidden;max-width:100%}
+body{margin:0;background:radial-gradient(ellipse at 82% 5%,rgba(126,91,42,.13),transparent 28%),var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden;max-width:100%;width:100%;position:relative}
 a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 64px));margin:auto}
 header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
 .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
@@ -809,8 +809,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 
 <style id="site-header-unified">
 /* Shared header system across every page */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
 header{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
-header .wrap.nav{width:min(var(--max,1260px),calc(100% - 48px));min-height:76px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(6px,0.8vw,14px);padding:8px 0;overflow:visible}
+header .wrap.nav{width:min(var(--max,1260px),calc(100% - 48px));margin:0 auto!important;min-height:76px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(6px,0.8vw,14px);padding:8px 0;overflow:visible}
 header .brand{position:relative;display:flex;align-items:center;flex:0 0 138px;width:138px;min-width:138px;max-width:138px;overflow:visible}
 header .brand-video{position:absolute;top:0;left:0;width:100%!important;height:100%!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important;mix-blend-mode:screen;z-index:2;pointer-events:none;transition:opacity .8s ease}
 header .brand-logo{display:block;width:138px!important;height:60px!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important;transition:opacity .8s ease}
@@ -831,7 +836,7 @@ header .menu-toggle{display:none;flex:0 0 auto}
 header .navcta{display:flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:38px;margin:0!important;padding:0 12px!important;border:1px solid rgba(199,166,106,.85);border-radius:3px;color:#e0c28b;background:transparent;font-size:9.5px!important;letter-spacing:.1em!important;white-space:nowrap;text-decoration:none}
 header .navcta:hover{background:rgba(199,166,106,.13)}
 @media(max-width:1150px) and (min-width:801px){
- header .wrap.nav{gap:6px;width:calc(100% - 24px)}
+ header .wrap.nav{gap:6px;width:calc(100% - 24px);margin:0 auto!important}
  header .brand{flex-basis:110px;width:110px;min-width:110px;max-width:110px}
  header .brand img,header .brand .brand-logo,header .brand-video{width:110px!important;height:48px!important;max-height:48px!important}
  header .navlinks{gap:clamp(4px,0.6vw,7px)}
@@ -840,7 +845,7 @@ header .navcta:hover{background:rgba(199,166,106,.13)}
  header .navcta{padding:0 7px!important;font-size:8px!important;min-height:32px;letter-spacing:.06em!important}
 }
 @media(max-width:920px) and (min-width:801px){
- header .wrap.nav{gap:4px;width:calc(100% - 16px)}
+ header .wrap.nav{gap:4px;width:calc(100% - 16px);margin:0 auto!important}
  header .brand{flex-basis:92px;width:92px;min-width:92px;max-width:92px}
  header .brand img,header .brand .brand-logo,header .brand-video{width:92px!important;height:40px!important;max-height:40px!important}
  header .navlinks{gap:4px}
@@ -849,31 +854,31 @@ header .navcta:hover{background:rgba(199,166,106,.13)}
  header .navcta{padding:0 5px!important;font-size:7.5px!important;min-height:30px;letter-spacing:.04em!important}
 }
 @media(max-width:800px){
- header .wrap.nav{width:calc(100% - 24px);min-height:62px;height:auto;gap:6px;flex-wrap:nowrap;padding:6px 0}
- header .brand{flex:0 0 102px;width:102px;min-width:88px;max-width:106px}
- header .brand img,header .brand .brand-logo,header .brand-video{width:100%!important;height:46px!important;max-height:46px!important}
+ header .wrap.nav{width:min(calc(100% - 24px),var(--max,1260px))!important;margin:0 auto!important;min-height:58px!important;height:58px!important;gap:clamp(4px,1.5vw,8px)!important;flex-wrap:nowrap!important;padding:0!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+ header .brand{flex:0 1 auto!important;width:clamp(84px,22vw,102px)!important;min-width:76px!important;max-width:104px!important;height:44px!important;min-height:44px!important;margin:0!important;display:flex!important;align-items:center!important}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:100%!important;height:100%!important;max-height:44px!important;object-fit:contain!important;object-position:left center!important}
  header .navlinks{display:none!important;position:absolute!important;top:calc(100% + 7px)!important;left:0!important;right:0!important;z-index:200!important;width:100%!important;max-height:min(72vh,560px);overflow-y:auto!important;flex:initial!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:18px 20px 12px!important;background:linear-gradient(145deg,#17140f,#0d0d0d 58%);border:1px solid rgba(199,166,106,.45);box-shadow:0 18px 48px rgba(0,0,0,.72);border-radius:5px;white-space:normal!important}
  header .navlinks.is-open{display:flex!important}
  header .navlinks::before{content:"EXPLORE THE PORTFOLIO";display:block;color:#c7a66a;font-size:9px;font-weight:700;letter-spacing:.23em;padding:0 0 12px;margin-bottom:5px;border-bottom:1px solid rgba(199,166,106,.22)}
  header .navlinks a{display:flex!important;align-items:center;min-height:44px;padding:10px 2px!important;border-bottom:1px solid rgba(255,255,255,.075)!important;color:#eee7da!important;font-size:11px!important;letter-spacing:.12em!important}
  header .navlinks a::after{content:"↗";margin-left:auto;color:#a88b58}
  header .navlinks a:last-child{border-bottom:0!important}
- header .nav-social{flex:0 0 30px;width:30px;height:30px;min-width:30px;font-size:13px;margin-left:auto!important}
- header .menu-toggle{display:inline-flex!important;align-items:center;justify-content:center;gap:5px;flex:0 0 68px;width:68px;min-width:68px;height:34px;min-height:34px;padding:0 6px;border:1px solid rgba(199,166,106,.78);border-radius:3px;background:linear-gradient(135deg,rgba(199,166,106,.18),rgba(199,166,106,.045));color:#e0c28b}
- header .menu-icon{width:13px;height:10px;display:flex;flex-direction:column;justify-content:space-between}
- header .menu-icon i{display:block;height:1.5px;background:currentColor;border-radius:2px}
- header .menu-copy{display:flex;flex-direction:column;line-height:1;gap:2px}
- header .menu-copy strong{font-size:7.5px;letter-spacing:.1em}
- header .menu-copy small,header .menu-spark{display:none}
- header .navcta{min-height:34px;height:34px;padding:0 8px!important;font-size:8px!important;letter-spacing:.06em!important;flex:0 0 auto}
+ header .nav-social{flex:0 0 30px!important;width:30px!important;height:30px!important;min-width:30px!important;font-size:13px!important;margin-left:auto!important;margin-right:0!important;border:1px solid rgba(199,166,106,.55)!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#e0c28b!important;text-decoration:none!important}
+ header .menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;flex:0 0 auto!important;width:clamp(60px,16vw,68px)!important;min-width:58px!important;height:34px!important;min-height:34px!important;padding:0 5px!important;border:1px solid rgba(199,166,106,.78)!important;border-radius:3px!important;background:linear-gradient(135deg,rgba(199,166,106,.18),rgba(199,166,106,.045))!important;color:#e0c28b!important;box-sizing:border-box!important}
+ header .menu-icon{width:13px!important;height:10px!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;flex:0 0 13px!important}
+ header .menu-icon i{display:block!important;height:1.5px!important;background:currentColor!important;border-radius:2px!important}
+ header .menu-copy{display:flex!important;flex-direction:column!important;line-height:1!important;gap:2px!important}
+ header .menu-copy strong{font-size:7.5px!important;letter-spacing:.1em!important}
+ header .menu-copy small,header .menu-spark{display:none!important}
+ header .navcta{display:flex!important;align-items:center!important;justify-content:center!important;min-height:34px!important;height:34px!important;padding:0 clamp(6px,1.8vw,9px)!important;font-size:clamp(7.2px,1.8vw,8px)!important;letter-spacing:.06em!important;flex:0 0 auto!important;border:1px solid rgba(199,166,106,.85)!important;border-radius:3px!important;color:#e0c28b!important;background:transparent!important;white-space:nowrap!important;box-sizing:border-box!important}
  body.menu-open{overflow:hidden}
 }
-@media(max-width:375px){
- header .wrap.nav{gap:4px;width:calc(100% - 16px)}
- header .brand{flex-basis:82px;width:82px;min-width:76px}
- header .menu-toggle{flex-basis:60px;width:60px;min-width:60px;padding:0 4px}
- header .navcta{padding:0 5px!important;font-size:7.5px!important}
- header .nav-social{flex-basis:28px;width:28px;height:28px;min-width:28px}
+@media(max-width:360px){
+ header .wrap.nav{width:calc(100% - 16px)!important;margin:0 auto!important;gap:4px!important}
+ header .brand{width:76px!important;min-width:70px!important}
+ header .menu-toggle{width:56px!important;min-width:54px!important;padding:0 3px!important}
+ header .navcta{padding:0 5px!important;font-size:7px!important}
+ header .nav-social{width:28px!important;height:28px!important;min-width:28px!important;font-size:12px!important}
 }
 </style>
 
@@ -886,8 +891,8 @@ a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px so
 /* Afzal Jafri signature identity — shared across every page */
 .brand.jafri-wordmark{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto!important;width:clamp(132px,15vw,174px)!important;min-width:132px!important;max-width:174px!important;height:68px!important;overflow:visible!important;text-decoration:none!important;white-space:normal!important}
 .brand.jafri-wordmark .brand-logo{display:block!important;width:100%!important;height:66px!important;max-height:66px!important;object-fit:contain!important;object-position:left center!important;border:0!important;padding:0!important;margin:0!important;background:transparent!important}
-@media(max-width:800px){.brand.jafri-wordmark{width:102px!important;min-width:88px!important;max-width:106px!important;height:48px!important}.brand.jafri-wordmark .brand-logo{height:46px!important;max-height:46px!important}}
-@media(max-width:375px){.brand.jafri-wordmark{width:84px!important;min-width:76px!important;max-width:88px!important;height:42px!important}.brand.jafri-wordmark .brand-logo{height:40px!important;max-height:40px!important}}
+@media(max-width:800px){.brand.jafri-wordmark{width:clamp(84px,22vw,102px)!important;min-width:76px!important;max-width:104px!important;height:44px!important}.brand.jafri-wordmark .brand-logo{height:42px!important;max-height:42px!important}}
+@media(max-width:360px){.brand.jafri-wordmark{width:76px!important;min-width:70px!important;max-width:80px!important;height:40px!important}.brand.jafri-wordmark .brand-logo{height:38px!important;max-height:38px!important}}
 </style>
 </head>
 <body>
