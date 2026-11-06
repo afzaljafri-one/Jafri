@@ -23,7 +23,7 @@
 
   <!-- Title -->
   <text x="480" y="34" text-anchor="middle" fill="#c7a66a" font-family="Inter, sans-serif" font-size="11" font-weight="700" letter-spacing="3">MERU CABS · DRIVER OPERATING ECOSYSTEM</text>
-  <text x="480" y="62" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="20" font-weight="400">Daily Driver Subscription Operating Model (Covering 2,000–5,000 Drivers)</text>
+  <text x="480" y="62" text-anchor="middle" fill="#f4f1eb" font-family="Georgia, serif" font-size="20" font-weight="400">Daily Driver Subscription Operating Model (2,000–3,000 Drivers · Delhi NCR)</text>
 
   <!-- 4 Step Circular / Continuous Flow Layout -->
   
@@ -88,10 +88,10 @@
     <g transform="translate(14, 50)">
       <text x="0" y="12" fill="#f4f1eb" font-family="Inter, sans-serif" font-size="13" font-weight="600">Daily Fixed Fee Model</text>
       <text x="0" y="32" fill="#d2c5af" font-family="Inter, sans-serif" font-size="11">
-        <tspan x="0" dy="0">• Predictable subscription fee</tspan>
+        <tspan x="0" dy="0">• ₹1,200 daily subscription fee</tspan>
+        <tspan x="0" dy="18">• Fuel expenses borne by driver</tspan>
         <tspan x="0" dy="18">• Surplus earnings kept by driver</tspan>
-        <tspan x="0" dy="18">• Daily bank &amp; kiosk settlement</tspan>
-        <tspan x="0" dy="18">• Transparent revenue ledger</tspan>
+        <tspan x="0" dy="18">• Collections across Delhi NCR</tspan>
       </text>
 
       <rect x="0" y="124" width="176" height="34" rx="4" fill="#1a150e" stroke="rgba(199,166,106,0.2)"/>
@@ -117,7 +117,7 @@
         <tspan x="0" dy="0">• Scheduled fleet R&amp;M</tspan>
         <tspan x="0" dy="18">• Behavioral training</tspan>
         <tspan x="0" dy="18">• Driver welfare programs</tspan>
-        <tspan x="0" dy="18">• Multi-city scale retention</tspan>
+        <tspan x="0" dy="18">• Driver retention &amp; compliance</tspan>
       </text>
 
       <rect x="0" y="124" width="144" height="34" rx="4" fill="#0f141f"/>
