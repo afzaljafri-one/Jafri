@@ -1,82 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <!--
   ==========================================================================
-  JAFRI.ONE — REUSABLE INSIGHTS TEMPLATE
+  JAFRI.ONE — REUSABLE INSIGHTS ARTICLE TEMPLATE (EDITORIAL BLUEPRINT)
   ==========================================================================
-  Use this template to publish new executive thought-leadership articles on jafri.one.
+  Use this template to publish new thought-leadership articles on jafri.one.
 
-  TO CREATE A NEW INSIGHT PAGE:
-  1. Create a folder: /insights/<slug>/
-  2. Copy this file to /insights/<slug>/index.html
-  3. Replace the placeholder variables {{...}} below with your content.
-  4. Add the canonical URL to /sitemap.xml
-  5. Test locally, commit to main, and verify live.
+  STRUCTURE:
+  1. Header & Navigation (site-wide convention with brand video)
+  2. Section 1 — Article Hero (Breadcrumb, Georgia serif title, Intro, Author metadata + Hero Graphic)
+  3. Section 2 — The Real Problem (2-col: Explanation + 4 Visual Cards)
+  4. Section 3 — The Payment Journey (Interactive 6-step flow + Potential failure points)
+  5. Section 4 — What Is Actually Causing Payment Failures? (Interactive Donut chart + Authorisation trend)
+  6. Section 5 — How Intelligent Routing and Cascading Work (Flow diagram with cascading forks)
+  7. Section 6 — The Commercial Impact (Visual revenue impact model)
+  8. Section 7 — Key Business Question (Black-and-gold feature banner)
+  9. Section 8 — My Perspective (Author perspective + Seated portrait + CTA)
+  10. Bottom Brand Decor & Footer
   ==========================================================================
 -->
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TD4H6773');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#060b14">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Afzal Jafri">
-
-<!-- SEO METADATA -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{PAGE_TITLE}} | Afzal Jafri</title>
 <meta name="description" content="{{META_DESCRIPTION}}">
 <link rel="canonical" href="{{CANONICAL_URL}}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Afzal Jafri">
+<meta name="theme-color" content="#090909">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/webp" href="/assets/afzal-jafri-signature-logo.webp">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- OPEN GRAPH / SOCIAL -->
+<!-- Open Graph / Facebook -->
 <meta property="og:site_name" content="Afzal Jafri">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{{PAGE_TITLE}} | Afzal Jafri">
 <meta property="og:description" content="{{META_DESCRIPTION}}">
 <meta property="og:url" content="{{CANONICAL_URL}}">
-<meta property="og:image" content="{{OG_IMAGE_URL}}">
+<meta property="og:image" content="{{OG_IMAGE_PATH}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:author" content="https://www.linkedin.com/in/afzaljafri/">
 
-<!-- TWITTER CARD -->
+<!-- Twitter Cards -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@AfzalJafri">
 <meta name="twitter:creator" content="@AfzalJafri">
 <meta name="twitter:title" content="{{PAGE_TITLE}} | Afzal Jafri">
 <meta name="twitter:description" content="{{META_DESCRIPTION}}">
-<meta name="twitter:image" content="{{OG_IMAGE_URL}}">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTJ0FR8T4P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MTJ0FR8T4P');
-</script>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "z7iblovjp4");
-</script>
+<meta name="twitter:image" content="{{OG_IMAGE_PATH}}">
 
 <!-- Schema.org JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jafri.one/#website",
+      "url": "https://jafri.one/",
+      "name": "Afzal Jafri",
+      "description": "Payments Strategy & Business Growth — Executive profile, fintech leadership, transit payments, and business portfolio of Afzal Jafri.",
+      "publisher": {
+        "@id": "https://jafri.one/#person"
+      },
+      "inLanguage": "en-US"
+    },
     {
       "@type": "Article",
       "@id": "{{CANONICAL_URL}}#article",
@@ -90,26 +89,45 @@
       "description": "{{META_DESCRIPTION}}",
       "url": "{{CANONICAL_URL}}",
       "inLanguage": "en-US",
-      "image": "{{OG_IMAGE_URL}}",
+      "mainEntityOfPage": "{{CANONICAL_URL}}",
+      "image": "{{OG_IMAGE_PATH}}",
       "author": {
         "@type": "Person",
         "@id": "https://jafri.one/#person",
         "name": "Afzal Jafri",
+        "url": "https://jafri.one/",
         "jobTitle": "Business Builder | Payments | Fintech",
-        "url": "https://jafri.one/"
+        "sameAs": [
+          "https://www.linkedin.com/in/afzaljafri/",
+          "https://twitter.com/AfzalJafri"
+        ]
       },
       "publisher": {
-        "@type": "Person",
-        "name": "Afzal Jafri",
-        "url": "https://jafri.one/"
+        "@id": "https://jafri.one/#person"
       }
     },
     {
       "@type": "BreadcrumbList",
+      "@id": "{{CANONICAL_URL}}#breadcrumb",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jafri.one/" },
-        { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://jafri.one/#expertise" },
-        { "@type": "ListItem", "position": 3, "name": "{{PAGE_TITLE}}", "item": "{{CANONICAL_URL}}" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://jafri.one/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://jafri.one/insights/payment-failures"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{{PAGE_TITLE}}",
+          "item": "{{CANONICAL_URL}}"
+        }
       ]
     }
   ]
@@ -118,632 +136,1236 @@
 
 <style>
 :root {
-  --bg: #060b14;
-  --bg-gradient: radial-gradient(circle at 50% 0%, #0d172a 0%, #060b14 75%);
-  --panel: #0d1524;
-  --panel-card: rgba(13, 21, 36, 0.72);
-  --panel-border: rgba(199, 166, 106, 0.22);
-  --panel-border-hover: rgba(224, 194, 139, 0.5);
+  --bg: #090909;
+  --panel: #111111;
+  --panel2: #151515;
   --gold: #c7a66a;
+  --gold2: #dfb76c;
   --gold-light: #e0c28b;
-  --gold-warm: #dfb76c;
-  --white: #ffffff;
-  --off-white: #f5f7fa;
-  --muted: #94a3b8;
+  --white: #f4f1eb;
+  --muted: #a7a29a;
   --muted-light: #cbd5e1;
-  --max: 1140px;
+  --line: rgba(199, 166, 106, .22);
+  --line-light: rgba(255, 255, 255, .08);
+  --max: 1180px;
 }
-
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 body {
   margin: 0;
   background: var(--bg);
-  background-image: var(--bg-gradient);
-  background-attachment: fixed;
-  color: var(--off-white);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  line-height: 1.6;
+  color: var(--white);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
 }
-
 a { color: inherit; text-decoration: none; }
-.wrap {
-  width: min(var(--max), calc(100% - 48px));
-  margin: 0 auto;
-}
-
-/* Header & Nav */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(6, 11, 20, 0.92);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(199, 166, 106, 0.18);
-}
-.nav {
-  height: 74px;
-  display: flex;
+.wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+.btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.brand { display: flex; align-items: center; flex: 0 0 auto; }
-.brand-logo { display: block; width: 140px; height: 56px; object-fit: contain; }
-.navlinks {
-  display: flex;
-  align-items: center;
-  gap: clamp(14px, 2.2vw, 28px);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #c9c3b8;
-}
-.navlinks a { padding: 8px 0; position: relative; transition: color 0.2s ease; }
-.navlinks a:hover { color: var(--gold-light); }
-.navlinks a[aria-current="page"] { color: var(--gold-light); font-weight: 600; }
-.navlinks a[aria-current="page"]::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: var(--gold);
-}
-
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-.nav-social {
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(199, 166, 106, 0.4);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: var(--gold-light);
-  transition: background 0.2s, border-color 0.2s;
-}
-.nav-social:hover { background: rgba(199, 166, 106, 0.14); border-color: var(--gold-light); }
-.nav-social svg { width: 16px; height: 16px; fill: currentColor; }
-.navcta {
+  gap: 8px;
+  padding: 11px 20px;
   border: 1px solid var(--gold);
-  border-radius: 4px;
-  padding: 9px 16px;
   color: var(--gold-light);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  letter-spacing: .13em;
   text-transform: uppercase;
+  transition: background .2s, color .2s, border-color .2s;
+  border-radius: 100px;
   font-weight: 600;
-  transition: background 0.2s, color 0.2s;
 }
-.navcta:hover { background: var(--gold); color: #060b14; }
+.btnfill {
+  background: var(--gold);
+  color: #111;
+  border-color: var(--gold);
+  font-weight: 700;
+}
+.btnfill:hover {
+  background: var(--gold2);
+  border-color: var(--gold2);
+  color: #090909;
+}
 
-.menu-toggle {
-  display: none;
+/* Section Common Styling */
+.section {
+  padding: 76px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.sec-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 52px;
   align-items: center;
-  gap: 7px;
-  padding: 7px 10px;
-  border: 1px solid rgba(199, 166, 106, 0.6);
-  border-radius: 4px;
-  background: linear-gradient(135deg, rgba(199, 166, 106, 0.15), rgba(199, 166, 106, 0.04));
-  color: var(--gold-light);
-  cursor: pointer;
-  min-height: 38px;
 }
-.menu-icon { width: 16px; height: 12px; display: flex; flex-direction: column; justify-content: space-between; }
-.menu-icon i { display: block; height: 1.5px; background: currentColor; border-radius: 2px; }
-.menu-copy strong { font-size: 9px; letter-spacing: 0.15em; font-weight: 700; }
-
-@media (max-width: 840px) {
-  .menu-toggle { display: inline-flex; }
-  .navlinks {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 16px;
-    right: 16px;
-    z-index: 100;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 18px 20px;
-    background: linear-gradient(145deg, #101826, #060b14 65%);
-    border: 1px solid rgba(199, 166, 106, 0.4);
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    gap: 0;
-  }
-  .navlinks.is-open { display: flex; }
-  .navlinks a { padding: 12px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 12px; }
-  .navlinks a:last-child { border-bottom: 0; }
+.sec-grid-2col-rev {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 52px;
+  align-items: center;
 }
+.sec-heading-block h2 {
+  font: clamp(28px, 3.4vw, 40px)/1.15 Georgia, serif;
+  font-weight: 400;
+  margin: 0 0 16px;
+  color: var(--white);
+}
+.sec-heading-block p.lead-desc {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+.sec-prose {
+  color: #8e887e;
+  font-size: 13.5px;
+  line-height: 1.8;
+  margin-top: 14px;
+}
+.sec-prose p { margin: 0 0 12px; }
+.sec-prose p:last-child { margin-bottom: 0; }
 
-/* Insight Hero */
-.insight-hero {
-  padding: 68px 0 60px;
+/* Section 1: Hero */
+.hero {
+  padding: 72px 0 68px;
+  background: radial-gradient(ellipse at 80% 20%, rgba(199, 166, 106, .09), transparent 50%), linear-gradient(180deg, #101010, #090909);
+  border-bottom: 1px solid var(--line);
+}
+.hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
   align-items: center;
-  gap: 48px;
 }
-.hero-pill {
-  display: inline-flex;
-  padding: 6px 14px;
-  border-radius: 100px;
-  border: 1px solid rgba(199, 166, 106, 0.42);
-  background: rgba(199, 166, 106, 0.08);
-  color: var(--gold-light);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+.hero-eyebrow {
+  color: var(--gold2);
+  font-size: 10.5px;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  font-weight: 600;
+  margin-bottom: 14px;
 }
-.hero-headline {
-  margin: 0 0 14px;
-  font-size: clamp(38px, 4.4vw, 56px);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  color: var(--white);
-}
-.hero-headline .serif-gold {
-  display: block;
-  font-family: Georgia, serif;
-  font-style: italic;
+.hero h1 {
+  font: clamp(38px, 4.8vw, 56px)/1.1 Georgia, serif;
+  letter-spacing: -.03em;
   font-weight: 400;
-  color: var(--gold-light);
-  margin-top: 4px;
+  margin: 0 0 8px;
+}
+.hero h1 span.gold-italic {
+  font-style: italic;
+  color: var(--gold2);
+  display: block;
 }
 .hero-subtitle {
-  font-size: clamp(20px, 2.2vw, 26px);
-  color: #e2e8f0;
-  margin: 0 0 20px;
-}
-.gold-divider {
-  width: 72px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  border-radius: 2px;
-  margin-bottom: 22px;
+  color: #d6d0c6;
+  font: clamp(18px, 2vw, 24px) Georgia, serif;
+  font-weight: 400;
+  margin: 12px 0 18px;
 }
 .hero-intro {
-  font-size: clamp(16px, 1.35vw, 18px);
-  line-height: 1.7;
-  color: var(--muted-light);
-  max-width: 540px;
-  margin: 0;
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0 0 24px;
 }
-.hero-visual-wrap { position: relative; display: flex; justify-content: center; }
-.hero-visual-img {
+.hero-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8a8377;
+  font-size: 12px;
+  letter-spacing: .04em;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  padding-top: 18px;
+}
+.hero-meta-strip span.sep {
+  color: var(--gold);
+  opacity: .6;
+}
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-visual img {
   width: 100%;
-  max-width: 440px;
-  border-radius: 16px;
-  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65));
+  max-width: 520px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.75));
+  border-radius: 6px;
 }
 
-/* Problem Section */
-.section-problem {
-  padding: 64px 0 72px;
-  border-top: 1px solid rgba(199, 166, 106, 0.16);
-}
-.problem-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 56px;
-}
-.problem-sidebar h2 {
-  font-size: clamp(32px, 3.4vw, 42px);
-  font-weight: 700;
-  color: var(--white);
-  margin: 0 0 16px;
-}
-.problem-sidebar p {
-  font-size: 17px;
-  line-height: 1.75;
-  color: var(--muted-light);
-  max-width: 440px;
-  margin: 0;
-}
+/* Section 2: 4 Cards */
 .problem-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
-.problem-card {
-  background: var(--panel-card);
-  border: 1px solid var(--panel-border);
-  border-radius: 12px;
+.info-card {
+  background: linear-gradient(145deg, #141414, #0d0d0d);
+  border: 1px solid rgba(199, 166, 106, 0.22);
+  border-radius: 4px;
   padding: 22px 20px;
   display: flex;
+  align-items: flex-start;
   gap: 16px;
-  transition: transform 0.25s, border-color 0.25s;
+  transition: border-color .2s, transform .2s;
 }
-.problem-card:hover { border-color: var(--panel-border-hover); transform: translateY(-2px); }
-.card-icon-wrap {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
-  border-radius: 10px;
-  background: rgba(199, 166, 106, 0.1);
-  border: 1px solid rgba(199, 166, 106, 0.28);
-  display: grid;
-  place-items: center;
-  color: var(--gold-light);
+.info-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
 }
-.card-icon-wrap svg { width: 22px; height: 22px; }
-.problem-card-content h3 { font-size: 16px; margin: 0 0 4px; color: var(--white); }
-.problem-card-content p { font-size: 13px; color: var(--muted); margin: 0; }
+.info-card-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  color: var(--gold2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.info-card-icon svg { width: 28px; height: 28px; stroke: var(--gold2); }
+.info-card-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0 0 5px;
+}
+.info-card-content p {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.65;
+  margin: 0;
+}
 
-/* Opportunity Section */
-.section-opportunity {
-  padding: 72px 0 64px;
-  border-top: 1px solid rgba(199, 166, 106, 0.16);
+/* Section 3: Payment Journey */
+.journey-container {
+  position: relative;
+  padding-bottom: 38px;
 }
-.opportunity-header h2 {
-  font-size: clamp(32px, 3.4vw, 42px);
-  font-weight: 700;
-  margin: 0 0 14px;
+.journey-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  position: relative;
 }
-.opportunity-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 14px;
-  margin-top: 36px;
-}
-.opportunity-card {
-  background: var(--panel-card);
-  border: 1px solid var(--panel-border);
-  border-radius: 12px;
-  padding: 24px 16px 22px;
+.journey-node {
+  background: linear-gradient(145deg, #161616, #0e0e0e);
+  border: 1px solid rgba(199, 166, 106, 0.35);
+  border-radius: 4px;
+  padding: 10px 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.25s, border-color 0.25s;
+  flex: 1 1 0;
+  min-width: 62px;
+  transition: border-color .2s;
 }
-.opportunity-card:hover { border-color: var(--panel-border-hover); transform: translateY(-3px); }
-.opportunity-card .card-icon-wrap { margin-bottom: 16px; }
-.opportunity-card h3 { font-size: 15px; margin: 0 0 8px; color: var(--white); }
-.opportunity-card p { font-size: 12px; color: var(--muted); margin: 0; }
-
-/* Key Takeaway Banner */
-.section-takeaway { padding: 24px 0 64px; }
-.takeaway-banner {
-  background: linear-gradient(135deg, rgba(20, 30, 48, 0.95), rgba(9, 14, 24, 0.95));
-  border: 1px solid rgba(199, 166, 106, 0.5);
-  border-radius: 16px;
-  padding: 36px 42px;
-  display: grid;
-  grid-template-columns: 68px 1fr;
-  align-items: center;
-  gap: 28px;
-  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
-}
-.takeaway-icon-wrap {
-  width: 68px;
-  height: 68px;
-  border-radius: 50%;
-  border: 1.5px solid var(--gold);
-  background: radial-gradient(circle at 35% 35%, rgba(199, 166, 106, 0.28), rgba(6, 11, 20, 0.8));
-  display: grid;
-  place-items: center;
-  color: var(--gold-light);
-}
-.takeaway-icon-wrap svg { width: 34px; height: 34px; }
-.takeaway-label { font-size: 15px; color: #e2e8f0; margin-bottom: 8px; }
-.takeaway-quote {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: clamp(21px, 2.2vw, 27px);
-  color: var(--gold-light);
-}
-
-/* Author Section */
-.section-author {
-  padding: 60px 0 76px;
-  border-top: 1px solid rgba(199, 166, 106, 0.16);
-}
-.author-layout {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 56px;
-  align-items: center;
-}
-.author-perspective h2 {
-  font-size: clamp(30px, 3vw, 38px);
-  margin: 0 0 14px;
-}
-.author-perspective p {
-  font-size: clamp(16px, 1.4vw, 18px);
-  color: #cbd5e1;
-  margin: 0;
-}
-.author-profile-card { display: flex; align-items: center; gap: 28px; }
-.author-avatar-wrap {
-  width: 130px;
-  height: 130px;
-  flex: 0 0 130px;
-  border-radius: 50%;
-  padding: 3px;
-  background: radial-gradient(circle at 30% 30%, #f7dfa5, #c7a66a 55%, #5d461f 100%);
-  box-shadow: 0 0 32px rgba(199, 166, 106, 0.45);
+.journey-node:hover { border-color: var(--gold2); }
+.journey-node svg { width: 22px; height: 22px; stroke: var(--gold2); margin-bottom: 6px; }
+.journey-node span { font-size: 9.5px; font-weight: 500; color: #ded8ce; line-height: 1.25; }
+.journey-arrow { color: var(--gold); font-size: 13px; flex: 0 0 auto; opacity: 0.7; }
+.journey-outcomes { display: flex; flex-direction: column; gap: 5px; flex: 0 0 auto; min-width: 78px; }
+.outcome-pill {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  gap: 5px;
+  padding: 4px 8px;
+  border-radius: 100px;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
-.author-avatar-img {
+.outcome-pill.appr { background: rgba(16, 185, 129, 0.12); border: 1px solid #10b981; color: #34d399; }
+.outcome-pill.decl { background: rgba(239, 68, 68, 0.12); border: 1px solid #ef4444; color: #f87171; }
+.outcome-pill svg { width: 11px; height: 11px; }
+
+.failure-points-strip {
+  position: absolute;
+  bottom: 0;
+  left: 31%;
+  right: 14%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.failure-dots {
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 50% 16%;
+  margin-bottom: 4px;
 }
-.author-meta h3 { font-size: 26px; margin: 0 0 6px; }
-.author-role { font-size: 13px; color: var(--gold-light); margin: 0 0 18px; }
-.author-cta {
-  display: inline-flex;
+.failure-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.failure-dot .dline {
+  width: 1px;
+  height: 12px;
+  border-left: 1px dashed rgba(239, 68, 68, 0.75);
+}
+.failure-dot .warn-badge {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+.failure-label {
+  color: var(--gold2);
+  font-size: 8.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.failure-label::before, .failure-label::after {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: rgba(199, 166, 106, 0.4);
+}
+
+/* Section 4: Dashboard */
+.dash-card {
+  border: 1px solid rgba(199, 166, 106, 0.28);
+  background: linear-gradient(145deg, #141414, #0b0b0b);
+  border-radius: 6px;
+  padding: 24px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.55);
+}
+.dash-header {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  padding-bottom: 10px;
+}
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: center;
+}
+.donut-col {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.donut-chart {
+  width: 106px;
+  height: 106px;
+  flex: 0 0 106px;
+  position: relative;
+}
+.donut-chart svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.donut-center-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.15;
+  text-align: center;
+  pointer-events: none;
+}
+.donut-center-label strong { font-size: 10px; font-weight: 700; color: #fff; }
+.donut-center-label span { font-size: 8px; color: var(--gold2); text-transform: uppercase; letter-spacing: 0.05em; }
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10.5px;
+  color: #ded8ce;
+}
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; flex: 0 0 8px; }
+
+.bar-chart-wrap {
+  border-left: 1px solid rgba(255,255,255,0.08);
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.trend-title {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+.trend-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 7px;
+  height: 72px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.tbar {
+  flex: 1 1 0;
+  background: linear-gradient(180deg, var(--gold2), #5d451e);
+  border-radius: 2px 2px 0 0;
+}
+
+/* Section 5: Routing & Cascading */
+.routing-flow {
+  display: flex;
   align-items: center;
   gap: 10px;
-  background: var(--gold);
-  color: #060b14;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 100px;
-  transition: transform 0.2s, background 0.2s;
 }
-.author-cta:hover { background: #ecd4a4; transform: translateY(-2px); }
-.author-cta svg { width: 16px; height: 16px; }
-
-/* Footer */
-.golden-wave-wrap { width: 100%; overflow: hidden; line-height: 0; opacity: 0.75; }
-.footer-brand-strip {
+.rf-node {
+  border: 1px solid rgba(199, 166, 106, 0.3);
+  background: linear-gradient(145deg, #161616, #0e0e0e);
+  border-radius: 5px;
+  padding: 14px 14px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 24px 0 20px;
+  text-align: center;
+  min-width: 108px;
+  flex: 1 1 0;
 }
-.footer-brand-strip .line { height: 1px; width: 90px; background: linear-gradient(90deg, transparent, var(--gold)); }
-.footer-brand-strip .line.right { background: linear-gradient(90deg, var(--gold), transparent); }
-.footer-brand-strip .brand-text { font-size: 15px; letter-spacing: 0.28em; color: var(--off-white); }
-footer {
-  border-top: 1px solid rgba(199, 166, 106, 0.18);
-  padding: 26px 0;
-  color: #8f9cae;
-  font-size: 12px;
+.rf-node svg { width: 22px; height: 22px; margin-bottom: 8px; }
+.rf-node strong { font-size: 11px; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.rf-node span { font-size: 9.5px; color: var(--muted); }
+.rf-decl {
+  border-color: rgba(239, 68, 68, 0.45);
+  background: linear-gradient(145deg, #1f0d10, #0f0708);
 }
-.footer-wrap {
+.rf-decl svg { stroke: #ef4444; }
+.rf-intel {
+  border-color: rgba(223, 183, 108, 0.55);
+  box-shadow: 0 0 16px rgba(199, 166, 106, 0.15);
+}
+.rf-intel svg { stroke: var(--gold2); }
+.rf-fork {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1.1 1 0;
 }
-.footer-brand img { width: 108px; height: auto; }
-.socials { display: inline-flex; gap: 10px; }
-.socials a {
-  width: 32px;
-  height: 32px;
+.rf-fork-node {
   border: 1px solid rgba(199, 166, 106, 0.4);
-  border-radius: 50%;
-  display: inline-grid;
-  place-items: center;
-  color: var(--gold-light);
+  background: linear-gradient(145deg, #18150f, #0d0c0a);
+  border-radius: 5px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.socials a:hover { background: var(--gold); color: #060b14; }
-.socials svg { width: 15px; height: 15px; fill: currentColor; }
-
-.whatsapp-float {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 9999;
-  width: 58px;
-  height: 58px;
+.rf-fork-node.success {
+  border-color: var(--gold2);
+  box-shadow: 0 0 14px rgba(223, 183, 108, 0.2);
+}
+.rf-fork-node.alt {
+  border-color: rgba(255,255,255,0.12);
+  opacity: 0.85;
+}
+.rf-badge {
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #25D366;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+  font-weight: 700;
+  flex: 0 0 20px;
 }
-.whatsapp-float img { width: 58px; height: 58px; }
+.rf-badge.gold { background: var(--gold2); color: #111; }
+.rf-badge.dark { background: #222; color: #fff; border: 1px solid #444; }
+.rf-fork-node div { display: flex; flex-direction: column; }
+.rf-fork-node strong { font-size: 10.5px; color: #fff; line-height: 1.2; }
+.rf-fork-node span { font-size: 9px; color: var(--muted); }
 
-@media (max-width: 1024px) {
-  .insight-hero { grid-template-columns: 1fr 1fr; }
-  .opportunity-grid { grid-template-columns: repeat(3, 1fr); }
+/* ==========================================================
+   SECTION 6: THE COMMERCIAL IMPACT (REVENUE MODEL)
+   ========================================================== */
+.impact-model-card {
+  border: 1px solid rgba(199, 166, 106, 0.28);
+  background: linear-gradient(145deg, #141414, #0b0b0b);
+  border-radius: 8px;
+  padding: 24px 22px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
 }
-@media (max-width: 840px) {
-  .insight-hero { grid-template-columns: 1fr; padding: 44px 0; }
-  .hero-visual-wrap { order: -1; max-width: 380px; margin: 0 auto; }
-  .problem-layout, .author-layout { grid-template-columns: 1fr; }
-  .takeaway-banner { grid-template-columns: 1fr; }
+.im-root-box {
+  width: 100%;
+  max-width: 340px;
 }
-@media (max-width: 600px) {
-  .wrap { width: min(var(--max), calc(100% - 32px)); }
-  .problem-cards-grid, .opportunity-grid { grid-template-columns: 1fr; }
-  .author-profile-card, .footer-wrap { flex-direction: column; text-align: center; }
+.im-node {
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform .2s, border-color .2s;
+}
+.im-attempts {
+  border: 1px solid rgba(199, 166, 106, 0.55);
+  background: linear-gradient(145deg, #221b0e, #130f07);
+  box-shadow: 0 6px 18px rgba(199, 166, 106, 0.12);
+}
+.im-attempts strong {
+  font-size: 13px;
+  color: #fff;
+  display: block;
+  font-weight: 600;
+}
+.im-attempts span {
+  font-size: 10px;
+  color: var(--gold2);
+  display: block;
+}
+.im-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+}
+.im-attempts .im-icon {
+  background: rgba(199, 166, 106, 0.16);
+  color: var(--gold2);
+  border: 1px solid rgba(199, 166, 106, 0.35);
+}
+.im-attempts .im-icon svg { width: 17px; height: 17px; }
+
+/* Connecting lines */
+.im-connector-v {
+  width: 1px;
+  height: 18px;
+  background: rgba(199, 166, 106, 0.4);
+}
+.im-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 14px;
+  width: 100%;
+  border-top: 1px solid rgba(199, 166, 106, 0.28);
+  padding-top: 14px;
+}
+.im-branch-col {
+  display: flex;
+  flex-direction: column;
+}
+.im-success {
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  background: linear-gradient(145deg, #0d1e17, #07100c);
+}
+.im-success .im-icon {
+  background: rgba(16, 185, 129, 0.18);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+.im-success .im-icon svg { width: 16px; height: 16px; }
+.im-success strong { font-size: 11.5px; color: #fff; display: block; }
+.im-tag-success { font-size: 9.5px; color: #34d399; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.im-note {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 8px 2px 0;
+}
+
+.im-failed {
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: linear-gradient(145deg, #1c150c, #0f0a05);
+}
+.im-failed .im-icon {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+.im-failed .im-icon svg { width: 16px; height: 16px; }
+.im-failed strong { font-size: 11.5px; color: #fff; display: block; }
+.im-tag-failed { font-size: 9.5px; color: #fbbf24; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.im-sub-connector {
+  width: 1px;
+  height: 12px;
+  background: rgba(245, 158, 11, 0.35);
+  margin: 0 auto;
+}
+
+.im-sub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.im-sub-node {
+  border-radius: 5px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.im-recoverable {
+  border: 1px solid rgba(223, 183, 108, 0.5);
+  background: linear-gradient(145deg, #19140c, #0d0a06);
+}
+.im-recoverable .im-sub-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--gold2);
+}
+.im-recoverable .im-sub-header svg { width: 13px; height: 13px; }
+.im-recoverable strong { font-size: 10px; color: #fff; line-height: 1.25; }
+.im-recoverable span { font-size: 8.5px; color: var(--muted); line-height: 1.35; }
+.im-badge-gold {
+  margin-top: 4px;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  background: rgba(199, 166, 106, 0.14);
+  padding: 2px 5px;
+  border-radius: 3px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.im-lost {
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: linear-gradient(145deg, #1d0a0d, #0e0506);
+}
+.im-lost .im-sub-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #f87171;
+}
+.im-lost .im-sub-header svg { width: 13px; height: 13px; }
+.im-lost strong { font-size: 10px; color: #fff; line-height: 1.25; }
+.im-lost span { font-size: 8.5px; color: var(--muted); line-height: 1.35; }
+.im-badge-crimson {
+  margin-top: 4px;
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.14);
+  padding: 2px 5px;
+  border-radius: 3px;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+/* Section 7: Key Takeaway Panel */
+.section-takeaway-panel {
+  border: 1px solid rgba(199, 166, 106, 0.45);
+  background: radial-gradient(ellipse at 85% 100%, rgba(199, 166, 106, .14) 0%, transparent 60%), linear-gradient(145deg, #151515, #0a0a0a);
+  border-radius: 6px;
+  padding: 38px 44px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55);
+}
+.takeaway-target-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  color: var(--gold2);
+  display: grid;
+  place-items: center;
+}
+.takeaway-target-icon svg {
+  width: 54px;
+  height: 54px;
+  stroke: var(--gold2);
+}
+.takeaway-copy-block {
+  flex: 1 1 auto;
+}
+.takeaway-label {
+  color: var(--gold2);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+.takeaway-quote {
+  font: clamp(20px, 2.4vw, 30px)/1.32 Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Section 8: Author Section */
+.section-author-wrapper {
+  padding: 72px 0 60px;
+}
+.author-3col-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+.author-text-col h2 {
+  font: 32px Georgia, serif;
+  font-weight: 400;
+  margin: 0 0 14px;
+  color: var(--white);
+}
+.author-text-col .lead-quote {
+  font: 15px/1.65 Georgia, serif;
+  color: #eee7dc;
+  margin: 0 0 14px;
+}
+.author-text-col .sub-bio {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.author-photo-card {
+  width: 100%;
+  max-width: 210px;
+  aspect-ratio: 4/3.2;
+  border-radius: 8px;
+  border: 1px solid rgba(199, 166, 106, 0.35);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+  background: #111;
+  margin: 0 auto;
+}
+.author-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.author-credentials-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.author-credentials-col h3 {
+  font: 28px Georgia, serif;
+  font-weight: 400;
+  margin: 0 0 6px;
+  color: var(--white);
+}
+.author-credentials-col .role-title {
+  color: var(--gold2);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+
+/* Bottom Brand Decor Accent */
+.brand-footer-accent {
+  padding: 42px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.brand-footer-accent .line {
+  flex: 1;
+  max-width: 220px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 166, 106, 0.4), transparent);
+}
+.brand-footer-accent span.domain {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  letter-spacing: .12em;
+  color: var(--gold2);
+}
+
+footer {
+  padding: 24px 0;
+  color: #777168;
+  font-size: 11px;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+}
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media(max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; text-align: left; }
+  .sec-grid-2col, .sec-grid-2col-rev { grid-template-columns: 1fr; gap: 36px; }
+  .author-3col-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+  .author-photo-card { margin: 0 auto; }
+  .author-credentials-col { align-items: center; }
+  .journey-flow { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .failure-points-strip { position: static; width: 100%; margin-top: 22px; }
+  .dash-grid { grid-template-columns: 1fr; gap: 24px; }
+  .bar-chart-wrap { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 16px; }
+  .routing-flow { flex-wrap: wrap; justify-content: center; }
+}
+
+@media(max-width: 640px) {
+  .wrap { width: calc(100% - 32px); }
+  .section { padding: 56px 0; }
+  .problem-cards-grid { grid-template-columns: 1fr; }
+  .section-takeaway-panel { flex-direction: column; padding: 28px 22px; text-align: center; gap: 20px; }
+  .donut-col { flex-direction: column; }
+  .im-split-grid { grid-template-columns: 1fr; gap: 16px; }
+  .im-sub-grid { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media(max-width: 480px) {
+  .hero h1 { font-size: 34px; }
+  .hero-meta-strip { flex-wrap: wrap; gap: 8px; }
+}
+</style>
+
+<style id="jafri-consistent-wordmark">
+a.jafri-wordmark{display:inline-flex!important;align-items:center!important;flex:0 0 auto!important;flex-wrap:nowrap!important;gap:14px!important;width:auto!important;min-width:0!important;max-width:none!important;overflow:visible!important;text-decoration:none!important;white-space:nowrap!important;color:#f3f0e9!important;font-family:Georgia,"Times New Roman",serif!important;font-size:25px!important;font-weight:400!important;line-height:1!important;letter-spacing:.01em!important;padding:0!important}
+a.jafri-wordmark .brand-name{display:inline-block!important;color:#f3f0e9!important;font:inherit!important;letter-spacing:.01em!important;border:0!important;padding:0!important;margin:0!important}
+a.jafri-wordmark .brand-domain{display:inline-block!important;border-left:1px solid rgba(210,218,229,.38)!important;padding:2px 0 2px 14px!important;margin:0!important;color:#c6ced8!important;font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;font-weight:400!important;line-height:1.2!important;letter-spacing:.01em!important}
+@media(max-width:760px){a.jafri-wordmark{gap:9px!important;font-size:20px!important}a.jafri-wordmark .brand-domain{font-size:12px!important;padding-left:9px!important}}
+
+/* Afzal Jafri signature identity — shared across every page */
+.brand.jafri-wordmark{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex:0 0 auto!important;width:clamp(132px,15vw,174px)!important;min-width:132px!important;max-width:174px!important;height:68px!important;overflow:visible!important;text-decoration:none!important;white-space:normal!important}
+.brand.jafri-wordmark .brand-logo{display:block!important;width:100%!important;height:66px!important;max-height:66px!important;object-fit:contain!important;object-position:left center!important;border:0!important;padding:0!important;margin:0!important;background:transparent!important}
+@media(max-width:800px){.brand.jafri-wordmark{width:clamp(84px,22vw,102px)!important;min-width:76px!important;max-width:104px!important;height:44px!important}.brand.jafri-wordmark .brand-logo{height:42px!important;max-height:42px!important}}
+@media(max-width:360px){.brand.jafri-wordmark{width:76px!important;min-width:70px!important;max-width:80px!important;height:40px!important}.brand.jafri-wordmark .brand-logo{height:38px!important;max-height:38px!important}}
+
+.whatsapp-float{position:fixed;right:24px;bottom:24px;z-index:9999;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#25D366;box-shadow:0 5px 20px rgba(0,0,0,.45);transition:transform .18s ease,box-shadow .18s ease}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.55)}
+.whatsapp-float:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.whatsapp-float img{display:block;width:62px;height:62px}
+@media(max-width:600px){.whatsapp-float{right:16px;bottom:18px;width:56px;height:56px}.whatsapp-float img{width:56px;height:56px}}
+</style>
+
+<link rel="preconnect" href="https://www.clarity.ms">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z7iblovjp4");
+</script>
+
+<style id="site-header-unified">
+/* Shared header system across every page */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+header{position:sticky;top:0;z-index:100;background:rgba(9,9,9,.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+header .wrap.nav{width:min(var(--max,1260px),calc(100% - 48px));margin:0 auto!important;min-height:76px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:clamp(6px,0.8vw,14px);padding:8px 0;overflow:visible}
+header .brand{position:relative;display:flex;align-items:center;flex:0 0 138px;width:138px;min-width:138px;max-width:138px;overflow:visible}
+header .brand-video{position:absolute;top:0;left:0;width:100%!important;height:100%!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important;mix-blend-mode:screen;z-index:2;pointer-events:none;transition:opacity .8s ease}
+header .brand-logo{display:block;width:138px!important;height:60px!important;max-height:60px!important;object-fit:contain!important;object-position:left center!important;transition:opacity .8s ease}
+header .brand.is-playing .brand-video{opacity:1}
+header .brand.is-playing .brand-logo{opacity:0}
+header .brand.has-ended .brand-video{opacity:0;pointer-events:none}
+header .brand.has-ended .brand-logo{opacity:1!important}
+@media (prefers-reduced-motion: reduce){
+ header .brand-video{display:none!important}
+ header .brand-logo{opacity:1!important}
+}
+header .navlinks{position:static;display:flex;align-items:center;justify-content:center;flex:1 1 auto;min-width:0;gap:clamp(5px,0.75vw,12px);white-space:nowrap;overflow:visible}
+header .navlinks a{font-size:9.5px;letter-spacing:.075em;line-height:1.2;text-transform:uppercase;color:#d6d0c6;text-decoration:none;padding:10px 0}
+header .navlinks a:hover,header .navlinks a[aria-current="page"],header .navlinks a[aria-current="true"]{color:#e0c28b}
+header .nav-social{display:flex!important;align-items:center;justify-content:center;flex:0 0 34px;width:34px;height:34px;min-width:34px;margin:0!important;border:1px solid rgba(199,166,106,.55);border-radius:50%;color:#e0c28b;text-decoration:none;font-family:Arial,sans-serif;font-size:14px;font-weight:700;line-height:1}
+header .nav-social:hover{background:rgba(199,166,106,.16)}
+header .menu-toggle{display:none;flex:0 0 auto}
+header .navcta{display:flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:38px;margin:0!important;padding:0 12px!important;border:1px solid rgba(199,166,106,.85);border-radius:3px;color:#e0c28b;background:transparent;font-size:9.5px!important;letter-spacing:.1em!important;white-space:nowrap;text-decoration:none}
+header .navcta:hover{background:rgba(199,166,106,.13)}
+@media(max-width:1150px) and (min-width:801px){
+ header .wrap.nav{gap:6px;width:calc(100% - 24px);margin:0 auto!important}
+ header .brand{flex-basis:110px;width:110px;min-width:110px;max-width:110px}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:110px!important;height:48px!important;max-height:48px!important}
+ header .navlinks{gap:clamp(4px,0.6vw,7px)}
+ header .navlinks a{font-size:8px;letter-spacing:.045em}
+ header .nav-social{flex-basis:28px;width:28px;height:28px;min-width:28px;font-size:12px}
+ header .navcta{padding:0 7px!important;font-size:8px!important;min-height:32px;letter-spacing:.06em!important}
+}
+@media(max-width:920px) and (min-width:801px){
+ header .wrap.nav{gap:4px;width:calc(100% - 16px);margin:0 auto!important}
+ header .brand{flex-basis:92px;width:92px;min-width:92px;max-width:92px}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:92px!important;height:40px!important;max-height:40px!important}
+ header .navlinks{gap:4px}
+ header .navlinks a{font-size:7.5px;letter-spacing:.035em}
+ header .nav-social{flex-basis:26px;width:26px;height:26px;min-width:26px;font-size:11px}
+ header .navcta{padding:0 5px!important;font-size:7.5px!important;min-height:30px;letter-spacing:.04em!important}
+}
+@media(max-width:800px){
+ header .wrap.nav{width:min(calc(100% - 24px),var(--max,1260px))!important;margin:0 auto!important;min-height:58px!important;height:58px!important;gap:clamp(4px,1.5vw,8px)!important;flex-wrap:nowrap!important;padding:0!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+ header .brand{flex:0 1 auto!important;width:clamp(84px,22vw,102px)!important;min-width:76px!important;max-width:104px!important;height:44px!important;min-height:44px!important;margin:0!important;display:flex!important;align-items:center!important}
+ header .brand img,header .brand .brand-logo,header .brand-video{width:100%!important;height:100%!important;max-height:44px!important;object-fit:contain!important;object-position:left center!important}
+ header .navlinks{display:none!important;position:absolute!important;top:calc(100% + 7px)!important;left:0!important;right:0!important;z-index:200!important;width:100%!important;max-height:min(72vh,560px);overflow-y:auto!important;flex:initial!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:18px 20px 12px!important;background:linear-gradient(145deg,#17140f,#0d0d0d 58%);border:1px solid rgba(199,166,106,.45);box-shadow:0 18px 48px rgba(0,0,0,.72);border-radius:5px;white-space:normal!important}
+ header .navlinks.is-open{display:flex!important}
+ header .navlinks::before{content:"EXPLORE THE PORTFOLIO";display:block;color:#c7a66a;font-size:9px;font-weight:700;letter-spacing:.23em;padding:0 0 12px;margin-bottom:5px;border-bottom:1px solid rgba(199,166,106,.22)}
+ header .navlinks a{display:flex!important;align-items:center;min-height:44px;padding:10px 2px!important;border-bottom:1px solid rgba(255,255,255,.075)!important;color:#eee7da!important;font-size:11px!important;letter-spacing:.12em!important}
+ header .navlinks a::after{content:"↗";margin-left:auto;color:#a88b58}
+ header .navlinks a:last-child{border-bottom:0!important}
+ header .nav-social{flex:0 0 30px!important;width:30px!important;height:30px!important;min-width:30px!important;font-size:13px!important;margin-left:auto!important;margin-right:0!important;border:1px solid rgba(199,166,106,.55)!important;border-radius:50%!important;display:flex!important;align-items:center!important;justify-content:center!important;color:#e0c28b!important;text-decoration:none!important}
+ header .menu-toggle{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;flex:0 0 auto!important;width:clamp(60px,16vw,68px)!important;min-width:58px!important;height:34px!important;min-height:34px!important;padding:0 5px!important;border:1px solid rgba(199,166,106,.78)!important;border-radius:3px!important;background:linear-gradient(135deg,rgba(199,166,106,.18),rgba(199,166,106,.045))!important;color:#e0c28b!important;box-sizing:border-box!important}
+ header .menu-icon{width:13px!important;height:10px!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;flex:0 0 13px!important}
+ header .menu-icon i{display:block!important;height:1.5px!important;background:currentColor!important;border-radius:2px!important}
+ header .menu-copy{display:flex!important;flex-direction:column!important;line-height:1!important;gap:2px!important}
+ header .menu-copy strong{font-size:7.5px!important;letter-spacing:.1em!important}
+ header .menu-copy small,header .menu-spark{display:none!important}
+ header .navcta{display:flex!important;align-items:center!important;justify-content:center!important;min-height:34px!important;height:34px!important;padding:0 clamp(6px,1.8vw,9px)!important;font-size:clamp(7.2px,1.8vw,8px)!important;letter-spacing:.06em!important;flex:0 0 auto!important;border:1px solid rgba(199,166,106,.85)!important;border-radius:3px!important;color:#e0c28b!important;background:transparent!important;white-space:nowrap!important;box-sizing:border-box!important}
+ body.menu-open{overflow:hidden}
+}
+@media(max-width:360px){
+ header .wrap.nav{width:calc(100% - 16px)!important;margin:0 auto!important;gap:4px!important}
+ header .brand{width:76px!important;min-width:70px!important}
+ header .menu-toggle{width:56px!important;min-width:54px!important;padding:0 3px!important}
+ header .navcta{padding:0 5px!important;font-size:7px!important}
+ header .nav-social{width:28px!important;height:28px!important;min-width:28px!important;font-size:12px!important}
 }
 </style>
 </head>
 
 <body>
-<header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD4H6773"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Global Header matching work.html -->
+<header role="banner">
   <div class="wrap nav">
-    <a class="brand" href="/" aria-label="Afzal Jafri homepage">
-      <img class="brand-logo" src="/assets/afzal-jafri-signature-logo.webp" alt="Afzal Jafri signature logo" width="1141" height="579">
+    <a class="brand jafri-wordmark is-playing" href="/" aria-label="Afzal Jafri homepage">
+      <video class="brand-video" autoplay muted playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+        <source src="/assets/brand/afzal-jafri-logo.mp4" type="video/mp4">
+      </video>
+      <img class="brand-logo" src="/assets/afzal-jafri-signature-logo.png" alt="Afzal Jafri" width="1177" height="597" decoding="async">
     </a>
 
     <nav id="site-navigation" class="navlinks" aria-label="Main navigation">
-      <a href="/#about">About</a>
-      <a href="/#impact">Impact</a>
-      <a href="/#expertise">Expertise</a>
-      <a href="/fastag.html">B2B FASTag</a>
+      <a href="/#about">ABOUT</a>
+      <a href="/expertise.html">EXPERTISE</a>
+      <a href="/#impact">IMPACT</a>
+      <a href="/operations-transformation.html">OPERATIONS</a>
+      <a href="/payments-ecosystem.html">PAYMENT ECOSYSTEM</a>
+      <a href="/fastag.html">B2B FASTAG</a>
       <a href="/ncmc.html">NCMC</a>
-      <a href="/mobility.html">Mobility</a>
-      <a href="/insights/payment-failures" aria-current="page">Insights</a>
-      <a href="/#career">Career</a>
-      <a href="/#contact">Contact</a>
+      <a href="/mobility.html">MOBILITY</a>
+      <a href="{{CANONICAL_URL}}" aria-current="page">INSIGHTS</a>
+      <a href="/career.html">CAREER</a>
+      <a href="/#contact">CONTACT</a>
     </nav>
 
-    <div class="nav-actions">
-      <a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.66.72-1.66 1.63 0 .92.71 1.63 1.66 1.63.92 0 1.63-.71 1.63-1.63 0-.91-.71-1.63-1.63-1.63Z"/></svg>
-      </a>
+    <a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn" title="LinkedIn">in</a>
 
-      <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">
-        <span class="menu-icon"><i></i><i></i><i></i></span>
-        <span class="menu-copy"><strong>EXPLORE</strong></span>
-      </button>
+    <button class="menu-toggle" type="button" aria-label="Explore the website navigation" aria-expanded="false" aria-controls="site-navigation">
+      <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="menu-copy"><strong>EXPLORE</strong><small>THE SITE</small></span>
+      <span class="menu-spark" aria-hidden="true">✦</span>
+    </button>
 
-      <a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">Contact Me</a>
-    </div>
+    <a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">CONTACT ME</a>
   </div>
 </header>
 
-<main>
-  <!-- Hero Section -->
-  <section class="insight-hero wrap" aria-labelledby="insight-headline">
-    <div class="hero-content">
-      <div class="hero-pill">{{CATEGORY}}</div>
-      <h1 id="insight-headline" class="hero-headline">
-        {{HEADLINE_PART_1}}
-        <span class="serif-gold">{{HEADLINE_PART_2}}</span>
-      </h1>
-      <p class="hero-subtitle">{{SUBHEADLINE}}</p>
-      <div class="gold-divider"></div>
-      <p class="hero-intro">{{HERO_INTRO}}</p>
-    </div>
-
-    <div class="hero-visual-wrap">
-      <img class="hero-visual-img" src="{{HERO_IMAGE_PATH}}" alt="{{HERO_IMAGE_ALT}}" width="1200" height="675">
+<main id="main-content">
+  <!-- SECTION 1: ARTICLE HERO -->
+  <section class="hero" aria-label="Article Hero">
+    <div class="wrap hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">{{CATEGORY_LABEL}}</div>
+        <h1>{{HEADLINE_HTML}}</h1>
+        <p class="hero-subtitle">{{SUBHEADLINE}}</p>
+        <p class="hero-intro">
+          {{HERO_INTRO}}
+        </p>
+        <div class="hero-meta-strip">
+          <span>{{AUTHOR_NAME}}</span>
+          <span class="sep">&middot;</span>
+          <span>{{CATEGORY_NAME}}</span>
+          <span class="sep">&middot;</span>
+          <span>{{READ_TIME}}</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="{{HERO_IMAGE_PATH}}" alt="{{HERO_IMAGE_ALT}}" width="1376" height="768" fetchpriority="high" decoding="async">
+      </div>
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section class="section-problem" aria-labelledby="problem-heading">
-    <div class="wrap problem-layout">
-      <div class="problem-sidebar">
-        <h2 id="problem-heading">{{PROBLEM_SECTION_TITLE}}</h2>
-        <div class="gold-divider"></div>
-        <p>{{PROBLEM_SECTION_INTRO}}</p>
+  <!-- SECTION 2: THE REAL PROBLEM -->
+  <section class="section" aria-labelledby="problem-heading">
+    <div class="wrap sec-grid-2col">
+      <div class="sec-heading-block">
+        <h2 id="problem-heading">{{PROBLEM_SECTION_HEADING}}</h2>
+        <p class="lead-desc">
+          {{PROBLEM_SECTION_INTRO}}
+        </p>
+        <div class="sec-prose">
+          {{PROBLEM_SECTION_PROSE}}
+        </div>
       </div>
 
       <div class="problem-cards-grid">
-        <!-- REPEAT FOR EACH PROBLEM CARD (Typical: 4 cards) -->
-        <article class="problem-card">
-          <div class="card-icon-wrap" aria-hidden="true">
-            <!-- Icon SVG -->
-          </div>
-          <div class="problem-card-content">
-            <h3>{{PROBLEM_CARD_TITLE}}</h3>
-            <p>{{PROBLEM_CARD_DESC}}</p>
-          </div>
-        </article>
+        {{PROBLEM_CARDS_HTML}}
       </div>
     </div>
   </section>
 
-  <!-- Opportunity Section -->
-  <section class="section-opportunity wrap" aria-labelledby="opportunity-heading">
-    <div class="opportunity-header">
-      <h2 id="opportunity-heading">{{OPPORTUNITY_SECTION_TITLE}}</h2>
-      <div class="gold-divider"></div>
-    </div>
-
-    <div class="opportunity-grid">
-      <!-- REPEAT FOR EACH OPPORTUNITY CARD (Typical: 6 cards) -->
-      <article class="opportunity-card">
-        <div class="card-icon-wrap" aria-hidden="true">
-          <!-- Icon SVG -->
+  <!-- SECTION 3: THE PAYMENT JOURNEY & WHERE IT BREAKS -->
+  <section class="section" aria-labelledby="journey-heading">
+    <div class="wrap sec-grid-2col">
+      <div class="sec-heading-block">
+        <h2 id="journey-heading">{{JOURNEY_SECTION_HEADING}}</h2>
+        <p class="lead-desc">
+          {{JOURNEY_SECTION_INTRO}}
+        </p>
+        <div class="sec-prose">
+          {{JOURNEY_SECTION_PROSE}}
         </div>
-        <h3>{{OPPORTUNITY_CARD_TITLE}}</h3>
-        <p>{{OPPORTUNITY_CARD_DESC}}</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Key Takeaway Banner -->
-  <section class="section-takeaway wrap" aria-label="Key Takeaway">
-    <div class="takeaway-banner">
-      <div class="takeaway-icon-wrap" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><path d="M22 2l-7.5 7.5"/>
-        </svg>
       </div>
-      <div class="takeaway-content">
-        <div class="takeaway-label">{{KEY_TAKEAWAY_LABEL}}</div>
-        <blockquote class="takeaway-quote">“{{KEY_TAKEAWAY_QUOTE}}”</blockquote>
+
+      <div class="journey-container">
+        {{JOURNEY_DIAGRAM_HTML}}
       </div>
     </div>
   </section>
 
-  <!-- Author Perspective Section -->
-  <section class="section-author" aria-labelledby="author-section-heading">
-    <div class="wrap author-layout">
-      <div class="author-perspective">
-        <h2 id="author-section-heading">{{AUTHOR_SECTION_HEADING}}</h2>
-        <div class="gold-divider"></div>
-        <p>{{AUTHOR_PERSPECTIVE_TEXT}}</p>
+  <!-- SECTION 4: WHAT IS ACTUALLY CAUSING PAYMENT FAILURES? -->
+  <section class="section" aria-labelledby="causing-failures-heading">
+    <div class="wrap sec-grid-2col-rev">
+      <div class="dash-card">
+        {{DASHBOARD_CARD_HTML}}
       </div>
 
-      <div class="author-profile-card">
-        <div class="author-avatar-wrap">
-          <img class="author-avatar-img" src="/assets/portrait.webp" alt="Afzal Jafri" width="1081" height="1455">
-        </div>
-        <div class="author-meta">
-          <h3>Afzal Jafri</h3>
-          <div class="author-role">Business Builder &nbsp;|&nbsp; Payments &nbsp;|&nbsp; Fintech</div>
-          <a class="author-cta" href="{{AUTHOR_CTA_URL}}" onclick="trackInsightCta('{{AUTHOR_CTA_LABEL}}', '{{AUTHOR_CTA_URL}}')">
-            <span>{{AUTHOR_CTA_LABEL}}</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+      <div class="sec-heading-block">
+        <h2 id="causing-failures-heading">{{DASHBOARD_SECTION_HEADING}}</h2>
+        <p class="lead-desc">
+          {{DASHBOARD_SECTION_INTRO}}
+        </p>
+        <div class="sec-prose">
+          {{DASHBOARD_SECTION_PROSE}}
         </div>
       </div>
     </div>
   </section>
+
+  <!-- SECTION 5: HOW INTELLIGENT ROUTING AND CASCADING WORK -->
+  <section class="section" aria-labelledby="routing-heading">
+    <div class="wrap sec-grid-2col">
+      <div class="sec-heading-block">
+        <h2 id="routing-heading">{{ROUTING_SECTION_HEADING}}</h2>
+        <p class="lead-desc">
+          {{ROUTING_SECTION_INTRO}}
+        </p>
+        <div class="sec-prose">
+          {{ROUTING_SECTION_PROSE}}
+        </div>
+      </div>
+
+      <div class="routing-flow">
+        {{ROUTING_FLOW_HTML}}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: THE COMMERCIAL IMPACT -->
+  <section class="section" aria-labelledby="impact-heading">
+    <div class="wrap sec-grid-2col-rev">
+      {{IMPACT_MODEL_HTML}}
+
+      <div class="sec-heading-block">
+        <h2 id="impact-heading">{{IMPACT_SECTION_HEADING}}</h2>
+        <p class="lead-desc">
+          {{IMPACT_SECTION_INTRO}}
+        </p>
+        <div class="sec-prose">
+          {{IMPACT_SECTION_PROSE}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: KEY BUSINESS QUESTION -->
+  <section class="section" aria-label="Key Strategic Question" style="padding: 48px 0;">
+    <div class="wrap">
+      <div class="section-takeaway-panel">
+        <div class="takeaway-target-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="6" r="6"/>
+            <circle cx="12" cy="2" r="2"/>
+            <path d="M22 2l-7.5 7.5"/>
+          </svg>
+        </div>
+        <div class="takeaway-copy-block">
+          <div class="takeaway-label">{{TAKEAWAY_LABEL}}</div>
+          <blockquote class="takeaway-quote">
+            “{{TAKEAWAY_QUOTE}}”
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: MY PERSPECTIVE -->
+  <section class="section section-author-wrapper" aria-labelledby="author-perspective-heading">
+    <div class="wrap author-3col-grid">
+      <div class="author-text-col">
+        <h2 id="author-perspective-heading">{{AUTHOR_HEADING}}</h2>
+        <p class="lead-quote">
+          {{AUTHOR_LEAD_QUOTE}}
+        </p>
+        <p class="sub-bio">
+          {{AUTHOR_SUB_BIO}}
+        </p>
+      </div>
+
+      <div class="author-photo-card">
+        <img src="{{AUTHOR_IMAGE_PATH}}" alt="{{AUTHOR_IMAGE_ALT}}" width="1086" height="1448" loading="lazy" decoding="async">
+      </div>
+
+      <div class="author-credentials-col">
+        <h3>{{AUTHOR_NAME}}</h3>
+        <p class="role-title">{{AUTHOR_ROLE}}</p>
+        <a class="btn btnfill" href="{{AUTHOR_CTA_URL}}" id="author-cta-btn" onclick="trackInsightCta('{{AUTHOR_CTA_LABEL}}', '{{AUTHOR_CTA_URL}}')">
+          {{AUTHOR_CTA_LABEL}} &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Brand Decor Accent matching visual reference -->
+  <div class="brand-footer-accent" aria-hidden="true">
+    <div class="line"></div>
+    <span class="domain">jafri.one</span>
+    <div class="line"></div>
+  </div>
 </main>
 
-<div class="footer-brand-strip" aria-hidden="true">
-  <span class="line"></span><span class="brand-text">jafri.one</span><span class="line right"></span>
-</div>
-
-<footer>
-  <div class="wrap footer-wrap">
-    <a class="footer-brand" href="/" aria-label="Afzal Jafri homepage">
-      <img src="/assets/afzal-jafri-signature-logo.webp" alt="Afzal Jafri" width="1141" height="579">
-    </a>
+<!-- Footer matching work.html -->
+<footer role="contentinfo">
+  <div class="wrap">
     <span>© <span id="year"></span> Afzal Jafri. All rights reserved.</span>
-    <span>Strategy · Partnerships · Execution</span>
-    <div class="socials">
-      <a href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.66.72-1.66 1.63 0 .92.71 1.63 1.66 1.63.92 0 1.63-.71 1.63-1.63 0-.91-.71-1.63-1.63-1.63Z"/></svg>
-      </a>
-      <a href="https://x.com/AfzalJafri" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.1L5.7 22H2.5l7.3-8.4L1.8 2h6.4l4.5 6.5L18.9 2zm-1.1 18h1.7L7.2 3.9H5.4L17.8 20z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/afzal.jafri/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.2-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
-      </a>
-    </div>
+    <span>Business building · Partnerships · Payments · Mobility</span>
   </div>
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
-<a href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Connect with Afzal on WhatsApp">
-  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" width="58" height="58">
+<!-- Floating WhatsApp Action matching work.html -->
+<a href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Connect with Afzal on WhatsApp">
+  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" width="62" height="62" loading="lazy" decoding="async">
 </a>
 
+<!-- Scripts: Mobile Menu Controller -->
 <script>
+(function(){
+  const toggle=document.querySelector('.menu-toggle');
+  const menu=document.getElementById('site-navigation');
+  if(!toggle||!menu)return;
+  function closeMenu(){toggle.setAttribute('aria-expanded','false');menu.classList.remove('is-open');document.body.classList.remove('menu-open');}
+  toggle.addEventListener('click',function(){
+    const opening=toggle.getAttribute('aria-expanded')!=='true';
+    toggle.setAttribute('aria-expanded',String(opening));
+    menu.classList.toggle('is-open',opening);
+    document.body.classList.toggle('menu-open',opening);
+  });
+  menu.addEventListener('click',function(event){if(event.target.closest('a'))closeMenu();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape')closeMenu();});
+  document.addEventListener('click',function(event){if(!menu.contains(event.target)&&!toggle.contains(event.target))closeMenu();});
+  window.addEventListener('resize',function(){if(window.innerWidth>800)closeMenu();});
+})();
+</script>
+
+<!-- Scripts: Signature Brand Video Controller matching work.html -->
+<script>
+(function(){
+  const brand = document.querySelector('header .brand');
+  const video = brand ? brand.querySelector('.brand-video') : null;
+  if (!brand || !video) return;
+
+  function finish(immediate) {
+    if (brand.classList.contains('has-ended')) return;
+    brand.classList.remove('is-playing');
+    brand.classList.add('has-ended');
+    if (immediate) {
+      try { video.remove(); } catch(e){}
+    } else {
+      setTimeout(function(){
+        try { video.pause(); video.remove(); } catch(e){}
+      }, 900);
+    }
+  }
+
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    finish(true);
+    return;
+  }
+
+  video.addEventListener('ended', function(){ finish(false); }, { once: true });
+  video.addEventListener('error', function(){ finish(true); }, { once: true });
+
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function(){ finish(true); });
+  }
+
+  setTimeout(function(){ finish(false); }, 11500);
+})();
+</script>
+
+<!-- Analytics Event Tracking Scripts -->
+<script>
+/* Author CTA click event tracking */
 function trackInsightCta(label, destination) {
-  // 1. Google Tag Manager event dispatch (single canonical mechanism for GA4)
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
     event: 'insight_cta_click',
@@ -753,12 +1375,55 @@ function trackInsightCta(label, destination) {
     page_path: window.location.pathname
   });
 
-  // 2. Microsoft Clarity custom event (separate tracking)
   if (typeof window.clarity === 'function') {
     window.clarity('event', 'insight_cta_click');
   }
 }
+
+/* Outbound Click Tracking: Google Tag Manager (dataLayer) & Microsoft Clarity */
+document.addEventListener('click', function(event) {
+  var link = event.target.closest('a[href]');
+  if (!link) return;
+
+  var url;
+  try {
+    url = new URL(link.href, window.location.href);
+  } catch (e) {
+    return;
+  }
+
+  var host = url.hostname.toLowerCase();
+
+  // WhatsApp click tracking
+  if (host === 'wa.me' || host === 'whatsapp.com' || host.endsWith('.whatsapp.com')) {
+    var waLabel = (link.innerText || link.getAttribute('aria-label') || 'WhatsApp').trim().slice(0, 100);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'whatsapp_click',
+      link_domain: host,
+      link_text: waLabel,
+      page_path: window.location.pathname
+    });
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'whatsapp_click');
+    }
+  }
+
+  // LinkedIn click tracking
+  if (host === 'linkedin.com' || host.endsWith('.linkedin.com')) {
+    var liLabel = (link.innerText || link.getAttribute('aria-label') || 'LinkedIn').trim().slice(0, 100);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'linkedin_click',
+      link_domain: host,
+      link_text: liLabel,
+      page_path: window.location.pathname
+    });
+    if (typeof window.clarity === 'function') {
+      window.clarity('event', 'linkedin_click');
+    }
+  }
+});
 </script>
-<script src="/assets/pwa.js" defer></script>
 </body>
 </html>
