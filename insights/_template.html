@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ==========================================================================
+  JAFRI.ONE — REUSABLE INSIGHTS TEMPLATE
+  ==========================================================================
+  Use this template to publish new executive thought-leadership articles on jafri.one.
+
+  TO CREATE A NEW INSIGHT PAGE:
+  1. Create a folder: /insights/<slug>/
+  2. Copy this file to /insights/<slug>/index.html
+  3. Replace the placeholder variables {{...}} below with your content.
+  4. Add the canonical URL to /sitemap.xml
+  5. Test locally, commit to main, and verify live.
+  ==========================================================================
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#060b14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Afzal Jafri">
+
+<!-- SEO METADATA -->
+<title>{{PAGE_TITLE}} | Afzal Jafri</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL_URL}}">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/webp" href="/assets/afzal-jafri-signature-logo.webp">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<!-- OPEN GRAPH / SOCIAL -->
+<meta property="og:site_name" content="Afzal Jafri">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{PAGE_TITLE}} | Afzal Jafri">
+<meta property="og:description" content="{{META_DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL_URL}}">
+<meta property="og:image" content="{{OG_IMAGE_URL}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:author" content="https://www.linkedin.com/in/afzaljafri/">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@AfzalJafri">
+<meta name="twitter:creator" content="@AfzalJafri">
+<meta name="twitter:title" content="{{PAGE_TITLE}} | Afzal Jafri">
+<meta name="twitter:description" content="{{META_DESCRIPTION}}">
+<meta name="twitter:image" content="{{OG_IMAGE_URL}}">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MTJ0FR8T4P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MTJ0FR8T4P');
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "z7iblovjp4");
+</script>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "{{CANONICAL_URL}}#article",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://jafri.one/#website",
+        "url": "https://jafri.one/",
+        "name": "Afzal Jafri"
+      },
+      "headline": "{{PAGE_TITLE}}",
+      "description": "{{META_DESCRIPTION}}",
+      "url": "{{CANONICAL_URL}}",
+      "inLanguage": "en-US",
+      "image": "{{OG_IMAGE_URL}}",
+      "author": {
+        "@type": "Person",
+        "@id": "https://jafri.one/#person",
+        "name": "Afzal Jafri",
+        "jobTitle": "Business Builder | Payments | Fintech",
+        "url": "https://jafri.one/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Afzal Jafri",
+        "url": "https://jafri.one/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jafri.one/" },
+        { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://jafri.one/#expertise" },
+        { "@type": "ListItem", "position": 3, "name": "{{PAGE_TITLE}}", "item": "{{CANONICAL_URL}}" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --bg: #060b14;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #0d172a 0%, #060b14 75%);
+  --panel: #0d1524;
+  --panel-card: rgba(13, 21, 36, 0.72);
+  --panel-border: rgba(199, 166, 106, 0.22);
+  --panel-border-hover: rgba(224, 194, 139, 0.5);
+  --gold: #c7a66a;
+  --gold-light: #e0c28b;
+  --gold-warm: #dfb76c;
+  --white: #ffffff;
+  --off-white: #f5f7fa;
+  --muted: #94a3b8;
+  --muted-light: #cbd5e1;
+  --max: 1140px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--off-white);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+.wrap {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Header & Nav */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(6, 11, 20, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(199, 166, 106, 0.18);
+}
+.nav {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.brand { display: flex; align-items: center; flex: 0 0 auto; }
+.brand-logo { display: block; width: 140px; height: 56px; object-fit: contain; }
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.2vw, 28px);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9c3b8;
+}
+.navlinks a { padding: 8px 0; position: relative; transition: color 0.2s ease; }
+.navlinks a:hover { color: var(--gold-light); }
+.navlinks a[aria-current="page"] { color: var(--gold-light); font-weight: 600; }
+.navlinks a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--gold);
+}
+
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-social {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(199, 166, 106, 0.4);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-social:hover { background: rgba(199, 166, 106, 0.14); border-color: var(--gold-light); }
+.nav-social svg { width: 16px; height: 16px; fill: currentColor; }
+.navcta {
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 9px 16px;
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.navcta:hover { background: var(--gold); color: #060b14; }
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(199, 166, 106, 0.6);
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(199, 166, 106, 0.15), rgba(199, 166, 106, 0.04));
+  color: var(--gold-light);
+  cursor: pointer;
+  min-height: 38px;
+}
+.menu-icon { width: 16px; height: 12px; display: flex; flex-direction: column; justify-content: space-between; }
+.menu-icon i { display: block; height: 1.5px; background: currentColor; border-radius: 2px; }
+.menu-copy strong { font-size: 9px; letter-spacing: 0.15em; font-weight: 700; }
+
+@media (max-width: 840px) {
+  .menu-toggle { display: inline-flex; }
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    z-index: 100;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 20px;
+    background: linear-gradient(145deg, #101826, #060b14 65%);
+    border: 1px solid rgba(199, 166, 106, 0.4);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    gap: 0;
+  }
+  .navlinks.is-open { display: flex; }
+  .navlinks a { padding: 12px 4px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 12px; }
+  .navlinks a:last-child { border-bottom: 0; }
+}
+
+/* Insight Hero */
+.insight-hero {
+  padding: 68px 0 60px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+}
+.hero-pill {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(199, 166, 106, 0.42);
+  background: rgba(199, 166, 106, 0.08);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-headline {
+  margin: 0 0 14px;
+  font-size: clamp(38px, 4.4vw, 56px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--white);
+}
+.hero-headline .serif-gold {
+  display: block;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+  margin-top: 4px;
+}
+.hero-subtitle {
+  font-size: clamp(20px, 2.2vw, 26px);
+  color: #e2e8f0;
+  margin: 0 0 20px;
+}
+.gold-divider {
+  width: 72px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  border-radius: 2px;
+  margin-bottom: 22px;
+}
+.hero-intro {
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.7;
+  color: var(--muted-light);
+  max-width: 540px;
+  margin: 0;
+}
+.hero-visual-wrap { position: relative; display: flex; justify-content: center; }
+.hero-visual-img {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.65));
+}
+
+/* Problem Section */
+.section-problem {
+  padding: 64px 0 72px;
+  border-top: 1px solid rgba(199, 166, 106, 0.16);
+}
+.problem-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+}
+.problem-sidebar h2 {
+  font-size: clamp(32px, 3.4vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 16px;
+}
+.problem-sidebar p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--muted-light);
+  max-width: 440px;
+  margin: 0;
+}
+.problem-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.problem-card {
+  background: var(--panel-card);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 22px 20px;
+  display: flex;
+  gap: 16px;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.problem-card:hover { border-color: var(--panel-border-hover); transform: translateY(-2px); }
+.card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border-radius: 10px;
+  background: rgba(199, 166, 106, 0.1);
+  border: 1px solid rgba(199, 166, 106, 0.28);
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+}
+.card-icon-wrap svg { width: 22px; height: 22px; }
+.problem-card-content h3 { font-size: 16px; margin: 0 0 4px; color: var(--white); }
+.problem-card-content p { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* Opportunity Section */
+.section-opportunity {
+  padding: 72px 0 64px;
+  border-top: 1px solid rgba(199, 166, 106, 0.16);
+}
+.opportunity-header h2 {
+  font-size: clamp(32px, 3.4vw, 42px);
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+.opportunity-card {
+  background: var(--panel-card);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 24px 16px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.opportunity-card:hover { border-color: var(--panel-border-hover); transform: translateY(-3px); }
+.opportunity-card .card-icon-wrap { margin-bottom: 16px; }
+.opportunity-card h3 { font-size: 15px; margin: 0 0 8px; color: var(--white); }
+.opportunity-card p { font-size: 12px; color: var(--muted); margin: 0; }
+
+/* Key Takeaway Banner */
+.section-takeaway { padding: 24px 0 64px; }
+.takeaway-banner {
+  background: linear-gradient(135deg, rgba(20, 30, 48, 0.95), rgba(9, 14, 24, 0.95));
+  border: 1px solid rgba(199, 166, 106, 0.5);
+  border-radius: 16px;
+  padding: 36px 42px;
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  align-items: center;
+  gap: 28px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
+}
+.takeaway-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  background: radial-gradient(circle at 35% 35%, rgba(199, 166, 106, 0.28), rgba(6, 11, 20, 0.8));
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+}
+.takeaway-icon-wrap svg { width: 34px; height: 34px; }
+.takeaway-label { font-size: 15px; color: #e2e8f0; margin-bottom: 8px; }
+.takeaway-quote {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(21px, 2.2vw, 27px);
+  color: var(--gold-light);
+}
+
+/* Author Section */
+.section-author {
+  padding: 60px 0 76px;
+  border-top: 1px solid rgba(199, 166, 106, 0.16);
+}
+.author-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 56px;
+  align-items: center;
+}
+.author-perspective h2 {
+  font-size: clamp(30px, 3vw, 38px);
+  margin: 0 0 14px;
+}
+.author-perspective p {
+  font-size: clamp(16px, 1.4vw, 18px);
+  color: #cbd5e1;
+  margin: 0;
+}
+.author-profile-card { display: flex; align-items: center; gap: 28px; }
+.author-avatar-wrap {
+  width: 130px;
+  height: 130px;
+  flex: 0 0 130px;
+  border-radius: 50%;
+  padding: 3px;
+  background: radial-gradient(circle at 30% 30%, #f7dfa5, #c7a66a 55%, #5d461f 100%);
+  box-shadow: 0 0 32px rgba(199, 166, 106, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.author-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 16%;
+}
+.author-meta h3 { font-size: 26px; margin: 0 0 6px; }
+.author-role { font-size: 13px; color: var(--gold-light); margin: 0 0 18px; }
+.author-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: #060b14;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 100px;
+  transition: transform 0.2s, background 0.2s;
+}
+.author-cta:hover { background: #ecd4a4; transform: translateY(-2px); }
+.author-cta svg { width: 16px; height: 16px; }
+
+/* Footer */
+.golden-wave-wrap { width: 100%; overflow: hidden; line-height: 0; opacity: 0.75; }
+.footer-brand-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 24px 0 20px;
+}
+.footer-brand-strip .line { height: 1px; width: 90px; background: linear-gradient(90deg, transparent, var(--gold)); }
+.footer-brand-strip .line.right { background: linear-gradient(90deg, var(--gold), transparent); }
+.footer-brand-strip .brand-text { font-size: 15px; letter-spacing: 0.28em; color: var(--off-white); }
+footer {
+  border-top: 1px solid rgba(199, 166, 106, 0.18);
+  padding: 26px 0;
+  color: #8f9cae;
+  font-size: 12px;
+}
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-brand img { width: 108px; height: auto; }
+.socials { display: inline-flex; gap: 10px; }
+.socials a {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(199, 166, 106, 0.4);
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  color: var(--gold-light);
+}
+.socials a:hover { background: var(--gold); color: #060b14; }
+.socials svg { width: 15px; height: 15px; fill: currentColor; }
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #25D366;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+.whatsapp-float img { width: 58px; height: 58px; }
+
+@media (max-width: 1024px) {
+  .insight-hero { grid-template-columns: 1fr 1fr; }
+  .opportunity-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 840px) {
+  .insight-hero { grid-template-columns: 1fr; padding: 44px 0; }
+  .hero-visual-wrap { order: -1; max-width: 380px; margin: 0 auto; }
+  .problem-layout, .author-layout { grid-template-columns: 1fr; }
+  .takeaway-banner { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wrap { width: min(var(--max), calc(100% - 32px)); }
+  .problem-cards-grid, .opportunity-grid { grid-template-columns: 1fr; }
+  .author-profile-card, .footer-wrap { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Afzal Jafri homepage">
+      <img class="brand-logo" src="/assets/afzal-jafri-signature-logo.webp" alt="Afzal Jafri signature logo" width="1141" height="579">
+    </a>
+
+    <nav id="site-navigation" class="navlinks" aria-label="Main navigation">
+      <a href="/#about">About</a>
+      <a href="/#impact">Impact</a>
+      <a href="/#expertise">Expertise</a>
+      <a href="/fastag.html">B2B FASTag</a>
+      <a href="/ncmc.html">NCMC</a>
+      <a href="/mobility.html">Mobility</a>
+      <a href="/insights/payment-failures" aria-current="page">Insights</a>
+      <a href="/#career">Career</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="nav-social" href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Afzal Jafri on LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.66.72-1.66 1.63 0 .92.71 1.63 1.66 1.63.92 0 1.63-.71 1.63-1.63 0-.91-.71-1.63-1.63-1.63Z"/></svg>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">
+        <span class="menu-icon"><i></i><i></i><i></i></span>
+        <span class="menu-copy"><strong>EXPLORE</strong></span>
+      </button>
+
+      <a class="navcta" href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer">Contact Me</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="insight-hero wrap" aria-labelledby="insight-headline">
+    <div class="hero-content">
+      <div class="hero-pill">{{CATEGORY}}</div>
+      <h1 id="insight-headline" class="hero-headline">
+        {{HEADLINE_PART_1}}
+        <span class="serif-gold">{{HEADLINE_PART_2}}</span>
+      </h1>
+      <p class="hero-subtitle">{{SUBHEADLINE}}</p>
+      <div class="gold-divider"></div>
+      <p class="hero-intro">{{HERO_INTRO}}</p>
+    </div>
+
+    <div class="hero-visual-wrap">
+      <img class="hero-visual-img" src="{{HERO_IMAGE_PATH}}" alt="{{HERO_IMAGE_ALT}}" width="1200" height="675">
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="section-problem" aria-labelledby="problem-heading">
+    <div class="wrap problem-layout">
+      <div class="problem-sidebar">
+        <h2 id="problem-heading">{{PROBLEM_SECTION_TITLE}}</h2>
+        <div class="gold-divider"></div>
+        <p>{{PROBLEM_SECTION_INTRO}}</p>
+      </div>
+
+      <div class="problem-cards-grid">
+        <!-- REPEAT FOR EACH PROBLEM CARD (Typical: 4 cards) -->
+        <article class="problem-card">
+          <div class="card-icon-wrap" aria-hidden="true">
+            <!-- Icon SVG -->
+          </div>
+          <div class="problem-card-content">
+            <h3>{{PROBLEM_CARD_TITLE}}</h3>
+            <p>{{PROBLEM_CARD_DESC}}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Opportunity Section -->
+  <section class="section-opportunity wrap" aria-labelledby="opportunity-heading">
+    <div class="opportunity-header">
+      <h2 id="opportunity-heading">{{OPPORTUNITY_SECTION_TITLE}}</h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <div class="opportunity-grid">
+      <!-- REPEAT FOR EACH OPPORTUNITY CARD (Typical: 6 cards) -->
+      <article class="opportunity-card">
+        <div class="card-icon-wrap" aria-hidden="true">
+          <!-- Icon SVG -->
+        </div>
+        <h3>{{OPPORTUNITY_CARD_TITLE}}</h3>
+        <p>{{OPPORTUNITY_CARD_DESC}}</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Key Takeaway Banner -->
+  <section class="section-takeaway wrap" aria-label="Key Takeaway">
+    <div class="takeaway-banner">
+      <div class="takeaway-icon-wrap" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><path d="M22 2l-7.5 7.5"/>
+        </svg>
+      </div>
+      <div class="takeaway-content">
+        <div class="takeaway-label">{{KEY_TAKEAWAY_LABEL}}</div>
+        <blockquote class="takeaway-quote">“{{KEY_TAKEAWAY_QUOTE}}”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Perspective Section -->
+  <section class="section-author" aria-labelledby="author-section-heading">
+    <div class="wrap author-layout">
+      <div class="author-perspective">
+        <h2 id="author-section-heading">{{AUTHOR_SECTION_HEADING}}</h2>
+        <div class="gold-divider"></div>
+        <p>{{AUTHOR_PERSPECTIVE_TEXT}}</p>
+      </div>
+
+      <div class="author-profile-card">
+        <div class="author-avatar-wrap">
+          <img class="author-avatar-img" src="/assets/portrait.webp" alt="Afzal Jafri" width="1081" height="1455">
+        </div>
+        <div class="author-meta">
+          <h3>Afzal Jafri</h3>
+          <div class="author-role">Business Builder &nbsp;|&nbsp; Payments &nbsp;|&nbsp; Fintech</div>
+          <a class="author-cta" href="{{AUTHOR_CTA_URL}}" onclick="trackInsightCta('{{AUTHOR_CTA_LABEL}}', '{{AUTHOR_CTA_URL}}')">
+            <span>{{AUTHOR_CTA_LABEL}}</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="footer-brand-strip" aria-hidden="true">
+  <span class="line"></span><span class="brand-text">jafri.one</span><span class="line right"></span>
+</div>
+
+<footer>
+  <div class="wrap footer-wrap">
+    <a class="footer-brand" href="/" aria-label="Afzal Jafri homepage">
+      <img src="/assets/afzal-jafri-signature-logo.webp" alt="Afzal Jafri" width="1141" height="579">
+    </a>
+    <span>© <span id="year"></span> Afzal Jafri. All rights reserved.</span>
+    <span>Strategy · Partnerships · Execution</span>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/afzaljafri/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.66.72-1.66 1.63 0 .92.71 1.63 1.66 1.63.92 0 1.63-.71 1.63-1.63 0-.91-.71-1.63-1.63-1.63Z"/></svg>
+      </a>
+      <a href="https://x.com/AfzalJafri" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.1L5.7 22H2.5l7.3-8.4L1.8 2h6.4l4.5 6.5L18.9 2zm-1.1 18h1.7L7.2 3.9H5.4L17.8 20z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/afzal.jafri/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm5.2-3.3a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<a href="https://wa.me/918777786086?text=Hi%20Afzal%2C%20I%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Connect with Afzal on WhatsApp">
+  <img src="/assets/whatsapp-icon.svg" alt="WhatsApp" width="58" height="58">
+</a>
+
+<script>
+function trackInsightCta(label, destination) {
+  // 1. Google Tag Manager event dispatch (single canonical mechanism for GA4)
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'insight_cta_click',
+    cta_label: label,
+    destination: destination,
+    page_title: document.title,
+    page_path: window.location.pathname
+  });
+
+  // 2. Microsoft Clarity custom event (separate tracking)
+  if (typeof window.clarity === 'function') {
+    window.clarity('event', 'insight_cta_click');
+  }
+}
+</script>
+<script src="/assets/pwa.js" defer></script>
+</body>
+</html>
